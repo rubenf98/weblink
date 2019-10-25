@@ -1,0 +1,47 @@
+.post-container {
+    width: 70%;
+    margin: auto;
+}
+
+.post-container .post {
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin: auto;
+}
+
+.post-container .post-image {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.post-container .post-content p {
+    color: #777777;
+}
+
+.post-container .links button {
+    color: white;
+    background-color: orange;
+    border: 3px solid orange;
+    padding: 16px 27px;
+    text-transform: uppercase;
+    border-radius: 27px;
+    font-weight: bold;
+}
+
+.post-container .post-content .tag {
+    background-color: var(--color);
+    padding: 8px 10px;
+    font-weight: bold;
+    border-radius: 15px;
+    color: white;
+    margin: 1%;
+    font-size: 12px;
+}
+
+.post-container .comment {
+    display: block;
+}
