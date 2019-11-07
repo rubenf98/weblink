@@ -21,7 +21,6 @@
                 <span class="date">{{$post->user->name}}: </span>
                 <span class="date">{{$post->created_at->diffForHumans()}}</span>
                 <h2>{{$post->title}}</h2>
-                <p>{{$post->description}}</p>
             </div>
 
             <div class="card-tags">
