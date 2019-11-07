@@ -1,8 +1,8 @@
 <style>
     .nav-bar .full-height {
-        height: 100px;
-        margin-bottom: 100px;
-        border-bottom: .5px solid gray;
+        height: 70px;
+        margin-bottom: 80px;
+        box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .16);
     }
 
     .nav-bar .flex-center {
@@ -17,8 +17,8 @@
 
     .nav-bar .top-right {
         position: absolute;
-        right: 10px;
-        top: 28px;
+        right: 2%;
+        top: 20px;
     }
 
     .nav-bar .top-center {
@@ -29,52 +29,47 @@
     }
 
     .nav-bar img {
-        height: 90px;
+        height: 60px;
     }
 
     .nav-bar .top-left {
         position: absolute;
-        left: 10px;
-        top: 28px;
+        left: 2%;
+        top: 20px;
     }
 
-    .nav-bar .links>a {
-        color: #636b6f;
-        padding: 0 25px;
-        font-size: 16px;
-        font-weight: 600;
-        letter-spacing: .1rem;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-
-    .sidenav {
+    .nav-bar .sidenav {
         height: 100%;
         width: 0;
         position: fixed;
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: #111;
+        background-color: white;
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
+        border-right: 1px solid gray;
     }
 
-    .sidenav a {
-        padding: 8px 8px 8px 32px;
+    .nav-bar .sidenav a {
         text-decoration: none;
-        font-size: 25px;
-        color: #818181;
+        color: black;
+        text-align: center;
+        font-size: 28px;
         display: block;
         transition: 0.3s;
+        padding: 20px 0px;
+        font-weight: 400;
+
     }
 
-    .sidenav a:hover {
-        color: #f1f1f1;
+    .nav-bar .sidenav .page:hover {
+        font-weight: bold;
+        color: rgb(162, 23, 255);
     }
 
-    .sidenav .closebtn {
+    .nav-bar .sidenav .closebtn {
         position: absolute;
         top: 0;
         right: 25px;
@@ -83,23 +78,34 @@
     }
 
     @media screen and (max-height: 450px) {
-        .sidenav {
+        .nav-bar .sidenav {
             padding-top: 15px;
         }
 
-        .sidenav a {
+        .nav-bar .sidenav a {
             font-size: 18px;
         }
+    }
+
+    .nav-bar ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .nav-bar .icon {
+        height: 35px;
     }
 </style>
 
 <script>
     function openNav() {
-          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("mySidenav").style.width = "300px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
         }
         
         function closeNav() {
           document.getElementById("mySidenav").style.width = "0";
+          document.body.style.backgroundColor = "white";
         }
 </script>
 
@@ -107,28 +113,32 @@
 <div class="flex-center position-ref full-height">
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="/posts">Posts</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <ul>
+            <li><a class="page" href="/posts">Posts</a></li>
+            <li><a class="page" href="/about">About</a></li>
+            <li><a class="page" href="/contact">Contact</a></li>
+        </ul>
     </div>
+
     @if (Route::has('login'))
-
     <div class="top-left links">
+        <img onclick="openNav()" style="cursor:pointer" class="icon" src="/icons/bars.svg">
+    </div>
 
-        <i onclick="openNav()" style="cursor:pointer" class="fas fa-bars fa-3x"></i>
-    </div>
     <div class="top-center links">
-        <a href="{{ url('/') }}"><img src="/logo.png" alt="" srcset=""></a>
+        <a href="{{ url('/') }}"><img src="/logo.png"></a>
     </div>
+
     <div class="top-right links">
         @auth
-        <a href="{{ url('/home') }}"><i class="fas fa-sign-in-alt fa-3x"></i></a>
+        <a href="{{ url('/home') }}"><img class="icon" src="/icons/logout.svg"></a>
+
         @else
 
-
         @if (Route::has('register'))
-        <a href="{{ url('/home') }}"><i class="fas fa-user fa-3x"></i></a>
+        <a href="{{ url('/login') }}"><img class="icon" src="/icons/user.svg"></a>
         @endif
+
         @endauth
     </div>
     @endif

@@ -24,9 +24,8 @@ class PostResource extends JsonResource
             'created_at' => (string) $this->created_at,
             'user' => $this->user,
             'comment' => CommentResource::collection($this->comment),
-            'image' => $this->post_img,
+            'post_img' => PostImgResource::collection($this->post_img),
             'tags' => TagResource::collection($this->tag),
-            //'post_has_tag' => PostHasTagResource::collection($this->post_has_tag),
         ];
     }
 }

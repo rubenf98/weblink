@@ -11,11 +11,13 @@
 
         <div onclick="window.location.href='/post/{{$post->id}}'" class="card">
 
-            @foreach ($post->post_img as $img)
+            @forelse ($post->post_img as $img)
             @if ($loop->first)
             <div class="card-image" style="--background: url({{ $img->url}});"></div>
             @endif
-            @endforeach
+            @empty
+            <div class="card-image" style="--background: url(/default.png);"></div>
+            @endforelse
 
             <div class="card-text">
                 <span class="date">{{$post->user->name}}: </span>

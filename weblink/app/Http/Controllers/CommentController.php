@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class CommentController extends Controller
 {
@@ -35,7 +37,28 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'content' => 'required|string|min:3',
+            'rating' => 'required|min:1|max:5|integer',
+            'post_id' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('post/' . $request->post_id)
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $data = new Request([
+            'user_id' => Auth::id(),
+            'content' => $request->content,
+            'rating' => $request->rating,
+            'post_id' => $request->post_id,
+        ]);
+
+        Comment::create($data->toArray());
+
+        return redirect('post/' . $request->post_id);
     }
 
     /**

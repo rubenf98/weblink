@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         //return PostsResource::collection(Post::paginate(9));
-        return view('posts.index')->with('posts', PostsResource::collection(Post::paginate(9)));
+        return view('posts.index')->with('posts', PostsResource::collection(Post::latest()->paginate(9)));
     }
 
     /**

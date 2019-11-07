@@ -22,6 +22,8 @@ Route::post('/post', 'PostController@store');
 
 Route::put('/post/{id}', 'PostController@update');
 Route::delete('/post/{id}', 'PostController@destroy');
+
+Route::post('/comment', 'CommentController@store')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

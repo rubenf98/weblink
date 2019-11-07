@@ -23,12 +23,24 @@
             font-weight: 200;
             height: 100vh;
             margin: 0;
+            transition: background-color .5s;
+        }
+
+        .fixedbutton {
+            position: fixed;
+            bottom: 3%;
+            right: 3%;
+            width: 50px;
+            border-radius: 50%;
+            background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
+            padding: 10px;
+            z-index:1;
         }
     </style>
 </head>
 
 <body>
-
+    <a href="#head"><img src="/icons/plus.svg" class="fixedbutton"></a>
 
     <div class="nav-bar">
         @include('layout.nav')
