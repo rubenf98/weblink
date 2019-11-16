@@ -3,6 +3,31 @@
 @section('content')
 <link rel="stylesheet" href="/css/post.css">
 
+<script language="javascript">
+    function like() {
+        var image =  document.getElementById("imageOne");
+        
+        var url = $(location).attr('href'), divisions = url.split("/"), post_id = divisions[divisions.length-1];           
+            
+    $.ajax({
+        type: 'post',
+        url: '/post/like/'+post_id,
+        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+
+        success: function (data) {
+            if (image.getAttribute('src') == "/icons/heart-filled.svg") 
+            {
+                image.src = "/icons/heart-regular.svg";
+            }
+            else 
+            {
+                image.src = "/icons/heart-filled.svg";
+            }            
+        }
+    });
+};
+</script>
+
 
 
 <div class="post-container">
@@ -24,8 +49,6 @@
 
             <br>
 
-
-
             <b> <i class="fas fa-paragraph"></i> Description</b>
             <p>{{$post->description}}</p>
 
@@ -39,28 +62,19 @@
                     @endif
                     @empty
                     <span class="tag">No tags available </span>
-
                     @endforelse
                 </p>
-
             </div>
 
             <div class="user">
                 <div class="user-name">
                     <b> <i class="fas fa-user"></i> Creator</b>
                     <p> {{$post->user->name}} <a href="/#"><i class="fas fa-external-link-square-alt"></i></a></p>
-
                 </div>
                 <div class="user-rating">
-                    <b> <i class="far fa-star"></i> Rating</b>
-                    @if ($post->rating)
-                    <p>{{$post->rating}}/5</p>
-                    @else
-                    <p>Not yet rated</p>
-                    @endif
-
+                    <b> <i class="fas fa-plus-square"></i> Created at</b>
+                    <p>{{$post->created_at}}</p>
                 </div>
-
             </div>
 
             <div class="user">
@@ -72,28 +86,46 @@
                         @else
                         <p>No code provided</p>
                         @endif
-
                     </div>
-
                 </div>
                 <div class="user-rating">
-                    <div class="links">
-                        <p>{{$post->created_at}}</p>
-
-                    </div>
+                    <b> <i class="fas fa-pen"></i> Updated at</b>
+                    @if ($post->updated_at)
+                    <p>{{$post->updated_at}}</p>
+                    @else
+                    <p>{{$post->created_at}}</p>
+                    @endif
                 </div>
 
             </div>
-
-
-
-
 
             <div class="links">
                 <a href={{$post->url}} target="_blank"><button>Visit</button></a>
             </div>
+        </div>
+        <div class="stats-container">
+            <div class="stats">
+                @if ($post->is_liked)
+                <img src="/icons/heart-filled.svg" id="imageOne" onclick="like()" />
+                @else
+                <img src="/icons/heart-regular.svg" id="imageOne" onclick="like()" />
+                @endif
+                <span>{{$post->likes->count()}}</span>
+
+                @if ($post->is_liked)
+                <img src="/icons/heart-filled.svg" id="imageOne" onclick="like()" />
+                @else
+                <img src="/icons/heart-regular.svg" id="imageOne" onclick="like()" />
+                @endif
+                <span>{{$post->likes->count()}}</span>
+            </div>
+
+            <div>
+                <span class="share">Share</span>
+            </div>
 
         </div>
+
     </div>
 
     <hr>

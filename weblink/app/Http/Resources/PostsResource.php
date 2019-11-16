@@ -21,6 +21,8 @@ class PostsResource extends JsonResource
             'created_at' => (string) $this->created_at,
             'favorites' => $this->favorites,
             'views' => $this->views,
+            'likes' => $this->likes,
+            'is_liked' => $this->is_liked,
             'user' => $this->user,
             'post_img' => PostImgResource::collection($this->post_img),
             'tags' => TagResource::collection($this->tag),

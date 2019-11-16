@@ -64,6 +64,10 @@
   font-size: 12px;
 }
 
+.posts-container .icon {
+  height: 25px;
+}
+
 .posts-container .card-text .date {
   font-size: 13px;
 }
@@ -107,7 +111,6 @@
 .posts-container .card-stats .value {
   font-size: 22px;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 .posts-container .card:hover {

@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('comment/like/{id}', ['as' => 'comment.like', 'uses' => 'LikeController@likeComment']);
+Route::post('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@likePost']);
+
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/create', 'PostController@create');
 Route::get('/post/{id}', 'PostController@show');

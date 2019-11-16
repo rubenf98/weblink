@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Comment;
 use App\Favorite;
 use App\PostView;
+use Auth;
 
 class Post extends Model
 {
@@ -18,7 +19,7 @@ class Post extends Model
         'user_id', 'title', 'description', 'url', 'rating', 'source'
     ];
 
-    protected $appends = ['comments', 'favourites', 'views'];
+    protected $appends = ['comments', 'favourites', 'views', 'is_liked'];
 
     public function getCommentsAttribute()
     {
@@ -36,6 +37,11 @@ class Post extends Model
     {
         $views = PostView::where('post_id', $this->attributes['id'])->count();
         return $views;
+    }
+
+    public function likes()
+    {
+        return $this->morphToMany('App\User', 'likeable')->whereDeletedAt(null);
     }
 
     /**
@@ -84,5 +90,11 @@ class Post extends Model
     public function views()
     {
         return $this->hasMany('App\PostView');
+    }
+
+    public function getIsLikedAttribute()
+    {
+        $like = $this->likes()->whereUserId(Auth::id())->first();
+        return (!is_null($like)) ? true : false;
     }
 }
