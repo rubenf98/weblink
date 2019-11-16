@@ -37,7 +37,7 @@
                     <div class="value"><i class="far fa-star"></i> {{$post->favorites}}</div>
                 </div>
                 <div class="stat">
-                    <div class="value"><i class="far fa-eye"></i> 83</div>
+                    <div class="value"><i class="far fa-eye"></i> {{$post->views}}</div>
                 </div>
                 <div class="stat">
                     <div class="value"><i class="far fa-comments"></i> {{$post->comments}}</div>
