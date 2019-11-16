@@ -45,7 +45,8 @@
         z-index: 1;
         top: 0;
         left: 0;
-        background-color: white;
+
+        background-color: rgba(0, 0, 0, 0.4);
         overflow-x: hidden;
         transition: 0.5s;
         padding-top: 60px;
@@ -54,7 +55,7 @@
 
     .nav-bar .sidenav a {
         text-decoration: none;
-        color: black;
+        color: white;
         text-align: center;
         font-size: 28px;
         display: block;
@@ -66,7 +67,6 @@
 
     .nav-bar .sidenav .page:hover {
         font-weight: bold;
-        color: rgb(162, 23, 255);
     }
 
     .nav-bar .sidenav .closebtn {
@@ -100,12 +100,12 @@
 <script>
     function openNav() {
           document.getElementById("mySidenav").style.width = "300px";
-          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+
         }
         
         function closeNav() {
           document.getElementById("mySidenav").style.width = "0";
-          document.body.style.backgroundColor = "white";
+
         }
 </script>
 
