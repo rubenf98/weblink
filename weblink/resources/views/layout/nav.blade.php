@@ -1,7 +1,6 @@
 <style>
     .nav-bar .full-height {
         height: 70px;
-        margin-bottom: 80px;
         box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .16);
     }
 

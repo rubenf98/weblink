@@ -1,0 +1,40 @@
+$colorText : #fff;
+$backgroundColor:  #fff;
+
+.title{
+    margin-left: 5px;
+    color: $colorText;
+    font-size: 100px;
+    font-family: Alata;
+}
+
+html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+            transition: background-color .5s;
+        }
+
+.content{
+    position: relative;
+}
+
+        .welcomeCard{
+            background-image: linear-gradient(to bottom, #00416A, $backgroundColor);
+            height: 500px;
+        }
+
+        .fixedbutton {
+            position: absolute;
+            bottom: 3%;
+            right: 3%;
+            width: 50px;
+            border-radius: 50%;
+            background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
+            padding: 10px;
+            z-index:1;
+}
+
