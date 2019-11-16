@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('url')->nullable();
             $table->string('source')->nullable();
             $table->integer('rating')->nullable();
+            $table->integer('views')->default(0);
             $table->timestamps();
 
 

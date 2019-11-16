@@ -27,7 +27,7 @@
 
             <div class="card-tags">
                 @foreach ($post->tag as $tag)
-                <span class="tag" style="--color: {{ $tag->color}};">{{ $tag->name}} </span>
+                <span class="tag">{{ $tag->name}} </span>
                 @endforeach
             </div>
 

@@ -13,19 +13,85 @@ class PostSeeder extends Seeder
     public function run()
     {
         Post::create([
-            'user_id'=> 1,
-            'title'=> 'My first Post',
-            'description'=> 'The description of my Post',
-            'url'=> 'mywebsite.com',
-            'source'=> 'github.com',         
+            'user_id' => 1,
+            'title' => 'CodePen',
+            'description' => 'CodePen is a social development environment for front-end designers and developers. Build and deploy a website, show off your work, build test cases to learn and debug, and find inspiration.',
+            'url' => 'https://codepen.io/',
+            'source' => 'github.com',
         ]);
 
         Post::create([
-            'user_id'=> 1,
-            'title'=> 'My second Post',
-            'description'=> 'The description of my Post',
-            'url'=> 'mywebsite.com',
-            'source'=> 'github.com',         
+            'user_id' => 1,
+            'title' => 'Pusher',
+            'description' => 'Hosted APIs that are flexible,  scalable, and easy to integrate',
+            'url' => 'https://pusher.com/',
+            'source' => 'github.com',
         ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'Ant Design',
+            'description' => 'A design system with values of Nature and Determinacy for better user experience of enterprise applications',
+            'url' => 'https://ant.design/',
+            'source' => 'github.com',
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'Overleaf',
+            'description' => 'The easy to use, online, collaborative LaTeX editor',
+            'url' => 'https://www.overleaf.com/',
+            'source' => 'github.com',
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'Firefox',
+            'description' => 'Get the latest Firefox browser and start getting the respect you deserve with our family of privacy-first products.',
+            'url' => 'https://www.firefox.com',
+            'source' => 'github.com',
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'Chrome',
+            'description' => 'Get more done with the new Chrome now more simple, secure, and faster than ever - with Google’s smarts built-in.',
+            'url' => 'https://www.google.com/intl/en-ENG/chrome/',
+            'source' => 'github.com',
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'Universidade da Madeira',
+            'description' => 'A Universidade da Madeira é uma universidade pública portuguesa. Localizada na cidade do Funchal, na Região Autónoma da Madeira, foi criada a 13 de Setembro de 1988.',
+            'url' => 'https://www.uma.pt/',
+            'source' => 'github.com',
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'Lenovo',
+            'description' => 'Lenovo is a Chinese multinational technology company with headquarters in Beijing. It designs, develops, manufactures, and sells personal computers, tablet computers, smartphones, workstations, servers, electronic storage devices, IT management software, and smart televisions.',
+            'url' => 'https://www.lenovo.com/us/en/',
+            'source' => 'github.com',
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'ITI',
+            'description' => 'ITI is dedicated to the interdisciplinary field of Human-computer Interaction and explores psychology, social sciences, computer science, creativity and Design.',
+            'url' => 'https://iti.larsys.pt/',
+            'source' => 'github.com',
+        ]);
+
+        Post::create([
+            'user_id' => 1,
+            'title' => 'Nike',
+            'description' => 'American multinational corporation that is engaged in the design, development, manufacturing, and worldwide marketing and sales of footwear, apparel, equipment, accessories, and services. The company is headquartered near Beaverton, Oregon, in the Portland metropolitan area.',
+            'url' => 'https://www.nike.com',
+            'source' => 'github.com',
+        ]);
+
+        
     }
 }
