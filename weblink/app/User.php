@@ -69,4 +69,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Favorite');
     }
+
+    /**
+    * Get all views from this user
+    */
+    public function views()
+    {
+        return $this->hasMany('App\PostView');
+    }
 }

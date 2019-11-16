@@ -23,6 +23,12 @@
     <div class="nav-bar">
         @include('layout.nav')
     </div>
+    
+    <<!Isto não fica aqui, tens que criar uma route que retorna uma view que esteja este hmtl->
+    <<!Criar view chamada homepage.blade.php->
+    <<!Criar route para / que retorna essa view->
+    <<!Mudar este código para essa route, como por exemplo em posts.index.blade.php->
+
     <div class="welcomeCard">
         <h1 class="titleWC">WebLink</h1>
         <p class="textWC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero suscipit et ipsam eos doloribus sunt quia in voluptates deserunt velit omnis eius porro fuga, iusto nam placeat rem. Possimus, aliquam?</p>

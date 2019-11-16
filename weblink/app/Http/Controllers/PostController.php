@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\PostResource;
 use App\Http\Resources\PostsResource;
 use App\Post;
+use App\PostView;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -60,9 +61,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
-        $post->views++;
-        $post->save();
+        PostView::incrementViews($id);
         //return new PostResource(Post::find($id));
         return view('posts.show')->with('post', new PostResource(Post::find($id)));
     }
