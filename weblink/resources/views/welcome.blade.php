@@ -14,40 +14,23 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-            transition: background-color .5s;
-        }
-
-        .fixedbutton {
-            position: fixed;
-            bottom: 3%;
-            right: 3%;
-            width: 50px;
-            border-radius: 50%;
-            background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
-            padding: 10px;
-            z-index:1;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 
 <body>
-    <a href="#head"><img src="/icons/plus.svg" class="fixedbutton"></a>
+    
 
     <div class="nav-bar">
         @include('layout.nav')
     </div>
-
-    <div class="content">@yield('content')</div>
-
+    <div class="welcomeCard">
+        <h1 class="titleWC">WebLink</h1>
+        <p class="textWC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero suscipit et ipsam eos doloribus sunt quia in voluptates deserunt velit omnis eius porro fuga, iusto nam placeat rem. Possimus, aliquam?</p>
+    </div>
+    <div class="content">@yield('content')
+        
+        <a href="#head"><img src="/icons/plus.svg" class="fixedbutton"></a>
+    </div>
     <div class="footer">
         @include('layout.footer')
     </div>
