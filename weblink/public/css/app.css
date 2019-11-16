@@ -11100,11 +11100,22 @@ a.text-dark:focus {
   }
 }
 
-.title {
-  margin-left: 5px;
+.titleWC {
+  padding-left: 5%;
+  padding-top: 8%;
   color: #fff;
   font-size: 100px;
   font-family: Alata;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.textWC {
+  padding-left: 5%;
+  width: 80%;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: Open Sans Condensed;
 }
 
 html,
@@ -11121,12 +11132,15 @@ body {
 
 .content {
   position: relative;
+  margin-bottom: 1%;
 }
 
 .welcomeCard {
+  margin-top: -6%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#00416A), to(#fff));
   background-image: linear-gradient(to bottom, #00416A, #fff);
-  height: 500px;
+  height: 700px;
+  margin-bottom: 1%;
 }
 
 .fixedbutton {

@@ -1,11 +1,25 @@
 $colorText : #fff;
 $backgroundColor:  #fff;
+$fontFamilyText: Open Sans Condensed;
+$fontFamilyTitle:Alata;
 
-.title{
-    margin-left: 5px;
+
+.titleWC{
+    padding-left: 5%;
+    padding-top: 8%;
     color: $colorText;
     font-size: 100px;
-    font-family: Alata;
+    font-family: $fontFamilyTitle;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.textWC{
+    padding-left: 5% ;
+    width: 80%;
+    color: $colorText;
+    font-size: 18px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-family: $fontFamilyText;
 }
 
 html, body {
@@ -20,11 +34,14 @@ html, body {
 
 .content{
     position: relative;
+    margin-bottom: 1%;
 }
 
         .welcomeCard{
+            margin-top: -6%;   
             background-image: linear-gradient(to bottom, #00416A, $backgroundColor);
-            height: 500px;
+            height: 700px;
+            margin-bottom:1% ;
         }
 
         .fixedbutton {
