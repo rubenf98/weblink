@@ -38,16 +38,16 @@ class User extends Authenticatable
     ];
 
     /**
-    * Get all posts this of this user
-    */
+     * Get all posts this of this user
+     */
     public function post()
     {
         return $this->hasMany('App\Post');
     }
 
     /**
-    * Get all posts this of this user
-    */
+     * Get all posts this of this user
+     */
     public function comment()
     {
         return $this->hasMany('App\Comment');
@@ -55,18 +55,42 @@ class User extends Authenticatable
 
 
     /**
-    * Get all follows this of this user
-    */
+     * Get all follows this of this user
+     */
     public function follow()
     {
         return $this->hasMany('App\Follow');
     }
 
     /**
-    * Get all favorites this of this user
-    */
+     * Get all favorites this of this user
+     */
     public function favorite()
     {
         return $this->hasMany('App\Favorite');
+    }
+
+    /**
+     * Get all views from this user
+     */
+    public function views()
+    {
+        return $this->hasMany('App\PostView');
+    }
+
+    /**
+     * Get all post's likes from this user
+     */
+    public function likedPosts()
+    {
+        return $this->morphedByMany('App\Post', 'likeable')->whereDeletedAt(null);
+    }
+
+    /**
+     * Get all comments's likes from this user
+     */
+    public function likedComments()
+    {
+        return $this->morphedByMany('App\Comments', 'likeable')->whereDeletedAt(null);
     }
 }

@@ -1,8 +1,6 @@
 @extends('welcome')
 
 @section('content')
-
-
 <link rel="stylesheet" href="/css/posts.css">
 
 <div class="posts-container">
@@ -20,9 +18,10 @@
             @endforelse
 
             <div class="card-text">
+                <h2>{{$post->title}}</h2>
                 <span class="date">{{$post->user->name}}: </span>
                 <span class="date">{{$post->created_at->diffForHumans()}}</span>
-                <h2>{{$post->title}}</h2>
+
             </div>
 
             <div class="card-tags">
@@ -34,10 +33,11 @@
 
             <div class="card-stats">
                 <div class="stat">
-                    <div class="value"><i class="far fa-star"></i> {{$post->favorites}}</div>
+                    <div id="like" class="value"><img class="icon" src="/icons/heart-white.svg"> {{$post->likes->count()}}
+                    </div>
                 </div>
                 <div class="stat">
-                    <div class="value"><i class="far fa-eye"></i> 83</div>
+                    <div class="value"><i class="far fa-eye"></i> {{$post->views}}</div>
                 </div>
                 <div class="stat">
                     <div class="value"><i class="far fa-comments"></i> {{$post->comments}}</div>
