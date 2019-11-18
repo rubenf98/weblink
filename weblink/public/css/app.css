@@ -11138,9 +11138,16 @@ a.text-dark:focus {
   width: 50%;
 }
 
+.welcomeCard {
+  margin-bottom: 1%;
+  padding-bottom: 20%;
+}
+
 html,
 body {
-  background-color: #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00416A), color-stop(#fff), to(#fff));
+  background-image: linear-gradient(to bottom, #00416A, #fff, #fff);
+  background-repeat: no-repeat;
   color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
@@ -11151,24 +11158,19 @@ body {
 }
 
 .content {
-  position: relative;
   margin-bottom: 1%;
-  text-align: center;
   width: 100%;
 }
 
 .welcomeCard {
-  margin-top: -6%;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00416A), to(#fff));
-  background-image: linear-gradient(to bottom, #00416A, #fff);
   margin-bottom: 1%;
-  padding-bottom: 10%;
+  padding-bottom: 20%;
 }
 
 .fixedbutton {
-  position: absolute;
   bottom: 3%;
-  right: 10%;
+  margin-left: 85%;
+  right: 10px;
   width: 50px;
   border-radius: 50%;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#a217ff), to(#274df7));

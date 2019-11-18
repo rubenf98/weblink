@@ -1,0 +1,36 @@
+$backgroundColor:  #fff;
+
+
+html, body {
+            background-image: linear-gradient(to bottom, #00416A, $backgroundColor, $backgroundColor);
+            background-repeat:no-repeat;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+            transition: background-color .5s;
+        }
+
+.content{
+    
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+.welcomeCard{
+    margin-bottom:1% ;
+    padding-bottom: 20%;
+}
+
+.fixedbutton {
+    bottom: 3%;
+    margin-left: 85%;
+    right: 10px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
+    padding: 10px;
+    z-index:1;
+}
+
