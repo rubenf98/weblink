@@ -15,14 +15,16 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque dolorem.</p>
             </div>
             <div>
-                <img src="/img_welcome/coding.png" alt="">
+                <img src="/img_welcome/light.png" alt="">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque dolorem.</p>
             </div>
             <div>
-                <img src="/img_welcome/coding.png" alt="">
+                <img src="/img_welcome/connection.png" alt="">
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque dolorem.</p>
             </div>
+            
         </div>
+        <button> START NOW</button>        
     @endsection
 
 

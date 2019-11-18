@@ -2,10 +2,17 @@ $colorText : #fff;
 $fontFamilyText: Open Sans Condensed;
 $fontFamilyTitle:Alata;
 $paddingLeftCard: 5%;
+$regularTextColor: #636b6f;
 
+.welcomeCard{
+    text-align: left;
+    margin-bottom:1% ;
+    padding-bottom: 20%;
+}
 
 .titleWC{
     padding-left: $paddingLeftCard;
+    width: 100%;
     padding-top: 8%;
     color: $colorText;
     font-size: 100px;
@@ -16,9 +23,8 @@ $paddingLeftCard: 5%;
 .textWC{
     padding-left: $paddingLeftCard;
     width: 60%;
-    color: $colorText;
-    font-size: 18px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: black;
+    font-size: 26px;
     font-family: $fontFamilyText;
 }
 .shortcutSection{
@@ -38,12 +44,21 @@ $paddingLeftCard: 5%;
     }
 }
 
-
-
-
-.welcomeCard{
-    margin-bottom:1% ;
-    padding-bottom: 20%;
+button{
+    background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
+    border-radius: 25px;
+    padding: 1%;  
+    padding-left: 2%;
+    padding-right: 2%;  
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
 }
+
+
+
+
+
+
 
 
