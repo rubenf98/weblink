@@ -1,0 +1,33 @@
+$backgroundColor:  #fff;
+$regularTextColor: #636b6f;
+$logoColor: rgb(15, 78, 167);
+
+html, body {
+            background-image: linear-gradient(to bottom, $logoColor, $backgroundColor, $backgroundColor);
+            background-repeat:no-repeat;
+            color: $regularTextColor;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+            transition: background-color .5s;
+        }
+
+.content{
+    text-align: center;
+    margin-bottom: 1%;
+    width: 100%;
+}
+
+
+.fixedbutton {
+    bottom: 3%;
+    margin-left: 85%;
+    right: 10px;
+    width: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
+    padding: 10px;
+    z-index:1;
+}
+

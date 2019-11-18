@@ -30,3 +30,7 @@ Route::post('/comment', 'CommentController@store')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/about', function(){
+    return view('about');
+});

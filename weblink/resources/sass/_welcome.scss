@@ -1,32 +1,40 @@
 $colorText : #fff;
-$backgroundColor:  #fff;
 $fontFamilyText: Open Sans Condensed;
 $fontFamilyTitle:Alata;
 $paddingLeftCard: 5%;
+$regularTextColor: #636b6f;
+$logoColor: rgb(15, 78, 167);
 
+.welcomeCard{
+    text-align: left;
+    margin-bottom:1% ;
+    padding-bottom: 5%;
+}
 
 .titleWC{
     padding-left: $paddingLeftCard;
+    width: 100%;
     padding-top: 8%;
     color: $colorText;
     font-size: 100px;
     font-family: $fontFamilyTitle;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-shadow: -2px 0 $logoColor, 0 2px $logoColor, 2px 0 $logoColor, 0 -2px $logoColor;
 }
 
 .textWC{
     padding-left: $paddingLeftCard;
     width: 60%;
-    color: $colorText;
-    font-size: 18px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: black;
+    font-size: 26px;
     font-family: $fontFamilyText;
 }
 .shortcutSection{
-
+    width: 80%;
     padding-bottom: 10%;
     display: flex;
     text-align: center;
+    justify-content: center;
+    margin: auto;
     div{
         margin: 0 auto;
         width: 30%;
@@ -39,38 +47,21 @@ $paddingLeftCard: 5%;
     }
 }
 
-html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-            transition: background-color .5s;
-        }
-
-.content{
-    position: relative;
-    margin-bottom: 1%;
-    text-align: center;
-    width: 100%;
-}
-
-.welcomeCard{
-    margin-top: -6%;   
-    background-image: linear-gradient(to bottom, #00416A, $backgroundColor);
-    margin-bottom:1% ;
-    padding-bottom: 10%;
-}
-
-.fixedbutton {
-    position: absolute;
-    bottom: 3%;
-    right: 10%;
-    width: 50px;
-    border-radius: 50%;
+button{
     background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
-    padding: 10px;
-    z-index:1;
+    border-radius: 25px;
+    padding: 1%;  
+    padding-left: 2%;
+    padding-right: 2%;  
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
 }
+
+
+
+
+
+
+
 
