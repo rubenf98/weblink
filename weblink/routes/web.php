@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('comment/like/{id}', ['as' => 'comment.like', 'uses' => 'LikeController@likeComment']);
-Route::post('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@likePost']);
+Route::post('comment/like/{id}', ['as' => 'comment.like', 'uses' => 'LikeController@likeComment'])->middleware('auth');
+Route::post('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@likePost'])->middleware('auth');
 
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/create', 'PostController@create');

@@ -23,6 +23,11 @@
             {
                 image.src = "/icons/heart-filled.svg";
             }            
+        }, 
+        error: function(data){
+            if (data.status == 401) {
+                alert("You need to login to be able to upvote")
+            }
         }
     });
 };
@@ -31,7 +36,6 @@
 
 
 <div class="post-container">
-
     <div class="post">
         <div class="post-image">
             @forelse ($post->post_img as $img)
