@@ -11103,7 +11103,7 @@ a.text-dark:focus {
 .welcomeCard {
   text-align: left;
   margin-bottom: 1%;
-  padding-bottom: 20%;
+  padding-bottom: 5%;
 }
 
 .titleWC {
@@ -11113,7 +11113,7 @@ a.text-dark:focus {
   color: #fff;
   font-size: 100px;
   font-family: Alata;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  text-shadow: -2px 0 #0f4ea7, 0 2px #0f4ea7, 2px 0 #0f4ea7, 0 -2px #0f4ea7;
 }
 
 .textWC {
@@ -11125,10 +11125,14 @@ a.text-dark:focus {
 }
 
 .shortcutSection {
+  width: 80%;
   padding-bottom: 10%;
   display: -webkit-box;
   display: flex;
   text-align: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  margin: auto;
 }
 
 .shortcutSection div {
@@ -11158,8 +11162,8 @@ button {
 
 html,
 body {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#00416A), color-stop(#fff), to(#fff));
-  background-image: linear-gradient(to bottom, #00416A, #fff, #fff);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#0f4ea7), color-stop(#fff), to(#fff));
+  background-image: linear-gradient(to bottom, #0f4ea7, #fff, #fff);
   background-repeat: no-repeat;
   color: #636b6f;
   font-family: "Nunito", sans-serif;
@@ -11176,11 +11180,6 @@ body {
   width: 100%;
 }
 
-.welcomeCard {
-  margin-bottom: 1%;
-  padding-bottom: 20%;
-}
-
 .fixedbutton {
   bottom: 3%;
   margin-left: 85%;
@@ -11191,5 +11190,42 @@ body {
   background-image: linear-gradient(to bottom right, #a217ff, #274df7);
   padding: 10px;
   z-index: 1;
+}
+
+#loginScreen {
+  display: -webkit-box;
+  display: flex;
+}
+
+.imgAbout {
+  height: 400px;
+  background-image: url(/images/aboutus.png?c2ed89cfcbe841c9fba0ec86902b93bc);
+  background-position: center;
+  box-shadow: 0px 20px 20px black inset;
+}
+
+.aboutAndLogo {
+  display: -webkit-box;
+  display: flex;
+  margin: 0 auto;
+  text-align: center;
+  align-content: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.aboutAndLogo .logo {
+  width: 20%;
+}
+
+.aboutAndLogo .logo img {
+  width: 100%;
+  padding-top: 3%;
+}
+
+.aboutAndLogo .about {
+  padding-top: 3%;
+  width: 40%;
+  text-align: left;
 }
 

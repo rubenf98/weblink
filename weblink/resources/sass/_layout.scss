@@ -1,8 +1,9 @@
 $backgroundColor:  #fff;
 $regularTextColor: #636b6f;
+$logoColor: rgb(15, 78, 167);
 
 html, body {
-            background-image: linear-gradient(to bottom, #00416A, $backgroundColor, $backgroundColor);
+            background-image: linear-gradient(to bottom, $logoColor, $backgroundColor, $backgroundColor);
             background-repeat:no-repeat;
             color: $regularTextColor;
             font-family: 'Nunito', sans-serif;
@@ -18,10 +19,6 @@ html, body {
     width: 100%;
 }
 
-.welcomeCard{
-    margin-bottom:1% ;
-    padding-bottom: 20%;
-}
 
 .fixedbutton {
     bottom: 3%;
