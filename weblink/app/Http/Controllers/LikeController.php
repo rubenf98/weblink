@@ -11,8 +11,14 @@ class LikeController extends Controller
     public function likePost($id)
     {
         // here you can check if product exists or is valid or whatever
-
-        $this->handleLike('App\Post', $id);
+        if (Auth::user()) 
+        {
+            $this->handleLike('App\Post', $id);
+        } else {
+            session()->flash('status', 'Unauthorized');
+            return session('status');
+            
+        }
     }
 
     public function likeComment($id)
