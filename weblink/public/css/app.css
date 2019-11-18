@@ -11111,11 +11111,31 @@ a.text-dark:focus {
 
 .textWC {
   padding-left: 5%;
-  width: 80%;
+  width: 60%;
   color: #fff;
   font-size: 18px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-family: Open Sans Condensed;
+}
+
+.shortcutSection {
+  padding-bottom: 10%;
+  display: -webkit-box;
+  display: flex;
+  text-align: center;
+}
+
+.shortcutSection div {
+  margin: 0 auto;
+  width: 30%;
+}
+
+.shortcutSection div p {
+  padding: 2%;
+}
+
+.shortcutSection div img {
+  width: 50%;
 }
 
 html,
@@ -11133,20 +11153,22 @@ body {
 .content {
   position: relative;
   margin-bottom: 1%;
+  text-align: center;
+  width: 100%;
 }
 
 .welcomeCard {
   margin-top: -6%;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#00416A), to(#fff));
   background-image: linear-gradient(to bottom, #00416A, #fff);
-  height: 700px;
   margin-bottom: 1%;
+  padding-bottom: 10%;
 }
 
 .fixedbutton {
   position: absolute;
   bottom: 3%;
-  right: 3%;
+  right: 10%;
   width: 50px;
   border-radius: 50%;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#a217ff), to(#274df7));

@@ -2,10 +2,11 @@ $colorText : #fff;
 $backgroundColor:  #fff;
 $fontFamilyText: Open Sans Condensed;
 $fontFamilyTitle:Alata;
+$paddingLeftCard: 5%;
 
 
 .titleWC{
-    padding-left: 5%;
+    padding-left: $paddingLeftCard;
     padding-top: 8%;
     color: $colorText;
     font-size: 100px;
@@ -14,12 +15,28 @@ $fontFamilyTitle:Alata;
 }
 
 .textWC{
-    padding-left: 5% ;
-    width: 80%;
+    padding-left: $paddingLeftCard;
+    width: 60%;
     color: $colorText;
     font-size: 18px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-family: $fontFamilyText;
+}
+.shortcutSection{
+
+    padding-bottom: 10%;
+    display: flex;
+    text-align: center;
+    div{
+        margin: 0 auto;
+        width: 30%;
+        p{
+            padding: 2%;
+        }
+        img{
+            width: 50%;
+        };
+    }
 }
 
 html, body {
@@ -35,23 +52,25 @@ html, body {
 .content{
     position: relative;
     margin-bottom: 1%;
+    text-align: center;
+    width: 100%;
 }
 
-        .welcomeCard{
-            margin-top: -6%;   
-            background-image: linear-gradient(to bottom, #00416A, $backgroundColor);
-            height: 700px;
-            margin-bottom:1% ;
-        }
+.welcomeCard{
+    margin-top: -6%;   
+    background-image: linear-gradient(to bottom, #00416A, $backgroundColor);
+    margin-bottom:1% ;
+    padding-bottom: 10%;
+}
 
-        .fixedbutton {
-            position: absolute;
-            bottom: 3%;
-            right: 3%;
-            width: 50px;
-            border-radius: 50%;
-            background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
-            padding: 10px;
-            z-index:1;
+.fixedbutton {
+    position: absolute;
+    bottom: 3%;
+    right: 10%;
+    width: 50px;
+    border-radius: 50%;
+    background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
+    padding: 10px;
+    z-index:1;
 }
 
