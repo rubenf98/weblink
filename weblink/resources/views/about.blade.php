@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+<div class="about-container">
     <div class="imgAbout"></div>
     <div class="aboutAndLogo">
         <div class="about">
@@ -14,6 +15,6 @@
             <img src="logo.png" alt="Logo">
         </div>
     </div>
-
+</div>
 
 @endsection

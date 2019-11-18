@@ -3,6 +3,7 @@
  
 
     @section('content')
+    <div class="welcome-container">
         <div class="welcomeCard">
             <h1 class="titleWC">WebLink</h1>
             <p class="textWC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero suscipit et ipsam eos doloribus sunt quia in voluptates deserunt velit omnis eius porro fuga, iusto nam placeat rem. Possimus, aliquam?</p>
@@ -23,7 +24,10 @@
             </div>
             
         </div>
-        <button> START NOW</button>        
+        <div class="buttonDiv">
+        <button> START NOW</button> 
+        </div> 
+    </div>
     @endsection
 
 
