@@ -1,6 +1,6 @@
 $colorText: #fff;
 $fontFamilyText: Open Sans Condensed;
-$fontFamilyTitle: "Roboto", sans-serif;
+$fontFamilyTitle: 'Roboto', sans-serif;
 $paddingLeftCard: 5%;
 $regularTextColor: #636b6f;
 $logoColor: rgb(15, 78, 167);
@@ -12,17 +12,17 @@ $logoColor: rgb(15, 78, 167);
         padding-bottom: 5%;
     }
 
-    .titleWC {
-        padding-left: $paddingLeftCard;
-        width: 100%;
-        padding-top: 2%;
-        padding-bottom: 1%;
-        color: $colorText;
-        font-size: 100px;
-        font-family: $fontFamilyTitle;
-        text-shadow: -2px 0 $logoColor, 0 2px $logoColor, 2px 0 $logoColor,
-            0 -2px $logoColor;
-    }
+.titleWC{
+    font-weight: bold;
+    padding-left: $paddingLeftCard;
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    color: $colorText;
+    font-size: 100px;
+    font-family: $fontFamilyTitle;
+    text-shadow: -2px 0 $logoColor, 0 2px $logoColor, 2px 0 $logoColor, 0 -2px $logoColor;
+}
 
     .textWC {
         padding-left: $paddingLeftCard;
@@ -64,4 +64,18 @@ $logoColor: rgb(15, 78, 167);
         padding-right: 2%;
         text-align: center;
     }
+
+button:hover{
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
 }
+button:focus{
+    outline: 0;
+}
+}
+
+
+
+
+
+
+

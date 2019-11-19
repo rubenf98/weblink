@@ -17,19 +17,25 @@
                 recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque
                 dolorem.</p>
         </div>
-        <div>
-            <img src="/img_welcome/light.png" alt="">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi
-                recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque
-                dolorem.</p>
-        </div>
-        <div>
-            <img src="/img_welcome/connection.png" alt="">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi
-                recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque
-                dolorem.</p>
+        
+        <div class="shortcutSection">
+            <div id="coding_div">
+                <img id="coding_img" src="/img_welcome/coding.svg" alt="">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque dolorem.</p>
+            </div>
+            <div id="idea_div">
+                <img id="idea_img" src="/img_welcome/light.svg" alt="">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque dolorem.</p>
+            </div>
+            <div id="connection_div">
+                <img id="connection_img" src="/img_welcome/connection.svg" alt="">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius accusantium maxime distinctio nisi recusandae corporis similique fuga quisquam magnam aut quae natus quo, facilis sit nemo rerum ad cumque dolorem.</p>
+            </div>
+            
         </div>
 
+        <button id="startButton"> START NOW</button> 
+    <script src="/js/welcome.js"></script>
     </div>
     <div class="buttonDiv">
         <button> START NOW</button>
