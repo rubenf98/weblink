@@ -1,17 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);.welcome-container .welcomeCard {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);.welcome-container .welcomeCard {
   text-align: left;
   margin-bottom: 1%;
   padding-bottom: 5%;
 }
 
 .welcome-container .titleWC {
+  font-weight: bold;
   padding-left: 5%;
   width: 100%;
   padding-top: 2%;
   padding-bottom: 1%;
   color: #fff;
   font-size: 100px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   text-shadow: -2px 0 #0f4ea7, 0 2px #0f4ea7, 2px 0 #0f4ea7, 0 -2px #0f4ea7;
 }
 
@@ -59,6 +60,14 @@
   text-align: center;
 }
 
+.welcome-container button:hover {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+}
+
+.welcome-container button:focus {
+  outline: 0;
+}
+
 html,
 body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#0f4ea7), color-stop(#fff), to(#fff));
@@ -82,12 +91,16 @@ body {
   bottom: 3%;
   margin-left: 85%;
   right: 10px;
-  width: 50px;
+  width: 3%;
   border-radius: 50%;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#a217ff), to(#274df7));
   background-image: linear-gradient(to bottom right, #a217ff, #274df7);
   padding: 10px;
   z-index: 1;
+}
+
+.fixedbutton:hover {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
 }
 
 #loginScreen {
@@ -125,5 +138,10 @@ body {
   padding-top: 3%;
   width: 40%;
   text-align: left;
+}
+
+.profile-container button {
+  display: block;
+  margin: auto;
 }
 
