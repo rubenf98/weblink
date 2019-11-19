@@ -1,23 +1,28 @@
-$backgroundColor:  #fff;
+$backgroundColor: #fff;
 $regularTextColor: #636b6f;
 $logoColor: rgb(15, 78, 167);
 
-html, body {
-            background-image: linear-gradient(to bottom, $logoColor, $backgroundColor, $backgroundColor);
-            background-repeat:no-repeat;
-            color: $regularTextColor;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-            transition: background-color .5s;
-        }
+html,
+body {
+    background-image: linear-gradient(
+        to bottom,
+        $logoColor,
+        $backgroundColor,
+        $backgroundColor
+    );
+    background-repeat: no-repeat;
+    color: $regularTextColor;
+    font-family: "Nunito", sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s;
+}
 
-.content{
+.content {
     margin-bottom: 1%;
     width: 100%;
 }
-
 
 .fixedbutton {
     bottom: 3%;
@@ -26,7 +31,11 @@ html, body {
     right: 10px;
     width: 3%;
     border-radius: 50%;
-    background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
+    background-image: linear-gradient(
+        to bottom right,
+        rgb(162, 23, 255),
+        rgb(39, 77, 247)
+    );
     padding: 10px;
     z-index:1;
     &:hover{

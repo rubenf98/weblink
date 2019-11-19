@@ -1,4 +1,10 @@
-.about-container{
+.about-container {
+    .imgAbout {
+        height: 400px;
+        background-image: url("aboutus.png");
+        background-position: center;
+        box-shadow: 0px 20px 20px black inset;
+    }
 
 .imgAbout{
     height:400px;
@@ -15,16 +21,15 @@
     justify-content: center;
         .logo{
             width: 20%;
-            img{
+            img {
                 width: 100%;
                 padding-top: 3%;
-                }
             }
-        .about{
+        }
+        .about {
             padding-top: 3%;
             width: 40%;
             text-align: left;
         }
+    }
 }
-}
-

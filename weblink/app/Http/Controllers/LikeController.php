@@ -10,40 +10,21 @@ class LikeController extends Controller
 {
     public function likePost($id)
     {
-        // here you can check if product exists or is valid or whatever
-        if (Auth::user()) 
-        {
-            $this->handleLike('App\Post', $id);
+        if (Auth::user()) {
+            Like::handleLike('App\Post', $id);
         } else {
             session()->flash('status', 'Unauthorized');
             return session('status');
-            
         }
     }
 
     public function likeComment($id)
     {
-        // here you can check if product exists or is valid or whatever
-
-        $this->handleLike('App\Comment', $id);
-    }
-
-    public function handleLike($type, $id)
-    {
-        $existing_like = Like::withTrashed()->whereLikeableType($type)->whereLikeableId($id)->whereUserId(Auth::id())->first();
-
-        if (is_null($existing_like)) {
-            Like::create([
-                'user_id'       => Auth::id(),
-                'likeable_id'   => $id,
-                'likeable_type' => $type,
-            ]);
+        if (Auth::user()) {
+            Like::handleLike('App\Comment', $id);
         } else {
-            if (is_null($existing_like->deleted_at)) {
-                $existing_like->delete();
-            } else {
-                $existing_like->restore();
-            }
+            session()->flash('status', 'Unauthorized');
+            return session('status');
         }
     }
 }

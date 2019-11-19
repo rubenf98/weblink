@@ -17,7 +17,6 @@ class PostsResource extends JsonResource
         return [
             'id' => $this->id,
             'title' =>  $this->title,
-            'rating' =>  $this->rating,
             'created_at' => (string) $this->created_at,
             'favorites' => $this->favorites,
             'views' => $this->views,
