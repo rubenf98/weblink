@@ -127,3 +127,142 @@ body {
   text-align: left;
 }
 
+.AuthContainer {
+  width: 50%;
+  margin: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  align-content: center;
+  padding: 3%;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1000px) {
+  .AuthContainer {
+    width: 90%;
+  }
+}
+
+.AuthContainer .submit-button {
+  border-style: none;
+  background-color: #a217ff;
+  display: block;
+  font-weight: bold;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 10% auto;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.AuthContainer .submit-button:hover {
+  background-color: #6900b0;
+}
+
+.AuthContainer .form-group input {
+  width: 80%;
+  border: none;
+  border-radius: 16px;
+  background-color: white;
+  padding: 15px 15px;
+  margin: 7% auto;
+  display: block;
+  box-shadow: 0px 0px 8px lightgray;
+}
+
+.AuthContainer .separator {
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(gray), to(rgba(0, 0, 0, 0))) 1 100%;
+  -webkit-border-image: linear-gradient(to bottom, gray, rgba(0, 0, 0, 0)) 1 100%;
+       -o-border-image: linear-gradient(to bottom, gray, rgba(0, 0, 0, 0)) 1 100%;
+          border-image: -webkit-gradient(linear, left top, left bottom, from(gray), to(rgba(0, 0, 0, 0))) 1 100%;
+          border-image: linear-gradient(to bottom, gray, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .AuthContainer .separator {
+    border: none;
+  }
+}
+
+.AuthContainer .box-shadow {
+  box-shadow: 0px 0px 10px grey;
+}
+
+.AuthContainer .LoginContainer {
+  background-color: white;
+  border-radius: 5%;
+  padding: 3%;
+  min-width: 300px;
+  margin: 0 3%;
+}
+
+@media screen and (max-width: 1000px) {
+  .AuthContainer .LoginContainer {
+    margin: 3% 3%;
+    min-width: 220px;
+  }
+}
+
+.AuthContainer .LoginContainer .center {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  align-content: center;
+  margin: auto;
+  width: 90%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  padding-bottom: 24px;
+  padding-top: 3px;
+}
+
+.AuthContainer .LoginContainer .center .checkbox {
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.AuthContainer .LoginContainer .center a {
+  color: #a217ff;
+}
+
+.AuthContainer .LoginContainer .center a:hover {
+  color: #6900b0;
+}
+
+.AuthContainer .RegisterContainer {
+  background-color: white;
+  border-radius: 5%;
+  margin: 0 3%;
+  min-width: 300px;
+  padding: 3%;
+}
+
+@media screen and (max-width: 1000px) {
+  .AuthContainer .RegisterContainer {
+    margin: 8% 3%;
+    min-width: 220px;
+  }
+}
+

@@ -1,0 +1,120 @@
+.AuthContainer {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 3%;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1000px) {
+        width: 90%;
+    }
+
+    .submit-button {
+        border-style: none;
+        background-color: $custom-purple;
+        display: block;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        padding: 0 20px;
+        min-width: 160px;
+        height: 50px;
+        border-radius: 25px;
+        margin: 10% auto;
+        font-size: 14px;
+        color: #fff;
+        line-height: 1.2;
+        text-transform: uppercase;
+        transition: all 0.4s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($custom-purple, 20%);
+        }
+    }
+
+    .form-group {
+        input {
+            width: 80%;
+            border: none;
+            border-radius: 16px;
+            background-color: white;
+            padding: 15px 15px;
+            margin: 7% auto;
+            display: block;
+            box-shadow: 0px 0px 8px lightgray;
+        }
+    }
+
+    .separator {
+        border-width: 1px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, gray, rgba(0, 0, 0, 0)) 1 100%;
+
+        @media screen and (max-width: 1000px) {
+            border: none;
+        }
+    }
+
+    .box-shadow {
+        box-shadow: 0px 0px 10px grey;
+    }
+
+    .LoginContainer {
+        background-color: white;
+        border-radius: 5%;
+        padding: 3%;
+        min-width: 300px;
+        margin: 0 3%;
+
+        @media screen and (max-width: 1000px) {
+            margin: 3% 3%;
+            min-width: 220px;
+        }
+
+        .center {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            margin: auto;
+            width: 90%;
+            font-size: 0.8rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            padding-bottom: 24px;
+            padding-top: 3px;
+
+            .checkbox {
+                display: flex;
+                align-content: center;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            a {
+                color: $custom-purple;
+
+                &:hover {
+                    color: darken($custom-purple, 20%);
+                }
+            }
+        }
+    }
+
+    .RegisterContainer {
+        background-color: white;
+        border-radius: 5%;
+        margin: 0 3%;
+        min-width: 300px;
+        padding: 3%;
+
+        @media screen and (max-width: 1000px) {
+            margin: 8% 3%;
+            min-width: 220px;
+        }
+    }
+}

@@ -1,69 +1,67 @@
-$colorText : #fff;
+$colorText: #fff;
 $fontFamilyText: Open Sans Condensed;
-$fontFamilyTitle: 'Roboto', sans-serif;
+$fontFamilyTitle: "Roboto", sans-serif;
 $paddingLeftCard: 5%;
 $regularTextColor: #636b6f;
 $logoColor: rgb(15, 78, 167);
 
-.welcome-container{
-.welcomeCard{
-    text-align: left;
-    margin-bottom:1% ;
-    padding-bottom: 5%;
-}
+.welcome-container {
+    .welcomeCard {
+        text-align: left;
+        margin-bottom: 1%;
+        padding-bottom: 5%;
+    }
 
-.titleWC{
-    padding-left: $paddingLeftCard;
-    width: 100%;
-    padding-top: 2%;
-    padding-bottom: 1%;
-    color: $colorText;
-    font-size: 100px;
-    font-family: $fontFamilyTitle;
-    text-shadow: -2px 0 $logoColor, 0 2px $logoColor, 2px 0 $logoColor, 0 -2px $logoColor;
-}
+    .titleWC {
+        padding-left: $paddingLeftCard;
+        width: 100%;
+        padding-top: 2%;
+        padding-bottom: 1%;
+        color: $colorText;
+        font-size: 100px;
+        font-family: $fontFamilyTitle;
+        text-shadow: -2px 0 $logoColor, 0 2px $logoColor, 2px 0 $logoColor,
+            0 -2px $logoColor;
+    }
 
-.textWC{
-    padding-left: $paddingLeftCard;
-    width: 60%;
-    color: black;
-    font-size: 26px;
-    font-family: $fontFamilyText;
-}
-.shortcutSection{
-    width: 80%;
-    padding-bottom: 10%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin: auto;
-    div{
-        margin: 0 auto;
-        width: 30%;
-        p{
-            padding: 2%;
+    .textWC {
+        padding-left: $paddingLeftCard;
+        width: 60%;
+        color: black;
+        font-size: 26px;
+        font-family: $fontFamilyText;
+    }
+    .shortcutSection {
+        width: 80%;
+        padding-bottom: 10%;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: auto;
+        div {
+            margin: 0 auto;
+            width: 30%;
+            p {
+                padding: 2%;
+            }
+            img {
+                width: 50%;
+            }
         }
-        img{
-            width: 50%;
-        };
+    }
+
+    button {
+        display: block;
+        margin: auto;
+        background-image: linear-gradient(
+            to bottom right,
+            rgb(162, 23, 255),
+            rgb(39, 77, 247)
+        );
+        border-radius: 25px;
+        padding: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        text-align: center;
     }
 }
-
-button{
-    display: block;
-    margin: auto;
-    background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
-    border-radius: 25px;
-    padding: 1%;  
-    padding-left: 2%;
-    padding-right: 2%;  
-    text-align: center;
-    }
-}
-
-
-
-
-
-
-

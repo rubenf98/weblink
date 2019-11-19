@@ -39,7 +39,6 @@ class CommentController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'content' => 'required|string|min:3',
-            'rating' => 'required|min:1|max:5|integer',
             'post_id' => 'required'
         ]);
 
@@ -52,7 +51,6 @@ class CommentController extends Controller
         $data = new Request([
             'user_id' => Auth::id(),
             'content' => $request->content,
-            'rating' => $request->rating,
             'post_id' => $request->post_id,
         ]);
 

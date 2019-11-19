@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Like extends Model
@@ -31,5 +32,23 @@ class Like extends Model
     public function posts()
     {
         return $this->morphedByMany('App\Post', 'likeable');
+    }
+
+    public static function handleLike($type, $id)
+    {
+        $like = Like::withTrashed()->where('likeable_type', $type)->where('likeable_id', $id)->where('user_id', Auth::id())->first();
+
+        if (is_null($like)) {
+            Like::create([
+                'user_id'       => Auth::id(),
+                'likeable_id'   => $id,
+                'likeable_type' => $type,
+            ]);
+        } else {
+            if (is_null($like->deleted_at))
+                $like->delete();
+            else
+                $like->restore();
+        }
     }
 }

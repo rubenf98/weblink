@@ -19,13 +19,9 @@
 </head>
 
 <body>
-
-
     <div class="nav-bar">
         @include('layout.nav')
     </div>
-    
-
     <div class="content">@yield('content')
 
         <a href="#head"><img src="/icons/plus.svg" class="fixedbutton"></a>
@@ -33,10 +29,6 @@
     <div class="footer">
         @include('layout.footer')
     </div>
-
-
-
-
 </body>
 
 </html>
