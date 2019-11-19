@@ -22,15 +22,14 @@ html, body {
 .fixedbutton {
     bottom: 3%;
     margin-left: 85%;
+    margin-right: 3%;
     right: 10px;
     width: 3%;
     border-radius: 50%;
     background-image: linear-gradient(to bottom right, rgb(162, 23, 255), rgb(39, 77, 247));
     padding: 10px;
     z-index:1;
+    &:hover{
+        box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+    }
 }
-
-.fixedbutton:hover{
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
-}
-

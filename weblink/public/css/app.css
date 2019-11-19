@@ -90,6 +90,7 @@ body {
 .fixedbutton {
   bottom: 3%;
   margin-left: 85%;
+  margin-right: 3%;
   right: 10px;
   width: 3%;
   border-radius: 50%;
@@ -110,7 +111,7 @@ body {
 
 .about-container .imgAbout {
   height: 400px;
-  background-image: url(/images/aboutus.png?c2ed89cfcbe841c9fba0ec86902b93bc);
+  background-image: url("/aboutus.png");
   background-position: center;
   box-shadow: 0px 20px 20px black inset;
 }
@@ -140,8 +141,12 @@ body {
   text-align: left;
 }
 
-.profile-container button {
-  display: block;
-  margin: auto;
+.profile-container .profileData {
+  text-align: center;
+  color: black;
+}
+
+.profile-container .profileData img {
+  width: 100px;
 }
 

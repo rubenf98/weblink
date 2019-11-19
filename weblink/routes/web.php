@@ -35,4 +35,4 @@ Route::get('/about', function(){
     return view('about');
 });
 
-Route::get('/profile','ProfileController@index');
+Route::get('/profile/{id}','UserController@index');

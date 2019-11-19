@@ -12,7 +12,7 @@
             </p>
         </div>
         <div class="logo"> 
-            <img src="logo.png" alt="Logo">
+            <img src="/logo.png" alt="Logo">
         </div>
     </div>
 </div>
