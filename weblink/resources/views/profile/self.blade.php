@@ -8,13 +8,7 @@
     <div class="profileData">
         
         <p>{{$userInfo->name}}</p>
-        <!-- sexo homem-->
-        @if (true)
-            <img src="/defaultUserMale.svg" alt="defaultUser">
-        @else
-            <img src="/defaultUserFemale.svg" alt="defaultUser">
-        @endif
-        
+       <img src={{$userInfo->image}} alt=""> 
         <p>Email: {{$userInfo->email}}</p>
     </div>
 </div>
