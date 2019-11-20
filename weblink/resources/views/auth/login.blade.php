@@ -7,7 +7,8 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-group row">
-                <input id="email" type="email" placeholder="E-Mail Address" name="email" required autocomplete="email">
+                <input class="form-input" id="email" type="email" placeholder="E-Mail Address" name="email" required
+                    autocomplete="email">
 
                 @error('email')
                 <span class="invalid-feedback" role="alert">
@@ -15,8 +16,8 @@
                 </span>
                 @enderror
 
-                <input id="password" type="password" placeholder="Password" class="form-control" name="password"
-                    required autocomplete="current-password">
+                <input class="form-input" id="password" type="password" placeholder="Password" name="password" required
+                    autocomplete="current-password">
 
                 @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -60,7 +61,7 @@
             @csrf
 
             <div class="form-group">
-                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
+                <input id="name" type="text" class="form-input" @error('name') is-invalid @enderror" name="name"
                     value="{{ old('name') }}" placeholder="Name" required autocomplete="name">
 
                 @error('name')
@@ -70,7 +71,7 @@
                 @enderror
 
 
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                <input id="email" type="email" class="form-input" @error('email') is-invalid @enderror" name="email"
                     value="{{ old('email') }}" placeholder="E-Mail Address" required autocomplete="email">
 
                 @error('email')
@@ -81,9 +82,8 @@
 
 
 
-                <input id="password" placeholder="Password" type="password"
-                    class="form-control @error('password') is-invalid @enderror" name="password" required
-                    autocomplete="new-password">
+                <input id="password" placeholder="Password" type="password" class="form-input" @error('password')
+                    is-invalid @enderror" name="password" required autocomplete="new-password">
 
                 @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -94,16 +94,26 @@
 
 
 
-                <input id="password-confirm" placeholder="Password confirmation" type="password" class="form-control"
+                <input class="form-input" id="password-confirm" placeholder="Password confirmation" type="password"
                     name="password_confirmation" required autocomplete="new-password">
 
-                <input id="b_day" placeholder="Birthday" type="date" class="form-control" name="b_day" required
+                <input class="form-input" id="b_day" placeholder="Birthday" type="date" name="b_day" required
                     autocomplete="b_day">
 
-                <input type="radio" name="gender" value="1" checked> Male<br>
-                <input type="radio" name="gender" value="0"> Female<br>
+                <div class="radio-button">
+                    <div>
+                        <input type="radio" name="gender" value="1" checked> Male
+                    </div>
 
-                <select name="country">
+                    <div>
+                        <input type="radio" name="gender" value="0"> Female
+                    </div>
+
+
+                </div>
+
+
+                <select class="form-input" name="country">
                     <option value="Portugal">Portugal</option>
                     <option value="US">US</option>
                     <option value="Spain">Spain</option>

@@ -1,14 +1,17 @@
 .AuthContainer {
-    width: 50%;
+    width: 90%;
     margin: auto;
     display: flex;
     justify-content: center;
-    align-content: center;
     padding: 3%;
     flex-wrap: wrap;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: $l) {
         width: 90%;
+    }
+
+    h1 {
+        margin-left: 5%;
     }
 
     .submit-button {
@@ -16,16 +19,13 @@
         background-color: $custom-purple;
         display: block;
         font-weight: bold;
-        justify-content: center;
-        align-items: center;
         padding: 0 20px;
         min-width: 160px;
         height: 50px;
         border-radius: 25px;
         margin: 10% auto;
         font-size: 14px;
-        color: #fff;
-        line-height: 1.2;
+        color: white;
         text-transform: uppercase;
         transition: all 0.4s;
         cursor: pointer;
@@ -36,7 +36,7 @@
     }
 
     .form-group {
-        input {
+        .form-input {
             width: 80%;
             border: none;
             border-radius: 16px;
@@ -45,6 +45,22 @@
             margin: 7% auto;
             display: block;
             box-shadow: 0px 0px 8px lightgray;
+            transition: 0.5s ease;
+
+            &:focus {
+                border: 1px solid #555;
+            }
+
+            @media screen and (max-width: $xs) {
+                width: 70%;
+            }
+        }
+
+        .radio-button {
+            display: flex;
+            justify-content: space-between;
+            margin: 7% auto;
+            width: 80%;
         }
     }
 
@@ -53,7 +69,7 @@
         border-style: solid;
         border-image: linear-gradient(to bottom, gray, rgba(0, 0, 0, 0)) 1 100%;
 
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: $xl) {
             border: none;
         }
     }
@@ -67,10 +83,13 @@
         border-radius: 5%;
         padding: 3%;
         min-width: 300px;
-        margin: 0 3%;
+        margin: 0% 3%;
 
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: $l) {
             margin: 3% 3%;
+        }
+
+        @media screen and (max-width: $xs) {
             min-width: 220px;
         }
 
@@ -78,6 +97,7 @@
             display: flex;
             justify-content: space-between;
             align-content: center;
+            flex-wrap: wrap;
             margin: auto;
             width: 90%;
             font-size: 0.8rem;
@@ -111,8 +131,13 @@
         margin: 0 3%;
         min-width: 300px;
         padding: 3%;
+        margin: 0% 3%;
 
-        @media screen and (max-width: 1000px) {
+        @media screen and (max-width: $l) {
+            margin: 3% 3%;
+        }
+
+        @media screen and (max-width: $xs) {
             margin: 8% 3%;
             min-width: 220px;
         }

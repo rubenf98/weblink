@@ -3,7 +3,6 @@
         height: 60px;
         box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .16);
         background-color: rgba(19, 17, 17, 0.39);
-        margin-bottom: 5%;
     }
 
     .nav-bar .flex-center {

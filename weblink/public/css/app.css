@@ -149,21 +149,24 @@ body {
 }
 
 .AuthContainer {
-  width: 50%;
+  width: 90%;
   margin: auto;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
-  align-content: center;
   padding: 3%;
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .AuthContainer {
     width: 90%;
   }
+}
+
+.AuthContainer h1 {
+  margin-left: 5%;
 }
 
 .AuthContainer .submit-button {
@@ -171,18 +174,13 @@ body {
   background-color: #a217ff;
   display: block;
   font-weight: bold;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
   padding: 0 20px;
   min-width: 160px;
   height: 50px;
   border-radius: 25px;
   margin: 10% auto;
   font-size: 14px;
-  color: #fff;
-  line-height: 1.2;
+  color: white;
   text-transform: uppercase;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
@@ -193,7 +191,7 @@ body {
   background-color: #6900b0;
 }
 
-.AuthContainer .form-group input {
+.AuthContainer .form-group .form-input {
   width: 80%;
   border: none;
   border-radius: 16px;
@@ -202,6 +200,27 @@ body {
   margin: 7% auto;
   display: block;
   box-shadow: 0px 0px 8px lightgray;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.AuthContainer .form-group .form-input:focus {
+  border: 1px solid #555;
+}
+
+@media screen and (max-width: 350px) {
+  .AuthContainer .form-group .form-input {
+    width: 70%;
+  }
+}
+
+.AuthContainer .form-group .radio-button {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  margin: 7% auto;
+  width: 80%;
 }
 
 .AuthContainer .separator {
@@ -214,7 +233,7 @@ body {
           border-image: linear-gradient(to bottom, gray, rgba(0, 0, 0, 0)) 1 100%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1600px) {
   .AuthContainer .separator {
     border: none;
   }
@@ -229,12 +248,17 @@ body {
   border-radius: 5%;
   padding: 3%;
   min-width: 300px;
-  margin: 0 3%;
+  margin: 0% 3%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
   .AuthContainer .LoginContainer {
     margin: 3% 3%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .AuthContainer .LoginContainer {
     min-width: 220px;
   }
 }
@@ -245,6 +269,7 @@ body {
   -webkit-box-pack: justify;
           justify-content: space-between;
   align-content: center;
+  flex-wrap: wrap;
   margin: auto;
   width: 90%;
   font-size: 0.8rem;
@@ -278,9 +303,16 @@ body {
   margin: 0 3%;
   min-width: 300px;
   padding: 3%;
+  margin: 0% 3%;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+  .AuthContainer .RegisterContainer {
+    margin: 3% 3%;
+  }
+}
+
+@media screen and (max-width: 350px) {
   .AuthContainer .RegisterContainer {
     margin: 8% 3%;
     min-width: 220px;
@@ -294,5 +326,318 @@ body {
 
 .profile-container .profileData img {
   width: 100px;
+}
+
+.post-container {
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 1200px) {
+  .post-container {
+    width: 90%;
+  }
+}
+
+.post-container button {
+  border-style: none;
+  background-color: #a217ff;
+  display: block;
+  font-weight: bold;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 3% auto;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.post-container button:hover {
+  background-color: #6900b0;
+}
+
+.post-container .post {
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.post-container .post .stats-container {
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+  margin-bottom: 5%;
+  width: 65%;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  min-width: 550px;
+}
+
+.post-container .post .stats-container .stats {
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+}
+
+.post-container .post .stats-container img {
+  cursor: pointer;
+  margin-right: 5px;
+  width: 30px;
+}
+
+.post-container .post .stats-container span {
+  font-size: 22px;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+.post-container .post .stats-container .share {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.post-container .post .post-content {
+  width: 30%;
+}
+
+@media screen and (max-width: 1600px) {
+  .post-container .post .post-content {
+    width: 100%;
+  }
+}
+
+.post-container .post .post-content .links {
+  margin-top: 5%;
+}
+
+.post-container .post .post-content .links a {
+  text-decoration: none;
+}
+
+.post-container .post .post-content .title {
+  font-weight: bold;
+  margin-top: 1%;
+  margin-bottom: 0%;
+}
+
+.post-container .post .post-content .description {
+  margin-top: 1%;
+}
+
+.post-container .post .post-content .description a {
+  text-decoration: none;
+  color: gray;
+}
+
+.post-container .post .post-content .description a:hover {
+  color: #4d4d4d;
+}
+
+.post-container .post .post-content .post-description {
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+  margin: auto;
+}
+
+@media screen and (max-width: 1600px) {
+  .post-container .post .post-content .post-description {
+    display: none;
+  }
+}
+
+.post-container .post .post-content .post-description .item-left {
+  width: 50%;
+}
+
+.post-container .post .post-content .post-description .user-right {
+  width: 45%;
+}
+
+.post-container .post .post-content .post-description-hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1600px) {
+  .post-container .post .post-content .post-description-hidden {
+    display: -webkit-box;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+}
+
+.post-container .post .post-content .post-description-hidden .hidden-item {
+  margin: 1% 5%;
+}
+
+.post-container .post .post-content p {
+  color: #777777;
+}
+
+.post-container .post .post-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1%;
+}
+
+@media screen and (max-width: 1600px) {
+  .post-container .post .post-content h1 {
+    font-size: 1.5rem;
+  }
+}
+
+.post-container .post .post-image {
+  width: 65%;
+  min-width: 700px;
+  margin-right: 2%;
+  margin-bottom: 1%;
+}
+
+@media screen and (max-width: 1600px) {
+  .post-container .post .post-image {
+    min-width: 0;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .post-container .post .post-image {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .post-container .post .post-image {
+    width: 100%;
+  }
+}
+
+.post-container .post .post-image .image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px grey;
+  height: auto;
+}
+
+.post-container .input-comment {
+  width: 50%;
+  min-width: 250px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 5%;
+  position: relative;
+}
+
+@media screen and (max-width: 770px) {
+  .post-container .input-comment {
+    height: 220px;
+  }
+}
+
+.post-container .input-comment textarea {
+  box-shadow: 1px 2px 10px -2px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  position: relative;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: #444;
+  resize: none;
+  overflow: hidden;
+}
+
+.post-container .input-comment textarea:focus {
+  border: 1px solid #555;
+}
+
+.post-container .input-comment button {
+  position: absolute;
+  bottom: 1px;
+  right: 15px;
+}
+
+@media screen and (max-width: 770px) {
+  .post-container .input-comment button {
+    min-width: 60px;
+  }
+}
+
+.post-container .comments {
+  width: 90%;
+  margin: auto;
+}
+
+.post-container .comments img {
+  width: 40px;
+  margin-right: 1%;
+  margin-bottom: 0%;
+}
+
+.post-container .comments .no-data {
+  text-align: center;
+  margin: auto;
+  display: block;
+  margin: 3%;
+}
+
+.post-container .comments .comment {
+  display: block;
+  padding: 1% 2%;
+}
+
+.post-container .comments .comment .comment-content {
+  margin-left: 1%;
+  border-left: 2px solid lightgray;
+  padding: 0% 1%;
+}
+
+.post-container .comments .comment .comment-content img {
+  cursor: pointer;
+  margin-top: 0%;
+  margin-right: 2px;
+  width: 20px;
+}
+
+.post-container .comments .comment .comment-content p {
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.post-container .comments .comment .comment-content .comments-upvotes {
+  display: -webkit-box;
+  display: flex;
+  align-content: center;
+}
+
+.post-container .comments .comment .comment-user {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: left;
+          justify-content: left;
+  align-content: center;
+}
+
+.post-container .comments .comment .comment-user .comment-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.post-container .comments .comment .comment-user .comment-date {
+  font-size: 12px;
+  margin: 0;
 }
 
