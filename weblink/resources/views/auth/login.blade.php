@@ -60,8 +60,6 @@
             @csrf
 
             <div class="form-group">
-
-
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
                     value="{{ old('name') }}" placeholder="Name" required autocomplete="name">
 
@@ -72,36 +70,46 @@
                 @enderror
 
 
-                <div class="col-md-6">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                        name="email" value="{{ old('email') }}" placeholder="E-Mail Address" required
-                        autocomplete="email">
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                    value="{{ old('email') }}" placeholder="E-Mail Address" required autocomplete="email">
 
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
 
 
-                <div class="col-md-6">
-                    <input id="password" placeholder="Password" type="password"
-                        class="form-control @error('password') is-invalid @enderror" name="password" required
-                        autocomplete="new-password">
 
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
+                <input id="password" placeholder="Password" type="password"
+                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                    autocomplete="new-password">
+
+                @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
 
 
-                <div class="col-md-6">
-                    <input id="password-confirm" placeholder="Password confirmation" type="password"
-                        class="form-control" name="password_confirmation" required autocomplete="new-password">
-                </div>
+
+
+                <input id="password-confirm" placeholder="Password confirmation" type="password" class="form-control"
+                    name="password_confirmation" required autocomplete="new-password">
+
+                <input id="b_day" placeholder="Birthday" type="date" class="form-control" name="b_day" required
+                    autocomplete="b_day">
+
+                <input type="radio" name="gender" value="1" checked> Male<br>
+                <input type="radio" name="gender" value="0"> Female<br>
+
+                <select name="country">
+                    <option value="Portugal">Portugal</option>
+                    <option value="US">US</option>
+                    <option value="Spain">Spain</option>
+                    <option value="France">France</option>
+                </select>
+
             </div>
 
             <div class="form-group row mb-0">

@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'rating'
+        'name', 'email', 'password', 'points', 'image', 'b_day', 'gender', 'description', 'country'
     ];
 
     /**
@@ -36,6 +37,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = ['age'];
+
+    public function getAgeAttribute()
+    {
+        $b_day = $this->attributes['b_day'];
+        return Carbon::parse($b_day)->age;
+    }
 
     /**
      * Get all posts this of this user

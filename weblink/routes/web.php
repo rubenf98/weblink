@@ -27,12 +27,17 @@ Route::put('/post/{id}', 'PostController@update');
 Route::delete('/post/{id}', 'PostController@destroy');
 
 Route::post('/comment', 'CommentController@store')->middleware('auth');
-Auth::routes();
+
+Route::get('/users', 'PostController@index'); //LIST OF USERS TO ADMIN
+Route::get('/user/{id}', 'PostController@show'); // PROFILE
+Auth::routes(); //LOGIN AND REGISTER
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/about', function(){
     return view('about');
 });
+
+
 
 Route::get('/profile/{id}','UserController@index');
