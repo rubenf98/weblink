@@ -1,22 +1,23 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);.welcome-container .welcomeCard {
-  text-align: left;
-  margin-bottom: 1%;
-  padding-bottom: 5%;
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);.welcome-container {
+  width: 100%;
 }
 
-.welcome-container .titleWC {
+.welcome-container .welcomeCard {
+  text-align: left;
+  margin-bottom: 10%;
+}
+
+.welcome-container .welcomeCard .titleWC {
   font-weight: bold;
+  margin-bottom: 0;
   padding-left: 5%;
-  width: 100%;
-  padding-top: 2%;
-  padding-bottom: 1%;
   color: #fff;
   font-size: 100px;
   font-family: "Roboto", sans-serif;
   text-shadow: -2px 0 #0f4ea7, 0 2px #0f4ea7, 2px 0 #0f4ea7, 0 -2px #0f4ea7;
 }
 
-.welcome-container .textWC {
+.welcome-container .welcomeCard .textWC {
   padding-left: 5%;
   width: 60%;
   color: black;
@@ -26,7 +27,7 @@
 
 .welcome-container .shortcutSection {
   width: 80%;
-  padding-bottom: 10%;
+  padding-bottom: 3%;
   display: -webkit-box;
   display: flex;
   text-align: center;
@@ -51,6 +52,7 @@
 .welcome-container button {
   display: block;
   margin: auto;
+  color: white;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#a217ff), to(#274df7));
   background-image: linear-gradient(to bottom right, #a217ff, #274df7);
   border-radius: 25px;
@@ -70,13 +72,12 @@
 
 html,
 body {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#0f4ea7), color-stop(#fff), to(#fff));
-  background-image: linear-gradient(to bottom, #0f4ea7, #fff, #fff);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#0f4ea7), color-stop(#fff), to(#fff));
+  background-image: linear-gradient(to bottom right, #0f4ea7, #fff, #fff);
   background-repeat: no-repeat;
   color: #636b6f;
   font-family: "Nunito", sans-serif;
   font-weight: 200;
-  height: 100vh;
   margin: 0;
   -webkit-transition: background-color 0.5s;
   transition: background-color 0.5s;

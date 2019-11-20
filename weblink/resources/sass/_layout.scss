@@ -5,7 +5,7 @@ $logoColor: rgb(15, 78, 167);
 html,
 body {
     background-image: linear-gradient(
-        to bottom,
+        to bottom right,
         $logoColor,
         $backgroundColor,
         $backgroundColor
@@ -14,7 +14,6 @@ body {
     color: $regularTextColor;
     font-family: "Nunito", sans-serif;
     font-weight: 200;
-    height: 100vh;
     margin: 0;
     transition: background-color 0.5s;
 }

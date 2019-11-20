@@ -240,7 +240,7 @@
         @forelse ($post->comment as $comment)
         <div class="comment">
             <div class="comment-user">
-                <img src={{$comment->user->image}}>
+                <img src="{{$comment->user->image}}">
                 <div class="comment-info">
                     <p class="comment-name">{{$comment->user->name}}</p>
                     <p class="comment-date">{{$comment->created_at->diffForHumans()}}</p>
