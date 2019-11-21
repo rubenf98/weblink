@@ -12,24 +12,19 @@
             <img src="/default-user-male.svg" alt="">
             <p>{{$user->name}}</p>
             <p>{{$user->description}}</p>
-            <p>Points: {{$user->points}}</p>
-            <p>Birthday: {{$user->b_day}}</p>
-            <p>Age: {{$user->age}}</p>
-            <p>Gender: {{$user->gender}}</p>
-            <p>Country: {{$user->country}}</p>
-            @if (Auth::user()->id != $user->id)
             <div class="contact_follow">
                 <button>Follow</button>
                 <button>Contact</button>
             </div>
-            @endif
         </div>
     </div>
     <div class="profile_posts">
-        <h1>Activity</h1>
+        <h1>Posts</h1>
         <hr>
         <div class="profile_posts_section">
             @foreach ($user->post as $post)
+            <h1>{{$post->id}}</h1>
+            
 
             <a href="/post/{{$post->id}}">
                 <div class="profile_post">
@@ -38,11 +33,8 @@
                         <div class="post-title"> {{$post->title}}</div>
                         <div class="post-description">{{$post->description}}</div>
                         <div class="post-date">{{$post->created_at->toFormattedDateString()}}</div>
-                        <div class="post-stats">
-                            <div class="stats-item"><i class="far fa-eye"></i> {{$post->views}} Views</div>
-                            <div class="stats-item"><i class="far fa-heart"></i> {{$post->likes->count()}} Likes</div>
-                        </div>
-
+                        <div class="post-views"><i class="far fa-eye"></i> {{$post->views}}</div>
+                        <div class="post-views"><i class="far fa-eye"></i> {{$post->likes->count()}}</div>
                     </div>
                 </div>
             </a>

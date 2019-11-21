@@ -14,12 +14,14 @@ class UserPostsResource extends JsonResource
      */
     public function toArray($request)
     {
-        return[
-        'id' => $this->id,
-        'title' =>  $this->title,
-        'description' =>  $this->description,
-        'image'=> $this->image,
-        'created_at'=> (string) $this->created_at,
+        return [
+            'id' => $this->id,
+            'title' =>  $this->title,
+            'description' =>  $this->description,
+            'image' => $this->image,
+            'views' => $this->views,
+            'likes' => $this->likes,
+            'created_at' => (string) $this->created_at,
         ];
     }
 }

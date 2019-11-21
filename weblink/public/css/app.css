@@ -580,6 +580,8 @@ body {
 .profile-container .profile_posts .profile_posts_section {
   height: 92%;
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .profile-container .profile_posts .profile_posts_section::-webkit-scrollbar {
@@ -617,7 +619,7 @@ body {
 }
 
 .profile-container .profile_posts .profile_post .post-text {
-  width: 55%;
+  width: 60%;
   display: block;
   padding-left: 1%;
 }
@@ -644,6 +646,17 @@ body {
   white-space: nowrap;
   overflow: hidden;
   margin-left: 2%;
+}
+
+.profile-container .profile_posts .profile_post .post-text .post-stats {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: left;
+          justify-content: left;
+}
+
+.profile-container .profile_posts .profile_post .post-text .post-stats .stats-item {
+  margin: 0 2%;
 }
 
 .post-container {
