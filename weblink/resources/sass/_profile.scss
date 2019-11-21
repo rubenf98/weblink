@@ -1,147 +1,150 @@
-.profile-container{
-     
-     margin: 5% auto;
-     display: flex;
-     flex-wrap: wrap;
-     width: 80%;
-     justify-content: center;
-     height: 500px;
-     .about{
-          background-color: white;
-          position: relative;
-          padding: 3%;
-          width: 30%;
-          box-shadow: 0px 0px 10px grey;
-          border-radius: 16px;
-          margin: 0 3%;
-          height: 100%;
-          h1{
-               margin: 0;
-          }
-          .profileData{
-               color: black;
-               text-align: center;
-               
-               img{
-                    width: 200px;
-               }
-               
-               p{
-                    height: 50%;
-                    overflow: auto;
-                    &::-webkit-scrollbar {
-                         display: none;
-                    }
-                    text-align: left;
-                    margin:0;
-                    margin-left: 2%;
-               }
-          
-          }
+.profile-container {
+    margin: 5% auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    height: 500px;
 
-          .contact_follow{
-               bottom: 3%;
-               left: 0;
-               right: 0;
-               margin-left:auto ;
-               margin-right:auto ;
-               position: absolute;
-               justify-content: space-evenly;
-               button {
-                    border-style: none;
-                    background-color: $custom-purple;
-                    font-weight: bold;
-                    padding: 0 20px;
-                    min-width: 160px;
-                    height: 50px;
-                    border-radius: 25px;
-                    margin: 3% auto;
-                    color: white;
-                    text-transform: uppercase;
-                    transition: all 0.4s;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: darken($custom-purple, 20%);
-                    }
-                     &:focus {
-                         outline: 0;
-                     }
-               }
-          }
-     }
+    .about {
+        background-color: white;
+        position: relative;
+        padding: 3%;
+        width: 30%;
+        box-shadow: 0px 0px 10px grey;
+        border-radius: 16px;
+        margin: 0 3%;
+        height: 100%;
 
-     .profile_posts{
-          background-color: white;
-          padding: 3%;
-          width: 30%;
-          box-shadow: 0px 0px 10px grey;
-          border-radius: 16px;
-          margin: 0 3%;
-          height: 100%;
-          .profile_posts_section{
-               height: 92%;
-               overflow: auto;
-               &::-webkit-scrollbar {
+        h1 {
+            margin: 0;
+        }
+
+        .profileData {
+            color: black;
+            text-align: center;
+
+            img {
+                width: 200px;
+            }
+
+            p {
+                height: 50%;
+                overflow: auto;
+                &::-webkit-scrollbar {
                     display: none;
-               }
-               a{
-                    color:$regularTextColor;
+                }
+                text-align: left;
+                margin: 0;
+                margin-left: 2%;
+            }
+        }
+
+        .contact_follow {
+            bottom: 3%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            position: absolute;
+            justify-content: space-evenly;
+            button {
+                border-style: none;
+                background-color: $custom-purple;
+                font-weight: bold;
+                padding: 0 20px;
+                min-width: 160px;
+                height: 50px;
+                border-radius: 25px;
+                margin: 3% auto;
+                color: white;
+                text-transform: uppercase;
+                transition: all 0.4s;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: darken($custom-purple, 20%);
+                }
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+
+    .profile_posts {
+        background-color: white;
+        padding: 3%;
+        width: 30%;
+        box-shadow: 0px 0px 10px grey;
+        border-radius: 16px;
+        margin: 0 3%;
+        height: 100%;
+
+        .profile_posts_section {
+            height: 92%;
+            overflow: auto;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            a {
+                color: $regularTextColor;
+                text-decoration: none;
+
+                &:visited {
                     text-decoration: none;
-                    &:visited{
-                         text-decoration: none;
-                         color:$regularTextColor;
-                    }
-               }
-          }
-          h1{
-               margin: 0;
-          }
-          .profile_post{
-               height: 90px;
-               width: 100%;
-               display: flex;
-               margin: 3% 0; 
-               
-               
-               img{
-                    margin: 0;
-                    padding: 0;
-                    height: 90px;
-               }
-               .post-text{
-                    height: 100%;
-                    display: block;
-                    margin-left: 1%;
+                    color: $regularTextColor;
+                }
+            }
+        }
+        h1 {
+            margin: 0;
+        }
 
-                    .post-title{
-                         overflow: hidden;
-                         text-overflow:ellipsis ;
-                         margin: 0;
-                         padding: 0;
-                         margin-left: 2%;
-                         font-weight: bold;
-                         color: darken($regularTextColor,10%);
-                         
-                    }
-                    .post-description{
-                         overflow: hidden;
-                         text-overflow:ellipsis ;
-                         height: 50%;
-                         margin: 0;
-                         padding: 0;
-                         margin-left: 2%;
-                         
-                    }
-                    .post-date{
-                         overflow: hidden;
-                         text-overflow:ellipsis ;
-                         margin: 0;
-                         padding: 0;
-                         margin-left: 2%;
-                         
-                    }
-               }
-          }
-     }
+        .profile_post {
+            height: 90px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin: 4% 0;
 
+            img {
+                margin: 0;
+                padding: 0;
+                width: 40%;
+            }
+
+            .post-text {
+                width: 55%;
+                display: block;
+                padding-left: 1%;
+
+                .post-title {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    font-size: 20px;
+                    margin-left: 2%;
+                    font-weight: bold;
+                    color: darken($regularTextColor, 10%);
+                }
+
+                .post-description {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    margin-left: 2%;
+                }
+
+                .post-date {
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    margin-left: 2%;
+                }
+            }
+        }
+    }
 }
