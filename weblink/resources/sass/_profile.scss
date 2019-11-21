@@ -1,9 +1,104 @@
 .profile-container{
-   .profileData{
-        text-align: center;
-        color: black;
-       img{
-            width: 100px;
-       }
-   }
+     margin: auto;
+     margin-top: 5%;
+     display: flex;
+     flex-wrap: wrap;
+     width: 80%;
+     justify-content: space-around;
+     height: 500px;
+     .about{
+          background-color: white;
+          position: relative;
+          padding: 3%;
+          width: 40%;
+          border: 1px solid black;
+          border-radius: 50px;
+          h1{
+               margin: 0;
+          }
+          .profileData{
+               color: black;
+               text-align: center;
+               
+               img{
+                    width: 200px;
+               }
+               
+               p{
+                    height: 50%;
+                    overflow: auto;
+                    &::-webkit-scrollbar {
+                         display: none;
+                    }
+                    text-align: left;
+                    margin:0;
+                    margin-left: 2%;
+               }
+          
+          }
+
+          .contact_follow{
+               bottom: 3%;
+               left: 0;
+               right: 0;
+               margin-left:auto ;
+               margin-right:auto ;
+               position: absolute;
+               justify-content: space-evenly;
+               button {
+                    border-style: none;
+                    background-color: $custom-purple;
+                    font-weight: bold;
+                    padding: 0 20px;
+                    min-width: 160px;
+                    height: 50px;
+                    border-radius: 25px;
+                    margin: 3% auto;
+                    color: white;
+                    text-transform: uppercase;
+                    transition: all 0.4s;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: darken($custom-purple, 20%);
+                    }
+                     &:focus {
+                         outline: 0;
+                     }
+               }
+          }
+     }
+
+     .profile_posts{
+          background-color: white;
+          padding: 3%;
+          width: 40%;
+          border: 1px solid black;
+          border-radius: 50px;
+          .profile_posts_section{
+               height: 90%;
+               overflow: auto;
+               &::-webkit-scrollbar {
+                    display: none;
+               }
+          }
+          h1{
+               margin: 0;
+          }
+          .profile_post{
+               display: flex;
+               margin-top: 10px;
+               margin-bottom: 10px;
+               img{
+                    margin: 0;
+                    padding: 0;
+                    height: 69px;
+               }
+               p{
+                    margin: 0;
+                    padding: 0;
+                    margin-left: 2%;
+               }
+          }
+     }
+
 }

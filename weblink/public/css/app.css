@@ -1,5 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);.welcome-container {
-  width: 100%;
+  width: 80%;
+  display: block;
+  margin: auto;
 }
 
 .welcome-container .welcomeCard {
@@ -60,6 +62,7 @@
   padding-left: 2%;
   padding-right: 2%;
   text-align: center;
+  cursor: pointer;
 }
 
 .welcome-container button:hover {
@@ -454,13 +457,124 @@ body {
   }
 }
 
-.profile-container .profileData {
-  text-align: center;
-  color: black;
+.profile-container {
+  margin: auto;
+  margin-top: 5%;
+  display: -webkit-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: space-around;
+  height: 500px;
 }
 
-.profile-container .profileData img {
-  width: 100px;
+.profile-container .about {
+  background-color: white;
+  position: relative;
+  padding: 3%;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.profile-container .about h1 {
+  margin: 0;
+}
+
+.profile-container .about .profileData {
+  color: black;
+  text-align: center;
+}
+
+.profile-container .about .profileData img {
+  width: 200px;
+}
+
+.profile-container .about .profileData p {
+  height: 50%;
+  overflow: auto;
+  text-align: left;
+  margin: 0;
+  margin-left: 2%;
+}
+
+.profile-container .about .profileData p::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-container .about .contact_follow {
+  bottom: 3%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.profile-container .about .contact_follow button {
+  border-style: none;
+  background-color: #a217ff;
+  font-weight: bold;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 3% auto;
+  color: white;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.profile-container .about .contact_follow button:hover {
+  background-color: #6900b0;
+}
+
+.profile-container .about .contact_follow button:focus {
+  outline: 0;
+}
+
+.profile-container .profile_posts {
+  background-color: white;
+  padding: 3%;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 50px;
+}
+
+.profile-container .profile_posts .profile_posts_section {
+  height: 90%;
+  overflow: auto;
+}
+
+.profile-container .profile_posts .profile_posts_section::-webkit-scrollbar {
+  display: none;
+}
+
+.profile-container .profile_posts h1 {
+  margin: 0;
+}
+
+.profile-container .profile_posts .profile_post {
+  display: -webkit-box;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-container .profile_posts .profile_post img {
+  margin: 0;
+  padding: 0;
+  height: 69px;
+}
+
+.profile-container .profile_posts .profile_post p {
+  margin: 0;
+  padding: 0;
+  margin-left: 2%;
 }
 
 .post-container {

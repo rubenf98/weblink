@@ -1,13 +1,8 @@
-$colorText: #fff;
-$fontFamilyText: Open Sans Condensed;
-$fontFamilyTitle: "Roboto", sans-serif;
-$paddingLeftCard: 5%;
-$regularTextColor: #636b6f;
-$logoColor: rgb(15, 78, 167);
 
 .welcome-container {
-    width: 100%;
-
+    width: 80%;
+    display: block;
+    margin: auto;
     .welcomeCard {
         text-align: left;
         margin-bottom: 10%;
@@ -65,12 +60,14 @@ $logoColor: rgb(15, 78, 167);
         padding-left: 2%;
         padding-right: 2%;
         text-align: center;
+        cursor: pointer;
+        &:hover {
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+        }
+        &:focus {
+            outline: 0;
+        }
     }
 
-    button:hover {
-        box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
-    }
-    button:focus {
-        outline: 0;
-    }
+    
 }
