@@ -18,7 +18,7 @@ class UserController extends Controller
         if($id == $user->id)
         {
             //return new UserResource(User::find($id));
-            return view('profile.self')->with('user',$user);
+            return view('profile.self')->with('user',new UserResource(User::find($id)));
         }
         else{
             

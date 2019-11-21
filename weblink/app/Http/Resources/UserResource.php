@@ -26,7 +26,7 @@ class UserResource extends JsonResource
             'description' =>  $this->description,
             'country' =>  $this->country,
             'created_at' => (string) $this->created_at,
-            'posts'=> PostsResource::collection($this->post)
+            'post' => UserPostsResource::collection($this->post),          
         ];
     }
 }
