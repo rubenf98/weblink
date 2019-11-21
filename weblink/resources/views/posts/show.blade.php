@@ -113,10 +113,13 @@
 
 
         <div class="post-content">
-            <h1>{{$post->title}}</h1>
 
-            <p class="title"> <i class="fas fa-paragraph"></i> Description</p>
-            <p class="description"> {{$post->description}}</p>
+            <h1 class="hide">{{$post->title}}</h1>
+
+
+            <p class="title hide"> <i class="fas fa-paragraph"></i> Description</p>
+            <p class="description hide"> {{$post->description}}</p>
+
 
             <div class="post-description">
                 <div class="item-left">
@@ -172,55 +175,69 @@
                 </div>
             </div>
 
-            <div class="post-description-hidden">
-                <div class="hidden-item">
-                    <p class="title"> <i class="fas fa-tags"></i> Tags</p>
-                    <p class="description">
-                        @forelse ($post->tag as $tag)
-                        <span class="tag">{{ $tag->name}} </span>
-                        @if(!$loop->last)
-                        |
-                        @endif
-                        @empty
-                        <span class="tag">No tags available </span>
-                        @endforelse
-                    </p>
-                </div>
-                <div class="hidden-item">
-                    <p class="title"> <i class="fas fa-eye"></i> Views</p>
-                    <p class="description"> {{$post->views}}</p>
+            <div class="hidden-container">
+                <div class="show">
+                    <h1>{{$post->title}}</h1>
+
+
+                    <p class="title"> <i class="fas fa-paragraph"></i> Description</p>
+                    <p class="description"> {{$post->description}}</p>
                 </div>
 
-                <div class="hidden-item">
-                    <p class="title"> <i class="fas fa-user"></i> Creator</p>
-                    <p class="description"> <a href={{'/profile/'.$post->user->id}}
-                            target="_blank">{{$post->user->name}}</a></p>
-                </div>
-                <div class="hidden-item">
-                    <p class="title"> <i class="fas fa-plus-square"></i> Created at</p>
-                    <p class="description"> {{$post->created_at->toFormattedDateString()}}</p>
-                </div>
+                <div class="post-description-hidden">
 
-                <div class="hidden-item">
-                    <div>
-                        <p class="title"> <i class="fas fa-code"></i> Source</p>
+                    <div class="hidden-item">
+                        <p class="title"> <i class="fas fa-tags"></i> Tags</p>
+                        <p class="description">
+                            @forelse ($post->tag as $tag)
+                            <span class="tag">{{ $tag->name}} </span>
+                            @if(!$loop->last)
+                            |
+                            @endif
+                            @empty
+                            <span class="tag">No tags available </span>
+                            @endforelse
+                        </p>
+                    </div>
+                    <div class="hidden-item">
+                        <p class="title"> <i class="fas fa-eye"></i> Views</p>
+                        <p class="description"> {{$post->views}}</p>
+                    </div>
 
-                        @if ($post->source)
-                        <p class="description"> <a href={{$post->source}} target="_blank">{{$post->source}}</a></p>
+                    <div class="hidden-item">
+                        <p class="title"> <i class="fas fa-user"></i> Creator</p>
+                        <p class="description"> <a href={{'/profile/'.$post->user->id}}
+                                target="_blank">{{$post->user->name}}</a></p>
+                    </div>
+
+
+                    <div class="hidden-item">
+                        <div>
+                            <p class="title"> <i class="fas fa-code"></i> Source</p>
+
+                            @if ($post->source)
+                            <p class="description"> <a href={{$post->source}} target="_blank">{{$post->source}}</a></p>
+                            @else
+                            <p class="description"> No code provided</p>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="hidden-item">
+                        <p class="title"> <i class="fas fa-plus-square"></i> Created at</p>
+                        <p class="description"> {{$post->created_at->toFormattedDateString()}}</p>
+                    </div>
+                    <div class="hidden-item">
+                        <p class="title"> <i class="fas fa-pen"></i> Updated at</p>
+                        @if ($post->updated_at)
+                        <p class="description"> {{$post->updated_at->toFormattedDateString()}}</p>
                         @else
-                        <p class="description"> No code provided</p>
+                        <p class="description"> {{$post->created_at->toFormattedDateString()}}</p>
                         @endif
                     </div>
                 </div>
-                <div class="hidden-item">
-                    <p class="title"> <i class="fas fa-pen"></i> Updated at</p>
-                    @if ($post->updated_at)
-                    <p class="description"> {{$post->updated_at->toFormattedDateString()}}</p>
-                    @else
-                    <p class="description"> {{$post->created_at->toFormattedDateString()}}</p>
-                    @endif
-                </div>
             </div>
+
+
 
             <div class="links">
                 <a href={{$post->url}} target="_blank"><button>Visit</button></a>
