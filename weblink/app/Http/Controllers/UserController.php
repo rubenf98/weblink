@@ -14,15 +14,9 @@ class UserController extends Controller
     public function index($id)
     {
         $user= Auth::user();
-        
-        if($id == $user->id)
-        {
+
             //return new UserResource(User::find($id));
             return view('profile.self')->with('user',new UserResource(User::find($id)));
-        }
-        else{
-            
-            return view('profile.visit')->with('user', new UserResource(User::find($id)));
-        }
+
     }
 }
