@@ -16,7 +16,7 @@ class UserController extends Controller
         $user= Auth::user();
 
             //return new UserResource(User::find($id));
-            return view('profile.self')->with('user',new UserResource(User::find($id)));
+            return view('profile.profile')->with('user',new UserResource(User::find($id)));
 
     }
 }

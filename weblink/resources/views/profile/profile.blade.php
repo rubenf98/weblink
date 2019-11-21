@@ -12,10 +12,17 @@
             <img src="/default-user-male.svg" alt="">
                 <p>{{$user->name}}</p>
                 <p>{{$user->description}}</p>
-            <div class="contact_follow">
-                <button>Follow</button>
-                <button>Contact</button>
-            </div>
+                <p>Points: {{$user->points}}</p>
+                <p>Birthday: {{$user->b_day}}</p>
+                <p>Age: {{$user->age}}</p>
+                <p>Gender: {{$user->gender}}</p>
+                <p>Country: {{$user->country}}</p>
+                @if (Auth::user()->id != $user->id)
+                    <div class="contact_follow">
+                        <button>Follow</button>
+                        <button>Contact</button>
+                    </div>
+                 @endif
         </div>
     </div>
     <div class="profile_posts">
