@@ -706,7 +706,7 @@ body {
   width: 30%;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1200px) {
   .post-container .post .post-content {
     width: 100%;
   }
@@ -746,7 +746,7 @@ body {
   margin: auto;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1200px) {
   .post-container .post .post-content .post-description {
     display: none;
   }
@@ -762,9 +762,10 @@ body {
 
 .post-container .post .post-content .post-description-hidden {
   display: none;
+  text-align: center;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1200px) {
   .post-container .post .post-content .post-description-hidden {
     display: -webkit-box;
     display: flex;
@@ -784,7 +785,7 @@ body {
 
 .post-container .post .post-content h1 {
   font-size: 2rem;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
 }
 
 @media screen and (max-width: 1600px) {
@@ -800,7 +801,7 @@ body {
   margin-bottom: 1%;
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (max-width: 1200px) {
   .post-container .post .post-image {
     min-width: 0;
     width: 80%;
@@ -886,6 +887,12 @@ body {
   margin: auto;
 }
 
+@media screen and (max-width: 770px) {
+  .post-container .comments-container {
+    width: 90%;
+  }
+}
+
 .post-container .comments-container .input-comment {
   width: 100%;
   min-width: 250px;
@@ -897,6 +904,7 @@ body {
 @media screen and (max-width: 770px) {
   .post-container .comments-container .input-comment {
     height: 220px;
+    min-width: 200px;
   }
 }
 
@@ -918,6 +926,7 @@ body {
 
 .post-container .comments-container .input-comment textarea:focus {
   border: 1px solid #555;
+  outline: 0;
 }
 
 .post-container .comments-container .input-comment button {
