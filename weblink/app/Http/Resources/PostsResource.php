@@ -23,7 +23,7 @@ class PostsResource extends JsonResource
             'likes' => $this->likes,
             'is_liked' => $this->is_liked,
             'user' => $this->user,
-            'post_img' => PostImgResource::collection($this->post_img),
+            'image' => $this->image,
             'tags' => TagResource::collection($this->tag),
         ];
     }

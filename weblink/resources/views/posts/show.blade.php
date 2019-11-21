@@ -81,13 +81,13 @@
     @endphp
     <div class="post">
         <div class="post-image">
-            @forelse ($post->post_img as $img)
-            @if ($loop->first)
-            <img class="image" src={{ $img->url}}>
+
+            @if ($post->image)
+            <img class="image" src={{ $post->image}}>
+            @else
+            <img class="image" src='/default.png'>
             @endif
-            @empty
-            <img class="image" src="/default.png">
-            @endforelse
+
         </div>
 
 
@@ -224,19 +224,20 @@
 
     </div>
 
+
+
     <form class="input-comment" action="/comment" method="POST">
         @csrf
         <textarea maxlength="250" placeholder="Add a comment" name="content"></textarea>
         <input type="hidden" name="post_id" value={{Request::segment(2)}}>
         <button type="submit" class="button">Post</button>
+        @if ($errors->has('content'))
+        <div class="error">{{ $errors->first('content') }}</div>
+        @endif
     </form>
 
-    @if ($errors->has('content'))
-    <div class="error">{{ $errors->first('content') }}</div>
-    @endif
-
-
     <div class="comments">
+        <h1>{{$post->comment->count()}} Comments</h1>
         @forelse ($post->comment as $comment)
         <div class="comment">
             <div class="comment-user">
@@ -300,6 +301,12 @@
 
         @endforelse
     </div>
+
+
+
+
+
+
 
 
 </div>

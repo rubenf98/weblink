@@ -1,21 +1,18 @@
 @extends('layout')
 
 @section('content')
-<link rel="stylesheet" href="/css/posts.css">
 
 <div class="posts-container">
     <div class="posts">
         @foreach ($posts as $post)
 
-        <div onclick="window.location.href='/post/{{$post->id}}'" class="card">
+        <div class="card" onclick="window.location.href='/post/{{$post->id}}'">
 
-            @forelse ($post->post_img as $img)
-            @if ($loop->first)
-            <div class="card-image" style="--background: url({{ $img->url}});"></div>
-            @endif
-            @empty
+            @if ($post->image)
+            <div class="card-image" style="--background: url({{ $post->image}});"></div>
+            @else
             <div class="card-image" style="--background: url(/default.png);"></div>
-            @endforelse
+            @endif
 
             <div class="card-text">
                 <h2>{{$post->title}}</h2>
@@ -33,7 +30,8 @@
 
             <div class="card-stats">
                 <div class="stat">
-                    <div id="like" class="value"><img class="icon" src="/icons/heart-white.svg"> {{$post->likes->count()}}
+                    <div id="like" class="value"><img class="icon" src="/icons/heart-white.svg">
+                        {{$post->likes->count()}}
                     </div>
                 </div>
                 <div class="stat">
@@ -49,7 +47,7 @@
     </div>
 
     <div class="pagination">
-        {{ $posts->links() }}
+        {{ $posts->links("pagination::default") }}
     </div>
 
 

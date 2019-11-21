@@ -1,0 +1,156 @@
+.posts-container {
+    background-image: url("/background.png");
+    width: 100vw;
+    margin-top: 5%;
+
+    .posts {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        margin: auto;
+
+        .card {
+            display: grid;
+            grid-template-columns: 320px;
+            grid-template-rows: 220px 140px 40px 60px;
+            grid-template-areas: "image" "text" "tags" "stats";
+            border-radius: 18px;
+            background: white;
+            box-shadow: 0px 0px 5px grey;
+            text-align: center;
+            transition: 0.2s ease;
+            cursor: pointer;
+            margin: 2%;
+            transform: scale(1.01);
+
+            @media screen and (max-height: 450px) {
+                grid-template-columns: 250px;
+            }
+
+            &:hover {
+                transform: scale(1);
+                box-shadow: 0px 0px 3px grey;
+            }
+
+            .card-image {
+                grid-area: image;
+                background: var(--background);
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .card-text {
+                grid-area: text;
+                margin: 25px;
+
+                .date {
+                    font-size: 13px;
+                }
+
+                p {
+                    color: grey;
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+
+                h2 {
+                    margin-top: 0px;
+                    font-size: 28px;
+                }
+            }
+
+            .card-tags {
+                grid-area: tags;
+
+                .tag {
+                    background-color: var(--color);
+                    padding: 8px 10px;
+                    font-weight: bold;
+                    border-radius: 15px;
+                    color: gray;
+                    margin: 1%;
+                    font-size: 12px;
+                }
+            }
+
+            .card-stats {
+                grid-area: stats;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+                background-image: linear-gradient(
+                    to bottom right,
+                    rgb(162, 23, 255),
+                    $logoColor
+                );
+
+                .icon {
+                    height: 25px;
+                }
+
+                .stat {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: 10px;
+                    color: white;
+
+                    .value {
+                        font-size: 22px;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+
+        ul {
+            display: inline-block;
+            list-style-type: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none !important;
+            margin: 5% 0%;
+            margin-bottom: 2%;
+
+            li {
+                display: inline;
+
+                a {
+                    text-decoration: none;
+                    border: 1px solid gray;
+                    color: gray;
+                    border-radius: 50%;
+                    padding: 15px 20px;
+
+                    &:hover {
+                        color: white;
+                        cursor: pointer;
+                        background-color: $logoColor;
+                        border: 1px solid $logoColor;
+                    }
+                }
+            }
+
+            .active {
+                color: white;
+                background-color: $logoColor;
+                border: 1px solid $logoColor;
+                border-radius: 50%;
+                padding: 15px 20px;
+            }
+        }
+    }
+}
