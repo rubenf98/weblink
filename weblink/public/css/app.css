@@ -605,45 +605,44 @@ body {
   width: 100%;
   display: -webkit-box;
   display: flex;
-  margin: 3% 0;
+  -webkit-box-align: center;
+          align-items: center;
+  margin: 4% 0;
 }
 
 .profile-container .profile_posts .profile_post img {
   margin: 0;
   padding: 0;
-  height: 90px;
+  width: 40%;
 }
 
 .profile-container .profile_posts .profile_post .post-text {
-  height: 100%;
+  width: 55%;
   display: block;
-  margin-left: 1%;
+  padding-left: 1%;
 }
 
 .profile-container .profile_posts .profile_post .post-text .post-title {
-  overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
-  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 20px;
   margin-left: 2%;
   font-weight: bold;
   color: #4b5154;
 }
 
 .profile-container .profile_posts .profile_post .post-text .post-description {
-  overflow: hidden;
   text-overflow: ellipsis;
-  height: 50%;
-  margin: 0;
-  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
   margin-left: 2%;
 }
 
 .profile-container .profile_posts .profile_post .post-text .post-date {
-  overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
-  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
   margin-left: 2%;
 }
 
