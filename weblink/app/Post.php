@@ -16,7 +16,7 @@ class Post extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'title', 'description', 'url', 'source'
+        'user_id', 'title', 'description', 'url', 'source', 'image'
     ];
 
     protected $appends = ['comments', 'favourites', 'views', 'is_liked'];

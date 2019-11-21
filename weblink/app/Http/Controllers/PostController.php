@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PostResource;
 use App\Http\Resources\PostsResource;
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image as IMG;
+use Auth;
 use App\Post;
 use App\PostView;
 use Illuminate\Http\Request;
@@ -29,16 +32,36 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        Validator::make($request->all(), [
             'user_id' => 'required|integer',
             'title' => 'required|string|max:100',
             'description' => 'required',
             'url' => 'nullable|string',
             'source' => 'nullable|string',
-            'tag' => 'required',
         ]);
 
-        $post = Post::create($request->all());
+        $filename = "/default.png";
+
+        if ($request->file('image')->isValid()) {
+            $image = $request->file('image');
+            $filename = uniqid() . '.png';
+
+            IMG::make($image)->encode('png', 65)->resize(760, null, function ($c) {
+                $c->aspectRatio();
+                $c->upsize();
+            })->save(public_path('/images/website/' . $filename));
+        }
+
+        $post = new Request([
+            'user_id' => Auth::id(),
+            'title' => $request->title,
+            'description' => $request->description,
+            'url' => $request->url,
+            'source' => $request->source,
+            'image' => '/images/website/' . $filename
+        ]);
+
+        Post::create($post->toArray());
 
         return redirect('/posts');
     }

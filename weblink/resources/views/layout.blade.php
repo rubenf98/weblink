@@ -32,18 +32,39 @@
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
+
                 <span class="close">&times;</span>
-                <form action="/post" method="post">
-                    <input class="form-input" type="text" name="title" id="" placeholder="Name of your project">
-                    <textarea class="form-input" name="description"
+                <h1>Create your post</h1>
+                <form action="/post" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input required class="form-input" type="text" name="title" placeholder="Name of your project">
+                    <textarea required class="form-input" name="description"
                         placeholder="Small description of you project"></textarea>
                     <div class="form-double-input">
-                        <input class="form-input spacing" type="text" name="url" id="" placeholder="Project url">
-                        <input class="form-input spacing" type="text" name="source" id="" placeholder="Source code url">
+                        <div class="form-double-item">
+                            <label for="url">
+                                <p>Reference to project page</p>
+                            </label>
+                            <input class="form-input" type="text" name="url" placeholder="https://www.weblink.com">
+                        </div>
+
+                        <div class="form-double-item">
+                            <label for="source">
+                                <p>Reference to source code</p>
+                            </label>
+                            <input class="form-input" type="text" name="source" id=""
+                                placeholder="https://bitbucket.org/kwajd/weblink">
+                        </div>
+
+
                     </div>
 
-                    <input type="file" name="file" id="files" class="inputfile" />
-                    <label for="file">Choose a file</label>
+                    <div class="center">
+                        <label for="files" class="custom-file-input">
+                            <i class="fa fa-cloud-upload"></i> Upload Image
+                        </label>
+                        <input class="file-input" id="files" type="file" name="image" />
+                    </div>
 
                     <img id="preview-image" class="preview-image" />
 

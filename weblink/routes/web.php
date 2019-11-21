@@ -21,8 +21,7 @@ Route::post('post/like/{id}', ['as' => 'post.like', 'uses' => 'LikeController@li
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/create', 'PostController@create');
 Route::get('/post/{id}', 'PostController@show');
-Route::post('/post', 'PostController@store');
-
+Route::post('/post', 'PostController@store')->middleware('auth');
 Route::put('/post/{id}', 'PostController@update');
 Route::delete('/post/{id}', 'PostController@destroy');
 
@@ -34,10 +33,10 @@ Auth::routes(); //LOGIN AND REGISTER
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/about', function(){
+Route::get('/about', function () {
     return view('about');
 });
 
 
 
-Route::get('/profile/{id}','UserController@index');
+Route::get('/profile/{id}', 'UserController@index');
