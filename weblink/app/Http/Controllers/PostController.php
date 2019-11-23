@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image as IMG;
 use Auth;
 use App\Post;
+use App\Tag;
 use App\PostView;
 use Illuminate\Http\Request;
 
@@ -40,17 +41,22 @@ class PostController extends Controller
             'source' => 'nullable|string',
         ]);
 
-        $filename = "/default.png";
+        $image = "/default.png";
 
-        if ($request->file('image')->isValid()) {
-            $image = $request->file('image');
-            $filename = uniqid() . '.png';
+        if ($request->file('image')) {
+            if ($request->file('image')->isValid()) {
+                $image = $request->file('image');
+                $filename = uniqid() . '.png';
 
-            IMG::make($image)->encode('png', 65)->resize(760, null, function ($c) {
-                $c->aspectRatio();
-                $c->upsize();
-            })->save(public_path('/images/website/' . $filename));
+                IMG::make($image)->encode('png', 65)->resize(760, null, function ($c) {
+                    $c->aspectRatio();
+                    $c->upsize();
+                })->save(public_path('/images/website/' . $filename));
+
+                $image = '/images/website/' . $filename;
+            }
         }
+
 
         $post = new Request([
             'user_id' => Auth::id(),
@@ -58,10 +64,17 @@ class PostController extends Controller
             'description' => $request->description,
             'url' => $request->url,
             'source' => $request->source,
-            'image' => '/images/website/' . $filename
+            'image' => $image
         ]);
 
-        Post::create($post->toArray());
+        $inserted_post = Post::create($post->toArray());
+
+        if ($request->tags) {
+            foreach ($request->tags as $tag) {
+                $tag_id = Tag::where('name', $tag)->value('id');
+                $inserted_post->tag()->attach($tag_id);
+            }
+        }
 
         return redirect('/posts');
     }
