@@ -85,7 +85,7 @@
                                 </g>
                             </g>
                         </svg>
-                        <p>Be the first to comment</p>
+                        <p>You don't have any posts</p>
                     </div>
                 </div>
             @endforelse
