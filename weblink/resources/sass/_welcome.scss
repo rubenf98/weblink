@@ -1,28 +1,37 @@
 
 .welcome-container {
-    width: 80%;
+    
     display: block;
     margin: auto;
+    @include containers-width();
     .welcomeCard {
         text-align: left;
         margin-bottom: 10%;
-
+        margin-left: $paddingLeftCard;;
         .titleWC {
+            width: 100%;
             font-weight: bold;
             margin-bottom: 0;
-            padding-left: $paddingLeftCard;
-            color: $colorText;
-            font-size: 100px;
+            color: $custom-purple;
             font-family: $fontFamilyTitle;
-            text-shadow: -2px 0 $logoColor, 0 2px $logoColor, 2px 0 $logoColor,
-                0 -2px $logoColor;
+                @media screen and (max-width: $xl){
+                    font-size: 100px;
+                }
+                @media screen and (max-width: $m){
+                    font-size: 75px;
+                }
+                @media screen and (max-width: $xs){
+                    font-size: 50px;
+                }
+
+
         }
 
         .textWC {
-            padding-left: $paddingLeftCard;
-            width: 60%;
+         
+            margin-top: 1%;
             color: black;
-            font-size: 26px;
+            font-size: 36px;
             font-family: $fontFamilyText;
         }
     }
@@ -34,14 +43,25 @@
         text-align: center;
         justify-content: center;
         margin: auto;
+        @media screen and (max-width: $s){
+            flex-direction: column;
+        }
         div {
+            min-width: 30px;
             margin: 0 auto;
             width: 30%;
             p {
+                font-size: 28px;
                 padding: 2%;
+                @media screen and (max-width: $s){
+                    font-size: 26px;
+                }
             }
             img {
                 width: 50%;
+            }
+            @media screen and (max-width: $s){
+                width: 100%;
             }
         }
     }

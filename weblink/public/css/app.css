@@ -1,29 +1,80 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);.welcome-container {
-  width: 80%;
   display: block;
   margin: auto;
+}
+
+@media screen and (max-width: 1600px) {
+  .welcome-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .welcome-container {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .welcome-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .welcome-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .welcome-container {
+    width: 100%;
+  }
 }
 
 .welcome-container .welcomeCard {
   text-align: left;
   margin-bottom: 10%;
+  margin-left: 5%;
 }
 
 .welcome-container .welcomeCard .titleWC {
+  width: 100%;
   font-weight: bold;
   margin-bottom: 0;
-  padding-left: 5%;
-  color: #fff;
-  font-size: 100px;
+  color: #a217ff;
   font-family: "Roboto", sans-serif;
-  text-shadow: -2px 0 #0f4ea7, 0 2px #0f4ea7, 2px 0 #0f4ea7, 0 -2px #0f4ea7;
+}
+
+@media screen and (max-width: 1600px) {
+  .welcome-container .welcomeCard .titleWC {
+    font-size: 100px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .welcomeCard .titleWC {
+    font-size: 75px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .welcome-container .welcomeCard .titleWC {
+    font-size: 50px;
+  }
 }
 
 .welcome-container .welcomeCard .textWC {
-  padding-left: 5%;
-  width: 60%;
+  margin-top: 1%;
   color: black;
-  font-size: 26px;
+  font-size: 36px;
   font-family: Open Sans Condensed;
 }
 
@@ -38,17 +89,39 @@
   margin: auto;
 }
 
+@media screen and (max-width: 500px) {
+  .welcome-container .shortcutSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+
 .welcome-container .shortcutSection div {
+  min-width: 30px;
   margin: 0 auto;
   width: 30%;
 }
 
 .welcome-container .shortcutSection div p {
+  font-size: 28px;
   padding: 2%;
+}
+
+@media screen and (max-width: 500px) {
+  .welcome-container .shortcutSection div p {
+    font-size: 26px;
+  }
 }
 
 .welcome-container .shortcutSection div img {
   width: 50%;
+}
+
+@media screen and (max-width: 500px) {
+  .welcome-container .shortcutSection div {
+    width: 100%;
+  }
 }
 
 .welcome-container button {

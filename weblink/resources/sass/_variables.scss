@@ -32,3 +32,28 @@ $m: 770px;
 $s: 500px;
 $xs: 350px;
 $xxs: 250px;
+
+
+//Mixins
+
+@mixin containers-width {
+    @media screen and (max-width: $xl){
+        width: 80%;
+    }
+    @media screen and (max-width: $l){
+        width: 80%;
+    }
+    @media screen and (max-width: $m){
+        width: 90%;
+    }
+    @media screen and (max-width: $s){
+        width: 90%;
+    }
+    @media screen and (max-width: $xs){
+        width: 100%;
+    }
+    @media screen and (max-width: $xxs){
+        width: 100%;
+    }
+}
+
