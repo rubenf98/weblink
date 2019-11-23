@@ -4,9 +4,15 @@
 
 @section('content')
 <div class="welcome-container">
-    <div class="welcomeCard">
-        <h1 class="titleWC">WebLink</h1>
-        <p class="textWC">Where you can Share, Learn and get feedback </p>
+    <div class="header-container">
+        <div class="welcomeCard">
+            <h1 class="titleWC">WebLink</h1>
+            <p class="textWC">Where you can Share, Learn and get feedback </p>
+        </div>
+        <div class="welcomeImage">
+            <img class="homepage-image" src="/homepage-image.svg" alt="" srcset="">
+        </div>
+
     </div>
 
     <div class="shortcutSection">
@@ -22,9 +28,9 @@
             <img id="connection_img" src="/img_welcome/connection.svg" alt="">
             <p>Interact with community</p>
         </div>
-
-
     </div>
+
+
     <button id="startButton"> START NOW</button>
     <script src="/js/welcome.js"></script>
 

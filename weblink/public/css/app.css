@@ -1,12 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);.welcome-container {
   display: block;
   margin: auto;
-}
-
-@media screen and (max-width: 1600px) {
-  .welcome-container {
-    width: 80%;
-  }
+  width: 80%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -15,85 +10,108 @@
   }
 }
 
-@media screen and (max-width: 770px) {
-  .welcome-container {
-    width: 90%;
-  }
-}
-
 @media screen and (max-width: 500px) {
   .welcome-container {
     width: 90%;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .welcome-container {
-    width: 100%;
   }
 }
 
 @media screen and (max-width: 250px) {
   .welcome-container {
+    width: 95%;
+  }
+}
+
+.welcome-container .header-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 10% auto;
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 1200px) {
+  .welcome-container .header-container {
     width: 100%;
   }
 }
 
-.welcome-container .welcomeCard {
+.welcome-container .header-container .welcomeCard {
   text-align: left;
-  margin-bottom: 10%;
-  margin-left: 5%;
+  width: 50%;
 }
 
-.welcome-container .welcomeCard .titleWC {
-  width: 100%;
+@media screen and (max-width: 1200px) {
+  .welcome-container .header-container .welcomeCard {
+    width: 100%;
+  }
+}
+
+.welcome-container .header-container .welcomeCard .titleWC {
   font-weight: bold;
   margin-bottom: 0;
+  font-size: 100px;
   color: #a217ff;
   font-family: "Roboto", sans-serif;
 }
 
-@media screen and (max-width: 1600px) {
-  .welcome-container .welcomeCard .titleWC {
-    font-size: 100px;
-  }
-}
-
-@media screen and (max-width: 770px) {
-  .welcome-container .welcomeCard .titleWC {
+@media screen and (max-width: 1200px) {
+  .welcome-container .header-container .welcomeCard .titleWC {
     font-size: 75px;
   }
 }
 
 @media screen and (max-width: 350px) {
-  .welcome-container .welcomeCard .titleWC {
+  .welcome-container .header-container .welcomeCard .titleWC {
     font-size: 50px;
   }
 }
 
-.welcome-container .welcomeCard .textWC {
-  margin-top: 1%;
+.welcome-container .header-container .welcomeCard .textWC {
   color: black;
   font-size: 36px;
   font-family: Open Sans Condensed;
 }
 
+@media screen and (max-width: 500px) {
+  .welcome-container .header-container .welcomeCard .textWC {
+    font-size: 26px;
+  }
+}
+
+.welcome-container .header-container .welcomeImage {
+  width: 50%;
+}
+
+.welcome-container .header-container .welcomeImage .homepage-image {
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .welcome-container .header-container .welcomeImage .homepage-image {
+    display: none;
+  }
+}
+
 .welcome-container .shortcutSection {
-  width: 80%;
+  width: 100%;
   padding-bottom: 3%;
   display: -webkit-box;
   display: flex;
   text-align: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: space-around;
   margin: auto;
+  flex-wrap: wrap;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 770px) {
   .welcome-container .shortcutSection {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
+    width: 90%;
   }
 }
 
@@ -103,9 +121,21 @@
   width: 30%;
 }
 
+@media screen and (max-width: 500px) {
+  .welcome-container .shortcutSection div {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+}
+
 .welcome-container .shortcutSection div p {
   font-size: 28px;
-  padding: 2%;
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .shortcutSection div p {
+    font-size: 22px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -114,13 +144,22 @@
   }
 }
 
+@media screen and (max-width: 350px) {
+  .welcome-container .shortcutSection div p {
+    font-size: 26px;
+  }
+}
+
 .welcome-container .shortcutSection div img {
   width: 50%;
+  max-width: 200px;
+  min-width: 70px;
 }
 
 @media screen and (max-width: 500px) {
-  .welcome-container .shortcutSection div {
-    width: 100%;
+  .welcome-container .shortcutSection div img {
+    min-width: 130px;
+    width: 40%;
   }
 }
 

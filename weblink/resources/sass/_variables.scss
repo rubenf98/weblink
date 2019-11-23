@@ -24,7 +24,6 @@ $custom-purple: rgb(162, 23, 255);
 $colorText: #fff;
 $logoColor: rgb(15, 78, 167);
 
-
 //Screen size
 $xl: 1600px;
 $l: 1200px;
@@ -33,27 +32,18 @@ $s: 500px;
 $xs: 350px;
 $xxs: 250px;
 
-
 //Mixins
 
 @mixin containers-width {
-    @media screen and (max-width: $xl){
+    @media screen and (max-width: $l) {
         width: 80%;
     }
-    @media screen and (max-width: $l){
-        width: 80%;
-    }
-    @media screen and (max-width: $m){
+
+    @media screen and (max-width: $s) {
         width: 90%;
     }
-    @media screen and (max-width: $s){
-        width: 90%;
-    }
-    @media screen and (max-width: $xs){
-        width: 100%;
-    }
-    @media screen and (max-width: $xxs){
-        width: 100%;
+
+    @media screen and (max-width: $xxs) {
+        width: 95%;
     }
 }
-
