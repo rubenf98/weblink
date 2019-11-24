@@ -29,8 +29,8 @@ Route::get('/tags', 'TagController@index');
 
 Route::post('/comment', 'CommentController@store')->middleware('auth');
 
-Route::get('/users', 'PostController@index'); //LIST OF USERS TO ADMIN
-Route::get('/user/{id}', 'PostController@show'); // PROFILE
+Route::get('/users', 'UserController@index'); //LIST OF USERS TO ADMIN
+Route::get('/user/{id}', 'UserController@show'); // PROFILE
 Auth::routes(); //LOGIN AND REGISTER
 
 Route::get('/home', 'HomeController@index')->name('home');

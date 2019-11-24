@@ -30,7 +30,7 @@
                 margin-bottom: 0;
                 font-size: 100px;
                 color: $custom-purple;
-                font-family: $fontFamilyTitle;
+                font-family: 'Alata', sans-serif;
 
                 @media screen and (max-width: $l) {
                     font-size: 75px;
@@ -43,11 +43,52 @@
             .textWC {
                 color: black;
                 font-size: 36px;
-                font-family: $fontFamilyText;
+                font-family: 'Alata', sans-serif;
 
                 @media screen and (max-width: $s) {
                     font-size: 26px;
                 }
+            }
+            div{
+                width: 100%;
+                display: flex;
+                @media screen and (max-width: $l) {
+                    width: 50%;
+                    margin: 0 auto;
+                }
+                
+                @media screen and (max-width: $m){
+                    text-align: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+            }
+            .intro-btn{
+                width: 197px;
+                font-size: 26px;
+                font-family: 'Alata', sans-serif;
+                padding: 12px 36px;
+                &:focus{
+                    outline:none
+                }
+                &:hover{
+                    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342); 
+                }
+                
+                
+            }
+            #posts-btn{
+                margin-right: 10px;
+                background-color: $custom-purple;
+                color: white;
+                border:1px solid $custom-purple;
+                @media screen and (max-width: $m){
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+            #start-btn{
+                border:1px solid $custom-purple;
             }
         }
         .welcomeImage {
@@ -112,27 +153,62 @@
             }
         }
     }
+    hr { display: block; height: 1px;
+        border: 0; border-top: 1px solid $custom-purple;
+        margin: 1em 0; padding: 0; }
 
-    button {
-        display: block;
-        margin: auto;
-        color: white;
-        background-image: linear-gradient(
-            to bottom right,
-            rgb(162, 23, 255),
-            rgb(39, 77, 247)
-        );
-        border-radius: 25px;
-        padding: 1%;
-        padding-left: 2%;
-        padding-right: 2%;
-        text-align: center;
-        cursor: pointer;
-        &:hover {
-            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+    .animated-board{
+        display: flex;
+        
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 2%;
+        @media screen and (max-width:$m){
+            display: block;
         }
-        &:focus {
-            outline: 0;
+        .animated-list{
+            width: 25%;
+            min-width: 150px;
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+            @media screen and (max-width:$m){
+                width: 80%;
+            }
+            #d-1{
+                background-color: rgb(141, 8, 230);
+            }
+            .list-item{
+                box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342); 
+                margin: 2%;
+                border-radius:16px ;
+                cursor: pointer;
+                color: white;
+                background-color: rgb(63,62,84);
+                padding: 5px;
+                display: block;
+                p{
+                    display: none;
+                }
+            }
+            
+        }
+        div{
+            width: 75%;
+            display: flex;
+            justify-content: center;
+            @media screen and (max-width:$m){
+                width: 80%;
+            }
+            .img-class{
+                margin-top: 10px ;
+                width: 100%;
+                display: none;
+            }
+           #img-1{
+               display: block;
+           }
         }
     }
+
 }

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);.welcome-container {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);@import url(https://fonts.googleapis.com/css?family=Alata&display=swap);.welcome-container {
   display: block;
   margin: auto;
   width: 80%;
@@ -57,7 +57,7 @@
   margin-bottom: 0;
   font-size: 100px;
   color: #a217ff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Alata", sans-serif;
 }
 
 @media screen and (max-width: 1200px) {
@@ -75,13 +75,70 @@
 .welcome-container .header-container .welcomeCard .textWC {
   color: black;
   font-size: 36px;
-  font-family: Open Sans Condensed;
+  font-family: "Alata", sans-serif;
 }
 
 @media screen and (max-width: 500px) {
   .welcome-container .header-container .welcomeCard .textWC {
     font-size: 26px;
   }
+}
+
+.welcome-container .header-container .welcomeCard div {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+  .welcome-container .header-container .welcomeCard div {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .header-container .welcomeCard div {
+    text-align: center;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+
+.welcome-container .header-container .welcomeCard .intro-btn {
+  width: 197px;
+  font-size: 26px;
+  font-family: "Alata", sans-serif;
+  padding: 12px 36px;
+}
+
+.welcome-container .header-container .welcomeCard .intro-btn:focus {
+  outline: none;
+}
+
+.welcome-container .header-container .welcomeCard .intro-btn:hover {
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+}
+
+.welcome-container .header-container .welcomeCard #posts-btn {
+  margin-right: 10px;
+  background-color: #a217ff;
+  color: white;
+  border: 1px solid #a217ff;
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .header-container .welcomeCard #posts-btn {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.welcome-container .header-container .welcomeCard #start-btn {
+  border: 1px solid #a217ff;
 }
 
 .welcome-container .header-container .welcomeImage {
@@ -163,26 +220,84 @@
   }
 }
 
-.welcome-container button {
+.welcome-container hr {
   display: block;
-  margin: auto;
-  color: white;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#a217ff), to(#274df7));
-  background-image: linear-gradient(to bottom right, #a217ff, #274df7);
-  border-radius: 25px;
-  padding: 1%;
-  padding-left: 2%;
-  padding-right: 2%;
-  text-align: center;
-  cursor: pointer;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #a217ff;
+  margin: 1em 0;
+  padding: 0;
 }
 
-.welcome-container button:hover {
+.welcome-container .animated-board {
+  display: -webkit-box;
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+  margin-bottom: 2%;
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .animated-board {
+    display: block;
+  }
+}
+
+.welcome-container .animated-board .animated-list {
+  width: 25%;
+  min-width: 150px;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .animated-board .animated-list {
+    width: 80%;
+  }
+}
+
+.welcome-container .animated-board .animated-list #d-1 {
+  background-color: #8d08e6;
+}
+
+.welcome-container .animated-board .animated-list .list-item {
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+  margin: 2%;
+  border-radius: 16px;
+  cursor: pointer;
+  color: white;
+  background-color: #3f3e54;
+  padding: 5px;
+  display: block;
 }
 
-.welcome-container button:focus {
-  outline: 0;
+.welcome-container .animated-board .animated-list .list-item p {
+  display: none;
+}
+
+.welcome-container .animated-board div {
+  width: 75%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .animated-board div {
+    width: 80%;
+  }
+}
+
+.welcome-container .animated-board div .img-class {
+  margin-top: 10px;
+  width: 100%;
+  display: none;
+}
+
+.welcome-container .animated-board div #img-1 {
+  display: block;
 }
 
 html,
@@ -451,10 +566,18 @@ body {
   position: relative;
   padding: 3%;
   width: 30%;
+  min-width: 300px;
   box-shadow: 0px 0px 10px grey;
   border-radius: 16px;
   margin: 0 3%;
   height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .profile-container .about {
+    margin-bottom: 30px;
+    width: 70%;
+  }
 }
 
 .profile-container .about h1 {
@@ -521,10 +644,17 @@ body {
   background-color: white;
   padding: 3%;
   width: 30%;
+  min-width: 300px;
   box-shadow: 0px 0px 10px grey;
   border-radius: 16px;
   margin: 0 3%;
   height: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .profile-container .profile_posts {
+    width: 70%;
+  }
 }
 
 .profile-container .profile_posts .profile_posts_section {
@@ -581,7 +711,7 @@ body {
 }
 
 .profile-container .profile_posts .profile_post .post-text {
-  width: 60%;
+  width: 5 0%;
   display: block;
   padding-left: 1%;
 }

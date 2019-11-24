@@ -8,6 +8,17 @@
         <div class="welcomeCard">
             <h1 class="titleWC">WebLink</h1>
             <p class="textWC">Where you can Share, Learn and get feedback </p>
+            <div>
+                <a href="/posts"> <button type="submit"  id="posts-btn" class="intro-btn"> Posts </button> </a>
+                @if (Auth::user()==null)
+                    <a href="/login"> <button type="submit" id="start-btn" class="intro-btn">Start Now</button> </a>
+                @else
+                    <a href="/user/{{Auth::user()->id}}"> <button type="submit" id="start-btn" class="intro-btn">Profile</button> </a>
+                @endif
+                
+            </div>
+            
+            
         </div>
         <div class="welcomeImage">
             <img class="homepage-image" src="/homepage-image.svg" alt="" srcset="">
@@ -29,9 +40,34 @@
             <p>Interact with community</p>
         </div>
     </div>
+    <hr>
+    <div class="animated-board">
+        <ul class="animated-list">
+            <li class="list-item " id="d-1"> 
+                <span class="fas fa-caret-down"> Posts</span>
+                <p style="display: block">WebLink allow you to post/view projects and gather feedback from the community</p>
+            </li>
+            <li class="list-item" id="d-2">
+                <span class="fas fa-caret-right">Profile</span>
+                <p>Once you create an account on WebLink you can post projects and interact with the community</p>
+            </li>
+            <li class="list-item" id="d-3">
+                <span class="fas fa-caret-right">Learn</span>
+                <p>WebLink is not a simple project show, where you can learn with the others a share experiences</p>
+            </li>
+            <li class="list-item" id="d-4"> 
+                <span class="fas fa-caret-right">What we ask?</span>
+                <p>When we use something from WebLink please reference our web page, in that away we can grow up</p>
+            </li>
+        </ul>
+        <div>
+            <img class="img-class" id="img-1" src="img_welcome/animated-list-img/post.svg" alt="">
+            <img class="img-class" id="img-2" src="img_welcome/animated-list-img/profile.svg" alt="">
+            <img class="img-class" id="img-3" src="img_welcome/animated-list-img/learn.svg" alt="">
+            <img class="img-class" id="img-4" src="img_welcome/animated-list-img/grow.svg" alt="">
+        </div>
+    </div>
 
-
-    <button id="startButton"> START NOW</button>
     <script src="/js/welcome.js"></script>
 
 </div>

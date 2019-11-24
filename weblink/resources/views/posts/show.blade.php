@@ -144,7 +144,7 @@
             <div class="post-description">
                 <div class="item-left">
                     <p class="title"> <i class="fas fa-user"></i> Creator</p>
-                    <p class="description"> <a href={{'/profile/'.$post->user->id}}
+                    <p class="description"> <a href={{'/user/'.$post->user->id}}
                             target="_blank">{{$post->user->name}}</a></p>
                 </div>
                 <div class="item-right">
