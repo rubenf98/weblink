@@ -15,7 +15,9 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul>
+            @auth
             <li><a class="page" href="{{ url('/profile/' . Auth::id()) }}">Profile</a></li>
+            @endauth
             <li><a class="page" href="/posts">Posts</a></li>
             <li><a class="page" href="/about">About</a></li>
             <li><a class="page" href="/contact">Contact</a></li>

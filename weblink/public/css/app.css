@@ -6,7 +6,7 @@
 
 @media screen and (max-width: 1200px) {
   .welcome-container {
-    width: 80%;
+    width: 90%;
   }
 }
 
@@ -1629,5 +1629,40 @@ body {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.footer {
+  width: 80%;
+  color: black;
+  height: 80px;
+  border-top: 0.5px solid gray;
+  margin: auto;
+  padding: 1%;
+}
+
+@media screen and (max-width: 770px) {
+  .footer {
+    width: 100%;
+  }
+}
+
+.footer .project-info span {
+  display: block;
+  clear: both;
+}
+
+.footer .social-media {
+  -webkit-box-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer .icon {
+  width: 30px;
+  margin: 0px 5px;
 }
 
