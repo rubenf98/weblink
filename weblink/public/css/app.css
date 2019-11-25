@@ -115,6 +115,8 @@
   font-size: 26px;
   font-family: "Alata", sans-serif;
   padding: 12px 36px;
+  border-radius: 16px;
+  cursor: pointer;
 }
 
 .welcome-container .header-container .welcomeCard .intro-btn:focus {
@@ -141,6 +143,7 @@
 
 .welcome-container .header-container .welcomeCard #start-btn {
   border: 1px solid #a217ff;
+  color: #a217ff;
 }
 
 .welcome-container .header-container .welcomeImage {
@@ -227,77 +230,79 @@
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  margin-bottom: 2%;
+  flex-wrap: wrap;
+  margin: 5% auto;
+  width: 80%;
 }
 
 @media screen and (max-width: 770px) {
   .welcome-container .animated-board {
     display: block;
+    width: 95%;
   }
 }
 
-.welcome-container .animated-board .animated-list {
-  min-width: 180px;
+.welcome-container .animated-board .animated-text {
+  width: 45%;
+  margin-right: 3%;
+}
+
+@media screen and (max-width: 770px) {
+  .welcome-container .animated-board .animated-text {
+    width: 100%;
+  }
+}
+
+.welcome-container .animated-board .animated-text .animated-list {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
-@media screen and (max-width: 770px) {
-  .welcome-container .animated-board .animated-list {
-    width: 80%;
-  }
-}
-
-.welcome-container .animated-board .animated-list #d-1 {
+.welcome-container .animated-board .animated-text .animated-list #d-1 {
   background-color: #8d08e6;
 }
 
-.welcome-container .animated-board .animated-list .list-item {
+.welcome-container .animated-board .animated-text .animated-list .list-item {
   box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
   margin: 2%;
   border-radius: 16px;
   cursor: pointer;
   color: white;
   background-color: #3f3e54;
-  padding: 5px;
+  padding: 15px 15px;
   display: block;
 }
 
-.welcome-container .animated-board .animated-list .list-item p {
+.welcome-container .animated-board .animated-text .animated-list .list-item p {
   display: none;
 }
 
-.welcome-container .animated-board div {
-  width: 70%;
+.welcome-container .animated-board .animated-images {
+  width: 45%;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
           justify-content: center;
+  margin-left: 3%;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 770px) {
-  .welcome-container .animated-board div {
-    width: 80%;
+  .welcome-container .animated-board .animated-images {
+    width: 60%;
+    min-width: 250px;
+    margin-top: 3%;
   }
 }
 
-.welcome-container .animated-board div .img-class {
-  margin-top: 10px;
-  width: 300px;
+.welcome-container .animated-board .animated-images .img-class {
+  height: 100%;
   min-width: 300px;
   display: none;
 }
 
-@media screen and (max-width: 770px) {
-  .welcome-container .animated-board div .img-class {
-    width: 80%;
-  }
-}
-
-.welcome-container .animated-board div #img-1 {
+.welcome-container .animated-board .animated-images #img-1 {
   display: block;
 }
 
