@@ -9,12 +9,11 @@
             <h1 class="titleWC">WebLink</h1>
             <p class="textWC">Where you can Share, Learn and get feedback </p>
             <div>
-                <a href="/posts"> <button type="submit" id="posts-btn" class="intro-btn"> Posts </button> </a>
+                <a href="/posts" id="posts-btn" class="intro-btn"> Posts</a>
                 @if (Auth::user()==null)
-                <a href="/login"> <button type="submit" id="start-btn" class="intro-btn">Start Now</button> </a>
+                <a href="/login" id="start-btn" class="intro-btn"> Start Now </a>
                 @else
-                <a href="/user/{{Auth::user()->id}}"> <button type="submit" id="start-btn"
-                        class="intro-btn">Profile</button> </a>
+                <a href="/user/{{Auth::user()->id}}" id="start-btn" class="intro-btn"> Profile</a>
                 @endif
 
             </div>
@@ -46,21 +45,21 @@
         <div class="animated-text">
             <ul class="animated-list">
                 <li class="list-item " id="d-1">
-                    <span class="fas fa-caret-down"> Posts</span>
-                    <p style="display: block">WebLink allow you to post/view projects and gather feedback from the
-                        community</p>
+                    <span class="fas fa-caret-down"> Post your projects</span>
+                    <p style="display: block">A simple, great experience with various features.</p>
                 </li>
                 <li class="list-item" id="d-2">
-                    <span class="fas fa-caret-right">Profile</span>
-                    <p>Once you create an account on WebLink you can post projects and interact with the community</p>
+                    <span class="fas fa-caret-right"> Envolve with the community</span>
+                    <p>Comment, like, follow and save your favorite projects.</p>
                 </li>
                 <li class="list-item" id="d-3">
-                    <span class="fas fa-caret-right">Learn</span>
-                    <p>WebLink is not a simple project show, where you can learn with the others a share experiences</p>
+                    <span class="fas fa-caret-right"> Knowledge Base</span>
+                    <p>Turn your tribal knowledge into easy-to-find answers.</p>
                 </li>
                 <li class="list-item" id="d-4">
-                    <span class="fas fa-caret-right">What we ask?</span>
-                    <p>When we use something from WebLink please reference our web page, in that away we can grow up</p>
+                    <span class="fas fa-caret-right"> Boost personal productivity</span>
+                    <p>Write better. Think more clearly. Stay organized.
+                    </p>
                 </li>
             </ul>
         </div>
