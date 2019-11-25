@@ -39,6 +39,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/dashboard', function () {
+    return view('auth.dashboard');
+})->middleware('admin');
+
 
 
 Route::get('/profile/{id}', 'UserController@index');

@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
             'password'=> bcrypt('admin'),
             'b_day' => '1998-03-03',
             'country' => 'Portugal',
+            'role' => 'admin',
             'gender' => 1
         ]);
 

@@ -1,6 +1,6 @@
 .posts-container {
     background-image: url("/background.png");
-    width: 100vw;
+    width: 100%;
     margin-top: 5%;
 
     .posts {
@@ -8,13 +8,13 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
-        flex-flow: row wrap;
+        flex-wrap: wrap;
         margin: auto;
 
         .card {
             display: grid;
-            grid-template-columns: 320px;
-            grid-template-rows: 220px 140px 40px 60px;
+            grid-template-columns: 300px;
+            grid-template-rows: 220px 120px 40px 60px;
             grid-template-areas: "image" "text" "tags" "stats";
             border-radius: 18px;
             background: white;
@@ -23,9 +23,9 @@
             transition: 0.2s ease;
             cursor: pointer;
             margin: 2%;
-            transform: scale(1.01);
+            transform: scale(1.005);
 
-            @media screen and (max-height: 450px) {
+            @media screen and (max-width: $s) {
                 grid-template-columns: 250px;
             }
 
@@ -65,15 +65,14 @@
 
             .card-tags {
                 grid-area: tags;
+                display: flex;
+                justify-content: center;
 
                 .tag {
-                    background-color: var(--color);
-                    padding: 8px 10px;
                     font-weight: bold;
-                    border-radius: 15px;
                     color: gray;
-                    margin: 1%;
                     font-size: 12px;
+                    margin: auto 10px;
                 }
             }
 
@@ -86,12 +85,16 @@
                 border-bottom-right-radius: 15px;
                 background-image: linear-gradient(
                     to bottom right,
-                    rgb(162, 23, 255),
+                    $custom-purple,
                     $logoColor
                 );
 
                 .icon {
-                    height: 25px;
+                    height: 20px;
+
+                    @media screen and (max-width: $s) {
+                        height: 15px;
+                    }
                 }
 
                 .stat {
@@ -103,8 +106,12 @@
                     color: white;
 
                     .value {
-                        font-size: 22px;
+                        font-size: 24px;
                         font-weight: 500;
+
+                        @media screen and (max-width: $s) {
+                            font-size: 18px;
+                        }
                     }
                 }
             }
@@ -115,6 +122,8 @@
         display: flex;
         justify-content: center;
         align-content: center;
+        margin: 5% auto;
+        margin-top: 2%;
 
         ul {
             display: inline-block;

@@ -32,8 +32,7 @@
     </div>
 
     <div class="content">@yield('content')
-        <div id="myBtn"><img src="/icons/plus.svg" class="fixedbutton"></div>
-
+        
     </div>
 
     @include('posts.create')
