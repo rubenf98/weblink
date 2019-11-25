@@ -7,18 +7,16 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 
-
 class UserController extends Controller
 {
     //
     public function show($id)
     {
         $user= Auth::user();
-        if(User::find($id)){
+        if (User::find($id)) {
             //return new UserResource(User::find($id));
-            return view('profile.profile')->with('user',new UserResource(User::find($id)));
-        }
-        else{
+            return view('users.show')->with('user', new UserResource(User::find($id)));
+        } else {
             return 'Error';
         }
     }
