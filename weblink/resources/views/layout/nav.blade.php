@@ -16,7 +16,12 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <ul>
             @auth
-            <li><a class="page" href="{{ url('/profile/' . Auth::id()) }}">Profile</a></li>
+            @if (Auth::user()->role == 'admin')
+            <li><a class="page" href="/dashboard">Dashboard</a></li>
+            @endif
+            @endauth
+            @auth
+            <li><a class="page" href="{{ url('/user/' . Auth::id()) }}">Profile</a></li>
             @endauth
             <li><a class="page" href="/posts">Posts</a></li>
             <li><a class="page" href="/about">About</a></li>

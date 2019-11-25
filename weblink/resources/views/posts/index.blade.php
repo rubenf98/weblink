@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+@include('layout.button')
 
 <div class="posts-container">
     <div class="posts">
@@ -35,10 +36,14 @@
                     </div>
                 </div>
                 <div class="stat">
-                    <div class="value"><i class="far fa-eye"></i> {{$post->views}}</div>
+                    <div id="like" class="value"><img class="icon" src="/icons/eye.svg">
+                        {{$post->views}}
+                    </div>
                 </div>
                 <div class="stat">
-                    <div class="value"><i class="far fa-comments"></i> {{$post->comments}}</div>
+                    <div id="like" class="value"><img class="icon" src="/icons/comments.svg">
+                        {{$post->comments}}
+                    </div>
                 </div>
             </div>
         </div>
@@ -49,7 +54,6 @@
     <div class="pagination">
         {{ $posts->links("pagination::default") }}
     </div>
-
 
 </div>
 

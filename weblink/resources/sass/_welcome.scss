@@ -31,7 +31,7 @@
                 margin-bottom: 0;
                 font-size: 100px;
                 color: $custom-purple;
-                font-family: 'Rancho', cursive;
+                font-family: "Rancho", cursive;
 
                 @media screen and (max-width: $l) {
                     font-size: 75px;
@@ -44,53 +44,54 @@
             .textWC {
                 color: black;
                 font-size: 36px;
-                font-family: 'Rancho', cursive;
+                font-family: "Rancho", cursive;
                 margin-top: 5px;
 
                 @media screen and (max-width: $s) {
                     font-size: 26px;
                 }
             }
-            div{
+            div {
                 width: 100%;
                 display: flex;
                 @media screen and (max-width: $l) {
                     width: 50%;
                     margin: 0 auto;
                 }
-                
-                @media screen and (max-width: $m){
+
+                @media screen and (max-width: $m) {
                     text-align: center;
                     justify-content: center;
                     flex-direction: column;
                 }
             }
-            .intro-btn{
+            .intro-btn {
                 width: 197px;
                 font-size: 26px;
-                font-family: 'Alata', sans-serif;
+                font-family: "Alata", sans-serif;
                 padding: 12px 36px;
-                &:focus{
-                    outline:none
+                border-radius: 16px;
+                cursor: pointer;
+                &:focus {
+                    outline: none;
                 }
-                &:hover{
-                    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342); 
+                &:hover {
+                    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
                 }
-                
-                
             }
-            #posts-btn{
+            #posts-btn {
                 margin-right: 10px;
                 background-color: $custom-purple;
                 color: white;
-                border:1px solid $custom-purple;
-                @media screen and (max-width: $m){
+                border: 1px solid $custom-purple;
+                @media screen and (max-width: $m) {
                     margin-right: 0;
                     margin-bottom: 10px;
                 }
             }
-            #start-btn{
-                border:1px solid $custom-purple;
+            #start-btn {
+                border: 1px solid $custom-purple;
+                color: $custom-purple;
             }
         }
         .welcomeImage {
@@ -156,63 +157,72 @@
         }
     }
 
-
-    .animated-board{
+    .animated-board {
         display: flex;
         justify-content: center;
-        margin: 0 auto;
-        width: 100%;
-        margin-bottom: 2%;
-        @media screen and (max-width:$m){
+        flex-wrap: wrap;
+        margin: 5% auto;
+        width: 80%;
+
+        @media screen and (max-width: $m) {
             display: block;
+            width: 95%;
         }
-        .animated-list{
-            min-width: 180px;
-            list-style: none;
-            margin: 0;
-            padding-left: 0;
-            @media screen and (max-width:$m){
-                width: 80%;
+
+        .animated-text {
+            width: 45%;
+            margin-right: 3%;
+
+            @media screen and (max-width: $m) {
+                width: 100%;
             }
-            #d-1{
-                background-color: rgb(141, 8, 230);
-            }
-            .list-item{
-                box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342); 
-                margin: 2%;
-                border-radius:16px ;
-                cursor: pointer;
-                color: white;
-                background-color: rgb(63,62,84);
-                padding: 5px;
-                display: block;
-                p{
-                    display: none;
+
+            .animated-list {
+                list-style: none;
+                margin: 0;
+                padding-left: 0;
+
+                #d-1 {
+                    background-color: rgb(141, 8, 230);
+                }
+                .list-item {
+                    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+                    margin: 2%;
+                    border-radius: 16px;
+                    cursor: pointer;
+                    color: white;
+                    background-color: rgb(63, 62, 84);
+                    padding: 15px 15px;
+                    display: block;
+
+                    p {
+                        display: none;
+                    }
                 }
             }
-            
         }
-        div{
-            width: 70%;
+
+        .animated-images {
+            width: 45%;
             display: flex;
             justify-content: center;
-            @media screen and (max-width:$m){
-                width: 80%;
+            margin-left: 3%;
+            margin: 0 auto;
+
+            @media screen and (max-width: $m) {
+                width: 60%;
+                min-width: 250px;
+                margin-top: 3%;
             }
-            .img-class{
-                margin-top: 10px ;
-                width: 300px;
+
+            .img-class {
+                height: 100%;
                 min-width: 300px;
                 display: none;
-                
-                @media screen and (max-width:$m){
-                    width: 80%;
-                }
             }
-           #img-1{
-               display: block;
-           }
+            #img-1 {
+                display: block;
+            }
         }
     }
-
 }
