@@ -36,7 +36,7 @@ $xxs: 250px;
 
 @mixin containers-width {
     @media screen and (max-width: $l) {
-        width: 80%;
+        width: 90%;
     }
 
     @media screen and (max-width: $s) {
