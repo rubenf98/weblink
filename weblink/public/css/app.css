@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);@import url(https://fonts.googleapis.com/css?family=Alata&display=swap);.welcome-container {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);@import url(https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap);@import url(https://fonts.googleapis.com/css?family=Alata&display=swap);@import url(https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap);@import url(https://fonts.googleapis.com/css?family=Rancho&display=swap);.welcome-container {
   display: block;
   margin: auto;
   width: 80%;
@@ -31,8 +31,8 @@
           align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin: 10% auto;
-  margin-top: 5%;
+  margin-top: 0;
+  margin-bottom: 10%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -53,11 +53,12 @@
 }
 
 .welcome-container .header-container .welcomeCard .titleWC {
+  margin-top: 0;
   font-weight: bold;
   margin-bottom: 0;
   font-size: 100px;
   color: #a217ff;
-  font-family: "Alata", sans-serif;
+  font-family: "Rancho", cursive;
 }
 
 @media screen and (max-width: 1200px) {
@@ -75,7 +76,8 @@
 .welcome-container .header-container .welcomeCard .textWC {
   color: black;
   font-size: 36px;
-  font-family: "Alata", sans-serif;
+  font-family: "Rancho", cursive;
+  margin-top: 5px;
 }
 
 @media screen and (max-width: 500px) {
@@ -223,8 +225,10 @@
 .welcome-container .animated-board {
   display: -webkit-box;
   display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   margin-bottom: 2%;
 }
 
@@ -235,7 +239,6 @@
 }
 
 .welcome-container .animated-board .animated-list {
-  width: 25%;
   min-width: 180px;
   list-style: none;
   margin: 0;
@@ -268,7 +271,7 @@
 }
 
 .welcome-container .animated-board div {
-  width: 75%;
+  width: 70%;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -283,6 +286,7 @@
 
 .welcome-container .animated-board div .img-class {
   margin-top: 10px;
+  width: 300px;
   min-width: 300px;
   display: none;
 }
@@ -555,7 +559,6 @@ body {
   width: 80%;
   -webkit-box-pack: center;
           justify-content: center;
-  height: 500px;
 }
 
 .profile-container .about {
@@ -567,7 +570,7 @@ body {
   box-shadow: 0px 0px 10px grey;
   border-radius: 16px;
   margin: 0 3%;
-  height: 100%;
+  height: 500px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -584,6 +587,14 @@ body {
 .profile-container .about .profileData {
   color: black;
   text-align: center;
+}
+
+.profile-container .about .profileData .data-label {
+  margin: 2% auto;
+  display: -webkit-box;
+  display: flex;
+  text-align: left;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.404);
 }
 
 .profile-container .about .profileData img {
@@ -638,6 +649,7 @@ body {
 }
 
 .profile-container .profile_posts {
+  height: 500px;
   background-color: white;
   padding: 3%;
   width: 30%;
@@ -645,7 +657,6 @@ body {
   box-shadow: 0px 0px 10px grey;
   border-radius: 16px;
   margin: 0 3%;
-  height: 100%;
 }
 
 @media screen and (max-width: 1200px) {
@@ -724,9 +735,9 @@ body {
 }
 
 .profile-container .profile_posts .profile_post .post-text .post-description {
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
   margin-left: 2%;
 }
 

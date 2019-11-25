@@ -10,20 +10,31 @@
 
         <div class="profileData">
             <img src="/default-user-male.svg" alt="">
-            <p>{{$user->name}}</p>
-            <p>Country: {{$user->country}}</p>
+            <div class="data-label">Name:
+                <p>{{$user->name}}</p>
+            </div>
+            <div class="data-label">Country:
+                <p>{{$user->country}}</p>
+            </div>
+            <div class="data-label">Description:
             <p>{{$user->description}}</p>
-            <p>Points: {{$user->points}}</p>
+        </div>
+            <div class="data-label">Points:
+            <p>{{$user->points}}</p>
+        </div>
             @if (Auth::user()->id == $user->id)
-            <p>Gender: 
+            <div class="data-label">Gender:
+            <p>
                 @if ($user->gender)
                     Male
                 @else
                     Female
                 @endif
             </p>
-            <p>Birthday: {{$user->b_day}}</p>
-            <p>Age: {{$user->age}}</p>
+        </div>
+            <div class="data-label">Birthday:
+            <p>{{$user->b_day}}</p>
+        </div>
             @endif
             
             @if (Auth::user()->id != $user->id)

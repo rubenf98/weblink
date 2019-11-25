@@ -10,8 +10,8 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        margin: 10% auto;
-        margin-top: 5%;
+        margin-top: 0;
+        margin-bottom: 10%;
 
         @media screen and (max-width: $l) {
             width: 100%;
@@ -26,11 +26,12 @@
             }
 
             .titleWC {
+                margin-top: 0;
                 font-weight: bold;
                 margin-bottom: 0;
                 font-size: 100px;
                 color: $custom-purple;
-                font-family: 'Alata', sans-serif;
+                font-family: 'Rancho', cursive;
 
                 @media screen and (max-width: $l) {
                     font-size: 75px;
@@ -43,7 +44,8 @@
             .textWC {
                 color: black;
                 font-size: 36px;
-                font-family: 'Alata', sans-serif;
+                font-family: 'Rancho', cursive;
+                margin-top: 5px;
 
                 @media screen and (max-width: $s) {
                     font-size: 26px;
@@ -157,15 +159,14 @@
 
     .animated-board{
         display: flex;
-        
+        justify-content: center;
         margin: 0 auto;
-        width: 80%;
+        width: 100%;
         margin-bottom: 2%;
         @media screen and (max-width:$m){
             display: block;
         }
         .animated-list{
-            width: 25%;
             min-width: 180px;
             list-style: none;
             margin: 0;
@@ -192,7 +193,7 @@
             
         }
         div{
-            width: 75%;
+            width: 70%;
             display: flex;
             justify-content: center;
             @media screen and (max-width:$m){
@@ -200,6 +201,7 @@
             }
             .img-class{
                 margin-top: 10px ;
+                width: 300px;
                 min-width: 300px;
                 display: none;
                 
