@@ -28,7 +28,7 @@
             </div>
             @else
             <div class="edit-profile">
-                <a href="http://"> Edit Profile <i class="fas fa-edit"></i></a>
+                <a href=""> Edit Profile <img src="/icons/pen-solid.svg" /></a>
             </div>
             @endif
             <div class="data-label">
@@ -38,10 +38,10 @@
                 <p>{{$user->description}}</p>
             </div>
             <div class="data-label">
-                <p> <i class="fas fa-map-marker-alt"></i> {{ $user->country }} </p>
+                <p> <img src="/icons/map-marker-alt-solid.svg"> {{ $user->country }} </p>
             </div>
             <div class="data-label">
-                <p><i class="fas fa-calendar-alt"></i>{{$user->b_day}}</p>
+                <p><img src="/icons/calendar-alt-solid.svg">{{$user->b_day}}</p>
             </div>
 
         </div>
@@ -53,11 +53,11 @@
             <div class="user-stats">
                 <div class="stat">
                     <p>12345<p>
-                            <i class="far fa-eye"></i> Views
+                            <img src="/icons/eye-solid.svg"> Views
                 </div>
                 <div class="stat">
                     <p>12345<p>
-                            <i class="far fa-heart"></i> Likes
+                            <img src="/icons/heart-regular.svg"> Likes
                 </div>
                 <div class="stat">
                     <p>12345<p>

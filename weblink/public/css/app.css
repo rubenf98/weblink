@@ -592,6 +592,10 @@ body {
   margin-bottom: 1%;
 }
 
+.profile-container .about .profile-data .data-label img {
+  height: 0.7em;
+}
+
 .profile-container .about .profile-data .contact-follow {
   display: -webkit-box;
   display: flex;
@@ -610,11 +614,14 @@ body {
 
 .profile-container .about .profile-data .edit-profile a:hover {
   cursor: pointer;
-  color: white;
+}
+
+.profile-container .about .profile-data .edit-profile a img {
+  height: 0.7em;
 }
 
 .profile-container .profile-posts {
-  width: 60%;
+  width: 70%;
   position: relative;
   overflow: auto;
 }
@@ -636,6 +643,10 @@ body {
   padding: 1% 0;
   margin: 0;
   text-align: center;
+}
+
+.profile-container .profile-posts .header-info .user-stats .stat img {
+  height: 0.7em;
 }
 
 .profile-container .profile-posts .header-info .user-stats .stat p {
