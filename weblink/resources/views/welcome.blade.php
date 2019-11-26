@@ -28,15 +28,15 @@
 
     <div class="shortcutSection">
         <div id="coding_div">
-            <img id="coding_img" src="/img_welcome/coding.svg" alt="">
+            <img id="coding_img" src="images/img_welcome/coding.svg" alt="">
             <p>Share and Learn knowledge</p>
         </div>
         <div id="idea_div">
-            <img id="idea_img" src="/img_welcome/light.svg" alt="">
+            <img id="idea_img" src="images//img_welcome/light.svg" alt="">
             <p>Find new ideas and inspiration</p>
         </div>
         <div id="connection_div">
-            <img id="connection_img" src="/img_welcome/connection.svg" alt="">
+            <img id="connection_img" src="images//img_welcome/connection.svg" alt="">
             <p>Interact with community</p>
         </div>
     </div>
@@ -65,10 +65,10 @@
         </div>
 
         <div class="animated-images">
-            <img class="img-class" id="img-1" src="img_welcome/animated-list-img/post.svg" alt="">
-            <img class="img-class" id="img-2" src="img_welcome/animated-list-img/profile.svg" alt="">
-            <img class="img-class" id="img-3" src="img_welcome/animated-list-img/learn.svg" alt="">
-            <img class="img-class" id="img-4" src="img_welcome/animated-list-img/grow.svg" alt="">
+            <img class="img-class" id="img-1" src="images/img_welcome/animated-list-img/post.svg" alt="">
+            <img class="img-class" id="img-2" src="images/img_welcome/animated-list-img/profile.svg" alt="">
+            <img class="img-class" id="img-3" src="images/img_welcome/animated-list-img/learn.svg" alt="">
+            <img class="img-class" id="img-4" src="images/img_welcome/animated-list-img/grow.svg" alt="">
         </div>
     </div>
 
