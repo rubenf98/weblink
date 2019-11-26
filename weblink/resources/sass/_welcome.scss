@@ -10,8 +10,7 @@
         align-items: center;
         flex-wrap: wrap;
         width: 100%;
-        margin-top: 0;
-        margin-bottom: 10%;
+        margin: 10% auto;
 
         @media screen and (max-width: $l) {
             width: 100%;
@@ -53,45 +52,49 @@
             }
             div {
                 width: 100%;
-                display: flex;
-                @media screen and (max-width: $l) {
-                    width: 50%;
-                    margin: 0 auto;
-                }
 
-                @media screen and (max-width: $m) {
+                .intro-btn {
+                    width: 120px;
                     text-align: center;
-                    justify-content: center;
-                    flex-direction: column;
+                    display: inline-block;
+                    text-decoration: none;
+                    font-size: 26px;
+                    font-family: "Alata", sans-serif;
+                    padding: 12px 36px;
+                    border-radius: 16px;
+                    cursor: pointer;
+
+                    @media screen and (max-width: $m) {
+                        width: 80px;
+                        font-size: 14px;
+                    }
+
+                    @media screen and (max-width: $s) {
+                        width: 40px;
+                        font-size: 12px;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                    &:hover {
+                        box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+                    }
                 }
-            }
-            .intro-btn {
-                width: 197px;
-                font-size: 26px;
-                font-family: "Alata", sans-serif;
-                padding: 12px 36px;
-                border-radius: 16px;
-                cursor: pointer;
-                &:focus {
-                    outline: none;
+                #posts-btn {
+                    margin-right: 10px;
+                    background-color: $custom-purple;
+                    color: white;
+                    border: 1px solid $custom-purple;
+                    @media screen and (max-width: $m) {
+                        margin-right: 0;
+                        margin-bottom: 10px;
+                    }
                 }
-                &:hover {
-                    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+                #start-btn {
+                    border: 1px solid $custom-purple;
+                    color: $custom-purple;
                 }
-            }
-            #posts-btn {
-                margin-right: 10px;
-                background-color: $custom-purple;
-                color: white;
-                border: 1px solid $custom-purple;
-                @media screen and (max-width: $m) {
-                    margin-right: 0;
-                    margin-bottom: 10px;
-                }
-            }
-            #start-btn {
-                border: 1px solid $custom-purple;
-                color: $custom-purple;
             }
         }
         .welcomeImage {
@@ -166,7 +169,7 @@
 
         @media screen and (max-width: $m) {
             display: block;
-            width: 95%;
+            width: 100%;
         }
 
         .animated-text {
@@ -210,15 +213,19 @@
             margin: 0 auto;
 
             @media screen and (max-width: $m) {
-                width: 60%;
-                min-width: 250px;
-                margin-top: 3%;
+                width: 90%;
+                margin: 10% auto;
             }
 
             .img-class {
                 height: 100%;
-                min-width: 300px;
+                min-width: 250px;
                 display: none;
+
+                @media screen and (max-width: $m) {
+                    width: 60%;
+                    height: auto;
+                }
             }
             #img-1 {
                 display: block;

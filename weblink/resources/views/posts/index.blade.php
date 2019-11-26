@@ -4,6 +4,13 @@
 @include('layout.button')
 
 <div class="posts-container">
+    <div class="search-container">
+        <form action="" method="get">
+            <input type="text" placeholder="What are you looking for?" name="post">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+
     <div class="posts">
         @foreach ($posts as $post)
 

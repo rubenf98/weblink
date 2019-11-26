@@ -3,6 +3,52 @@
     width: 100%;
     margin-top: 5%;
 
+    .search-container {
+        margin: auto;
+        display: block;
+        border: 2px solid red;
+
+        form {
+            display: block;
+            margin: auto;
+            width: 50%;
+            input[type="text"] {
+                width: 30%;
+                font-size: 14px;
+                color: #444;
+                border: none;
+                background-color: white;
+                padding: 15px 15px;
+                margin: auto;
+                display: inline-block;
+                margin-right: 0;
+                box-shadow: 0px 0px 8px lightgray;
+                transition: 0.5s ease;
+                border-bottom-left-radius: 15px;
+                border-top-left-radius: 15px;
+
+                @media screen and (max-width: $xs) {
+                    width: 90%;
+                }
+            }
+
+            button {
+                display: inline;
+                margin-left: -5px;
+                padding: 15px 15px;
+                background-color: white;
+                border: none;
+                cursor: pointer;
+                border-bottom-right-radius: 15px;
+                border-top-right-radius: 15px;
+
+                &:hover {
+                    background-color: white;
+                }
+            }
+        }
+    }
+
     .posts {
         width: 70%;
         display: flex;
