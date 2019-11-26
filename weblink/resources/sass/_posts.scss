@@ -6,44 +6,85 @@
     .search-container {
         margin: auto;
         display: block;
-        border: 2px solid red;
+        margin-bottom: 5%;
 
         form {
-            display: block;
+            width: 40%;
             margin: auto;
-            width: 50%;
-            input[type="text"] {
-                width: 30%;
-                font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+
+            .search-input {
+                width: 60%;
+                font-size: 16px;
                 color: #444;
                 border: none;
                 background-color: white;
                 padding: 15px 15px;
-                margin: auto;
-                display: inline-block;
                 margin-right: 0;
-                box-shadow: 0px 0px 8px lightgray;
                 transition: 0.5s ease;
-                border-bottom-left-radius: 15px;
-                border-top-left-radius: 15px;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                background: white url("icons/search.svg") no-repeat scroll;
+                background-position: 2% center;
+                background-size: auto 50%;
+                padding-left: 50px;
 
                 @media screen and (max-width: $xs) {
                     width: 90%;
                 }
+
+                &:focus {
+                    border: 1px solid #555;
+                }
             }
 
-            button {
-                display: inline;
-                margin-left: -5px;
-                padding: 15px 15px;
-                background-color: white;
+            .search-select {
+                text-align: center;
+                width: 30%;
+                font-size: 16px;
+                color: #444;
                 border: none;
+                border-left: 1px solid lightgray;
+                background-color: white;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
                 cursor: pointer;
-                border-bottom-right-radius: 15px;
-                border-top-right-radius: 15px;
+
+                &:after {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 50px;
+                    height: 100%;
+                    line-height: 38px;
+                    content: "\2228";
+                    text-align: center;
+                    color: #714bb9;
+                    font-size: 24px;
+                    border-left: 1px solid #3c1c78;
+                    z-index: -1;
+                }
+
+                &:focus {
+                    border: 1px solid #555;
+                }
+            }
+
+            .search-submit {
+                width: 15%;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                font-size: 16px;
+                color: white;
+                border: none;
+                background-color: $custom-purple;
+                cursor: pointer;
+                transition: 0.5s ease;
 
                 &:hover {
-                    background-color: white;
+                    background-color: darken($custom-purple, 20%);
                 }
             }
         }

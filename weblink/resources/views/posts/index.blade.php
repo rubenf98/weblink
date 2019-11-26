@@ -6,8 +6,16 @@
 <div class="posts-container">
     <div class="search-container">
         <form action="" method="get">
-            <input type="text" placeholder="What are you looking for?" name="post">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <input class="search-input" type="text" placeholder="What are you looking for?" name="post">
+
+            <select class="search-select">
+                <option value="volvo">New</option>
+                <option value="saab">Hot</option>
+                <option value="mercedes">Rising</option>
+                <option value="audi">Best</option>
+            </select>
+
+            <input class="search-submit" type="submit" value="Post">
         </form>
     </div>
 
