@@ -1,61 +1,89 @@
 @extends('layout')
 
 @section('content')
+<div class="banner-container">
+</div>
 <div class="profile-container">
+
     <div class="about">
         @if (Auth::user()->id==$user->id)
         <!-- Botão editar perfil -->
         @endif
-        <img src="/default-user-male.svg" alt="">
-        <div class="profileData">
-
-            <div class="data-label">Name <p>{{$user->name}}</p>
-            </div>
-            <div class="data-label">Country:
-                <p>{{$user->country}}</p>
-            </div>
-            <div class="data-label">Description:
-                <p>{{$user->description}}</p>
-            </div>
-            <div class="data-label">Points:
-                <p>{{$user->points}}</p>
-            </div>
-            @if (Auth::user()->id == $user->id)
-            <div class="data-label">Gender:
+        <div class="profile-img-container">
+            <div class="data-label">
                 <p>
                     @if ($user->gender)
-                    Male
+                    <img src="/default-user-male.svg" alt="">
                     @else
-                    Female
+                    <img src="/default-user-female.svg" alt="">
                     @endif
                 </p>
             </div>
-            <div class="data-label">Birthday:
-                <p>{{$user->b_day}}</p>
-            </div>
-            @endif
-
+        </div>
+        <div class="profile-data">
             @if (Auth::user()->id != $user->id)
-            <div class="contact_follow">
-                <button>Follow</button>
-                <button>Contact</button>
+            <div class="contact-follow">
+                <button class="visiter-btn">Follow</button>
+                <button class="visiter-btn">Contact</button>
+            </div>
+            @else
+            <div class="edit-profile">
+                <a href="http://"> Edit Profile <i class="fas fa-edit"></i></a>
             </div>
             @endif
+            <div class="data-label">
+                <p id="name">{{$user->name}}</p>
+            </div>
+            <div class="data-label">
+                <p>{{$user->description}}</p>
+            </div>
+            <div class="data-label">
+                <p> <i class="fas fa-map-marker-alt"></i> {{ $user->country }} </p>
+            </div>
+            <div class="data-label">
+                <p><i class="fas fa-calendar-alt"></i>{{$user->b_day}}</p>
+            </div>
+
         </div>
     </div>
-    <div class="profile_posts">
-        <h1>Activity</h1>
-        <hr>
-        <div class="profile_posts_section">
+
+
+    <div class="profile-posts">
+        <div class="header-info">
+            <div class="user-stats">
+                <div class="stat">
+                    <p>12345<p>
+                            <i class="far fa-eye"></i> Views
+                </div>
+                <div class="stat">
+                    <p>12345<p>
+                            <i class="far fa-heart"></i> Likes
+                </div>
+                <div class="stat">
+                    <p>12345<p>
+                            <i class="far fa-follow"></i> Following
+                </div>
+                <div class="stat">
+                    <p>12345<p>
+                            <i class="far fa-follow"></i> Followers
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-posts-section">
             @forelse ($user->post as $post)
 
             <a href="/post/{{$post->id}}">
                 <div class="profile_post">
+                    <div class="post-text">
+                        <div class="post-title">
+                            <h1>{{$post->title}}</h1>
+                        </div>
+                    </div>
                     <div class="post-img-container">
                         <img src={{$post->image}} alt="">
                     </div>
                     <div class="post-text">
-                        <div class="post-title"> {{$post->title}}</div>
                         <div class="post-description">{{$post->description}}</div>
                         <div class="post-date">{{$post->created_at->toFormattedDateString()}}</div>
                         <div class="post-stats">
