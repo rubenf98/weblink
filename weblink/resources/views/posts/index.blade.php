@@ -5,8 +5,21 @@
 
 <div class="posts-container">
     <div class="search-container">
-        <form action="" method="get">
+        <form class="search-form" action="" method="get">
             <input class="search-input" type="text" placeholder="What are you looking for?" name="post">
+
+
+
+            <input class="search-submit" type="submit" value="Search">
+
+
+        </form>
+
+
+    </div>
+
+    <div class="posts">
+        <form class="order-form" action="" method="get">
 
             <select class="search-select">
                 <option value="volvo">New</option>
@@ -14,12 +27,7 @@
                 <option value="mercedes">Rising</option>
                 <option value="audi">Best</option>
             </select>
-
-            <input class="search-submit" type="submit" value="Post">
         </form>
-    </div>
-
-    <div class="posts">
         @foreach ($posts as $post)
 
         <div class="card" onclick="window.location.href='/post/{{$post->id}}'">
@@ -32,7 +40,7 @@
 
             <div class="card-text">
                 <h2>{{$post->title}}</h2>
-                <span class="date">{{$post->user->name}}: </span>
+                <span class="name">{{$post->user->name}}</span>
                 <span class="date">{{$post->created_at->diffForHumans()}}</span>
 
             </div>

@@ -28,9 +28,8 @@
                 margin-top: 0;
                 font-weight: bold;
                 margin-bottom: 0;
-                font-size: 100px;
+                font-size: 86px;
                 color: $custom-purple;
-                font-family: "Rancho", cursive;
 
                 @media screen and (max-width: $l) {
                     font-size: 75px;
@@ -42,8 +41,7 @@
 
             .textWC {
                 color: black;
-                font-size: 36px;
-                font-family: "Rancho", cursive;
+                font-size: 30px;
                 margin-top: 5px;
 
                 @media screen and (max-width: $s) {
@@ -59,7 +57,6 @@
                     display: inline-block;
                     text-decoration: none;
                     font-size: 26px;
-                    font-family: "Alata", sans-serif;
                     padding: 12px 36px;
                     border-radius: 16px;
                     cursor: pointer;
@@ -218,7 +215,8 @@
             }
 
             .img-class {
-                height: 100%;
+                width: 100%;
+                max-height: 320px;
                 min-width: 250px;
                 display: none;
 

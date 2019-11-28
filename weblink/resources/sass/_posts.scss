@@ -8,11 +8,11 @@
         display: block;
         margin-bottom: 5%;
 
-        form {
+        .search-form {
             width: 40%;
             margin: auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
 
             .search-input {
                 width: 60%;
@@ -98,6 +98,14 @@
         flex-wrap: wrap;
         margin: auto;
 
+        .order-form {
+            display: block;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 5%;
+        }
+
         .card {
             display: grid;
             grid-template-columns: 300px;
@@ -112,8 +120,14 @@
             margin: 2%;
             transform: scale(1.005);
 
+            @media screen and (max-width: $m) {
+                margin: 5% auto;
+            }
+
             @media screen and (max-width: $s) {
                 grid-template-columns: 250px;
+                grid-template-rows: 170px 120px 40px 50px;
+                margin: 10% auto;
             }
 
             &:hover {
@@ -135,18 +149,27 @@
                 margin: 25px;
 
                 .date {
-                    font-size: 13px;
+                    color: grey;
+                    font-size: 11px;
                 }
 
-                p {
+                .name {
                     color: grey;
                     font-size: 15px;
-                    font-weight: 300;
+                    font-weight: bold;
+                }
+
+                span {
+                    margin: 0 auto;
+                    display: block;
                 }
 
                 h2 {
-                    margin-top: 0px;
+                    margin: 3px auto;
                     font-size: 28px;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                 }
             }
 
@@ -211,6 +234,10 @@
         align-content: center;
         margin: 5% auto;
         margin-top: 2%;
+
+        @media screen and (max-width: $s) {
+            margin: 10% auto;
+        }
 
         ul {
             display: inline-block;
