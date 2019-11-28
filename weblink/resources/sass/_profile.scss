@@ -34,6 +34,9 @@
                     font-size: 2rem;
                     margin-bottom: 1%;
                 }
+                img {
+                    height: 0.7em;
+                }
             }
             .contact-follow {
                 display: flex;
@@ -50,14 +53,16 @@
                     }
                     &:hover {
                         cursor: pointer;
-                        color: white;
+                    }
+                    img {
+                        height: 0.7em;
                     }
                 }
             }
         }
     }
     .profile-posts {
-        width: 60%;
+        width: 70%;
         position: relative;
         overflow: auto;
         .header-info {
@@ -70,6 +75,9 @@
                 justify-content: space-around;
                 .stat {
                     padding: 1% 0;
+                    img {
+                        height: 0.7em;
+                    }
                     p {
                         margin: 0;
                         font-weight: bold;
