@@ -4,49 +4,92 @@
 <div class="banner-container">
 </div>
 <div class="profile-container">
-
-    <div class="about">
-        @if (Auth::user()->id==$user->id)
-        <!-- Botão editar perfil -->
-        @endif
-        <div class="profile-img-container">
-            <div class="data-label">
-                <p>
-                    @if ($user->gender)
-                    <img src="/default-user-male.svg" alt="">
-                    @else
-                    <img src="/default-user-female.svg" alt="">
-                    @endif
-                </p>
-            </div>
-        </div>
-        <div class="profile-data">
-            @if (Auth::user()->id != $user->id)
-            <div class="contact-follow">
-                <button class="visiter-btn">Follow</button>
-                <button class="visiter-btn">Contact</button>
-            </div>
-            @else
-            <div class="edit-profile">
-                <a href=""> Edit Profile <img src="/icons/pen-solid.svg" /></a>
-            </div>
+    <div class="about-show">
+        <div class="about">
+            @if (Auth::user()->id==$user->id)
+            <!-- Botão editar perfil -->
             @endif
-            <div class="data-label">
-                <p id="name">{{$user->name}}</p>
+            <div class="profile-img-container">
+                <div class="data-label">
+                    <p>
+                        @if ($user->gender)
+                        <img src="/default-user-male.svg" alt="">
+                        @else
+                        <img src="/default-user-female.svg" alt="">
+                        @endif
+                    </p>
+                </div>
             </div>
-            <div class="data-label">
-                <p>{{$user->description}}</p>
-            </div>
-            <div class="data-label">
-                <p> <img src="/icons/map-marker-alt-solid.svg"> {{ $user->country }} </p>
-            </div>
-            <div class="data-label">
-                <p><img src="/icons/calendar-alt-solid.svg">{{$user->b_day}}</p>
-            </div>
+            <div class="profile-data">
+                @if (Auth::user()->id != $user->id)
+                <div class="contact-follow">
+                    <button class="visiter-btn">Follow</button>
+                    <button class="visiter-btn">Contact</button>
+                </div>
+                @else
+                <div class="edit-profile">
+                    <p id='edit-profile-btn'> Edit Profile <img src="/icons/pen-solid.svg" /></p>
+                </div>
+                @endif
+                <div class="data-label">
+                    <p id="name">{{$user->name}}</p>
+                </div>
+                <div class="data-label">
+                    <p>{{$user->description}}</p>
+                </div>
+                <div class="data-label">
+                    <p> <img src="/icons/map-marker-alt-solid.svg"> {{ $user->country }} </p>
+                </div>
+                <div class="data-label">
+                    <p><img src="/icons/calendar-alt-solid.svg">{{$user->b_day}}</p>
+                </div>
 
+            </div>
         </div>
     </div>
+    <div class="about-form">
+        <div class="about">
+            @if (Auth::user()->id==$user->id)
+            <!-- Botão editar perfil -->
+            @endif
+            <div class="profile-img-container">
+                <div class="data-label">
+                    <p>
+                        @if ($user->gender)
+                        <img src="/default-user-male.svg" alt="">
+                        @else
+                        <img src="/default-user-female.svg" alt="">
+                        @endif
+                    </p>
+                </div>
+            </div>
+            <div class="profile-data">
+                @if (Auth::user()->id != $user->id)
+                <div class="contact-follow">
+                    <button class="visiter-btn">Follow</button>
+                    <button class="visiter-btn">Contact</button>
+                </div>
+                @else
+                <div class="edit-profile">
+                    <p> Edit Profile <img src="/icons/pen-solid.svg" /></p>
+                </div>
+                @endif
+                <div class="data-label">
+                    <p id="name">{{$user->name}}</p>
+                </div>
+                <div class="data-label">
+                    <p>{{$user->description}}</p>
+                </div>
+                <div class="data-label">
+                    <p> <img src="/icons/map-marker-alt-solid.svg"> {{ $user->country }} </p>
+                </div>
+                <div class="data-label">
+                    <p><img src="/icons/calendar-alt-solid.svg">{{$user->b_day}}</p>
+                </div>
 
+            </div>
+        </div>
+    </div>
 
     <div class="profile-posts">
         <div class="header-info">
@@ -132,4 +175,7 @@
         </div>
     </div>
 </div>
+
+<script src="/js/user.js"></script>
+
 @endsection

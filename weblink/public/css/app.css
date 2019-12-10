@@ -548,6 +548,10 @@ body {
           justify-content: space-between;
 }
 
+.profile-container .about-form {
+  display: none;
+}
+
 .profile-container .about {
   position: fixed;
   width: 30%;
@@ -594,25 +598,25 @@ body {
           justify-content: space-evenly;
 }
 
-.profile-container .about .profile-data .edit-profile a {
+.profile-container .about .profile-data .edit-profile p {
   color: rgba(0, 0, 0, 0.404);
   text-decoration: none;
 }
 
-.profile-container .about .profile-data .edit-profile a:visited {
+.profile-container .about .profile-data .edit-profile p:visited {
   text-decoration: none;
 }
 
-.profile-container .about .profile-data .edit-profile a:hover {
+.profile-container .about .profile-data .edit-profile p:hover {
   cursor: pointer;
 }
 
-.profile-container .about .profile-data .edit-profile a img {
+.profile-container .about .profile-data .edit-profile p img {
   height: 0.7em;
 }
 
 .profile-container .profile-posts {
-  margin-left: 30%;
+  margin-left: 40%;
   width: 70%;
   position: relative;
   overflow: auto;
