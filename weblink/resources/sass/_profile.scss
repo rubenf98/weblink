@@ -3,6 +3,11 @@
     margin: 0 auto;
     width: 90%;
     justify-content: space-between;
+    .about-show {
+    }
+    .about-form {
+        display: none;
+    }
     .about {
         position: fixed;
 
@@ -42,7 +47,7 @@
                 }
             }
             .edit-profile {
-                a {
+                p {
                     color: rgba(0, 0, 0, 0.404);
                     text-decoration: none;
                     &:visited {
@@ -59,7 +64,7 @@
         }
     }
     .profile-posts {
-        margin-left: 30%;
+        margin-left: 40%;
         width: 70%;
         position: relative;
         overflow: auto;
