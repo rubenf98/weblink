@@ -95,8 +95,6 @@
                 
                 data.data.forEach(function (arrayItem) {
 
-                    console.log(arrayItem.name)
-
                     $(document).ready(function () {
                         $(".chosen-select").chosen({width: "80%", no_results_text: "Oops, nothing found!", max_selected_options: 3});
                         $('.chosen-select').append("<option value='"+arrayItem.name+"'>"+arrayItem.name+"</option>");

@@ -7,12 +7,20 @@
         margin: auto;
         display: block;
         margin-bottom: 5%;
+        text-align: center;
+
+        .reset-button {
+            color: #444;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
         .search-form {
             width: 40%;
             margin: auto;
             display: flex;
             justify-content: center;
+            margin-bottom: 10px;
 
             .search-input {
                 width: 60%;
@@ -30,41 +38,13 @@
                 background-size: auto 50%;
                 padding-left: 50px;
 
+                @media screen and (max-width: $m) {
+                    width: 80%;
+                }
+
                 @media screen and (max-width: $xs) {
                     width: 90%;
-                }
-
-                &:focus {
-                    border: 1px solid #555;
-                }
-            }
-
-            .search-select {
-                text-align: center;
-                width: 30%;
-                font-size: 16px;
-                color: #444;
-                border: none;
-                border-left: 1px solid lightgray;
-                background-color: white;
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                cursor: pointer;
-
-                &:after {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    width: 50px;
-                    height: 100%;
-                    line-height: 38px;
-                    content: "\2228";
-                    text-align: center;
-                    color: #714bb9;
-                    font-size: 24px;
-                    border-left: 1px solid #3c1c78;
-                    z-index: -1;
+                    background-position: 5% center;
                 }
 
                 &:focus {
@@ -73,7 +53,6 @@
             }
 
             .search-submit {
-                width: 15%;
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
                 font-size: 16px;
@@ -92,135 +71,177 @@
 
     .posts {
         width: 70%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-wrap: wrap;
         margin: auto;
 
-        .order-form {
-            display: block;
+        @media screen and (max-width: $s) {
             width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            margin-right: 5%;
+            margin-top: 15%;
         }
 
-        .card {
-            display: grid;
-            grid-template-columns: 300px;
-            grid-template-rows: 220px 120px 40px 60px;
-            grid-template-areas: "image" "text" "tags" "stats";
-            border-radius: 18px;
-            background: white;
-            box-shadow: 0px 0px 5px grey;
-            text-align: center;
-            transition: 0.2s ease;
-            cursor: pointer;
-            margin: 2%;
-            transform: scale(1.005);
+        .order-form {
+            margin: 0 2%;
+            display: block;
+            display: flex;
+            justify-content: space-around;
 
-            @media screen and (max-width: $m) {
-                margin: 5% auto;
-            }
+            .filler {
+                width: 34%;
 
-            @media screen and (max-width: $s) {
-                grid-template-columns: 250px;
-                grid-template-rows: 170px 120px 40px 50px;
-                margin: 10% auto;
-            }
-
-            &:hover {
-                transform: scale(1);
-                box-shadow: 0px 0px 3px grey;
-            }
-
-            .card-image {
-                grid-area: image;
-                background: var(--background);
-                border-top-left-radius: 15px;
-                border-top-right-radius: 15px;
-                background-size: cover;
-                background-position: center;
-            }
-
-            .card-text {
-                grid-area: text;
-                margin: 25px;
-
-                .date {
-                    color: grey;
-                    font-size: 11px;
-                }
-
-                .name {
-                    color: grey;
-                    font-size: 15px;
-                    font-weight: bold;
-                }
-
-                span {
-                    margin: 0 auto;
-                    display: block;
-                }
-
-                h2 {
-                    margin: 3px auto;
-                    font-size: 28px;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
+                @media screen and (max-width: $m) {
+                    display: none;
                 }
             }
 
-            .card-tags {
-                grid-area: tags;
-                display: flex;
+            @media screen and (max-width: $l) {
+                margin: auto;
                 justify-content: center;
-
-                .tag {
-                    font-weight: bold;
-                    color: gray;
-                    font-size: 12px;
-                    margin: auto 10px;
-                }
             }
 
-            .card-stats {
-                grid-area: stats;
+            .search-select {
+                font-family: Arial, FontAwesome;
+                width: 150px;
+                font-size: 18px;
+                font-weight: bold;
+                color: white;
+                border-radius: 16px;
+                border: none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                padding: 10px 10px;
+                cursor: pointer;
+                background: $custom-purple url("/icons/sort-down.svg") 90% / 10%
+                    no-repeat;
+
+                &:focus {
+                    border: 1px solid #555;
+                }
+            }
+        }
+
+        .post {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: auto;
+
+            .card {
                 display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: 1fr;
-                border-bottom-left-radius: 15px;
-                border-bottom-right-radius: 15px;
-                background-image: linear-gradient(
-                    to bottom right,
-                    $custom-purple,
-                    $logoColor
-                );
+                grid-template-columns: 300px;
+                grid-template-rows: 220px 120px 40px 60px;
+                grid-template-areas: "image" "text" "tags" "stats";
+                border-radius: 18px;
+                background: white;
+                box-shadow: 0px 0px 5px grey;
+                text-align: center;
+                transition: 0.2s ease;
+                cursor: pointer;
+                margin: 2%;
+                transform: scale(1.005);
 
-                .icon {
-                    height: 20px;
+                @media screen and (max-width: $l) {
+                    margin: 5% auto;
+                }
 
-                    @media screen and (max-width: $s) {
-                        height: 15px;
+                @media screen and (max-width: $s) {
+                    grid-template-columns: 250px;
+                    grid-template-rows: 170px 120px 40px 50px;
+                    margin: 10% auto;
+                }
+
+                &:hover {
+                    transform: scale(1);
+                    box-shadow: 0px 0px 3px grey;
+                }
+
+                .card-image {
+                    grid-area: image;
+                    background: var(--background);
+                    border-top-left-radius: 15px;
+                    border-top-right-radius: 15px;
+                    background-size: cover;
+                    background-position: center;
+                }
+
+                .card-text {
+                    grid-area: text;
+                    margin: 25px;
+
+                    .date {
+                        color: grey;
+                        font-size: 11px;
+                    }
+
+                    .name {
+                        color: grey;
+                        font-size: 15px;
+                        font-weight: bold;
+                    }
+
+                    span {
+                        margin: 0 auto;
+                        display: block;
+                    }
+
+                    h2 {
+                        margin: 3px auto;
+                        font-size: 28px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
                     }
                 }
 
-                .stat {
+                .card-tags {
+                    grid-area: tags;
                     display: flex;
-                    align-items: center;
                     justify-content: center;
-                    flex-direction: column;
-                    padding: 10px;
-                    color: white;
 
-                    .value {
-                        font-size: 24px;
-                        font-weight: 500;
+                    .tag {
+                        font-weight: bold;
+                        color: gray;
+                        font-size: 12px;
+                        margin: auto 10px;
+                    }
+                }
+
+                .card-stats {
+                    grid-area: stats;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    grid-template-rows: 1fr;
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px;
+                    background-image: linear-gradient(
+                        to bottom right,
+                        $custom-purple,
+                        $logoColor
+                    );
+
+                    .icon {
+                        height: 20px;
 
                         @media screen and (max-width: $s) {
-                            font-size: 18px;
+                            height: 15px;
+                        }
+                    }
+
+                    .stat {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        padding: 10px;
+                        color: white;
+
+                        .value {
+                            font-size: 24px;
+                            font-weight: 500;
+
+                            @media screen and (max-width: $s) {
+                                font-size: 18px;
+                            }
                         }
                     }
                 }

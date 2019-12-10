@@ -21,6 +21,7 @@ class PostsResource extends JsonResource
             'favorites' => $this->favorites,
             'views' => $this->views,
             'likes' => $this->likes,
+            'score' => $this->score,
             'is_liked' => $this->is_liked,
             'user' => $this->user,
             'image' => $this->image,

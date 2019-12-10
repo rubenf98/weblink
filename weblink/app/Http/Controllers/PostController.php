@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PostResource;
 use App\Http\Resources\PostsResource;
+use App\QueryFilters\PostFilters;
+
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Facades\Image as IMG;
 use Auth;
@@ -19,10 +21,16 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //return PostsResource::collection(Post::paginate(9));
-        return view('posts.index')->with('posts', PostsResource::collection(Post::latest()->paginate(9)));
+        $filters = PostFilters::hydrate($request->query());
+
+        $ordered_query = Post::order($filters, $request->order);
+
+
+
+        //return PostsResource::collection($ordered_query);
+        return view('posts.index')->with('posts', PostsResource::collection($ordered_query));
     }
 
     /**
