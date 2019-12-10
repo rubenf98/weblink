@@ -32,7 +32,7 @@
     </div>
 
     <div class="content">@yield('content')
-        
+
     </div>
 
     @include('posts.create')
@@ -57,7 +57,7 @@
     
     // When the user clicks the button, open the modal 
     btn.onclick = function() {
-         .style.display = "block";
+        modal.style.display = "block";
     }
     
     // When the user clicks on <span> (x), close the modal
