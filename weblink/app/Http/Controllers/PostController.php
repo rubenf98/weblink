@@ -23,6 +23,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
+        
         $filters = PostFilters::hydrate($request->query());
 
         $ordered_query = Post::order($filters, $request->order);
