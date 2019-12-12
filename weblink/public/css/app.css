@@ -569,6 +569,10 @@ body {
   width: 60%;
 }
 
+.profile-container .about .profile-data {
+  width: 100%;
+}
+
 .profile-container .about .profile-data .data-label {
   margin: 1% 0;
   display: -webkit-box;
@@ -598,7 +602,16 @@ body {
           justify-content: space-evenly;
 }
 
+.profile-container .about .profile-data .edit-profile {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
 .profile-container .about .profile-data .edit-profile p {
+  margin: 0;
+  margin-right: 0.5rem;
   color: rgba(0, 0, 0, 0.404);
   text-decoration: none;
 }
@@ -611,8 +624,58 @@ body {
   cursor: pointer;
 }
 
-.profile-container .about .profile-data .edit-profile p img {
-  height: 0.7em;
+.profile-container .about .profile-data .edit-profile img {
+  -webkit-box-pack: center;
+          justify-content: center;
+  height: 0.9rem;
+  margin-right: 0.2rem;
+}
+
+.profile-container .about .profile-data .edit-profile img:visited {
+  text-decoration: none;
+}
+
+.profile-container .about .profile-data .edit-profile img:hover {
+  cursor: pointer;
+}
+
+.profile-container .about .profile-data .form-label {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+}
+
+.profile-container .about .profile-data .form-label input {
+  outline: none;
+  width: 100%;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.profile-container .about .profile-data .form-label input:focus {
+  border: 0;
+}
+
+.profile-container .about .profile-data .form-label textarea {
+  outline: none;
+  width: 100%;
+  resize: none;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.profile-container .about .profile-data .form-label input[type=file] {
+  display: none;
+}
+
+.profile-container .about .profile-data .show-data {
+  display: none;
+}
+
+.profile-container .about .profile-data .form-data {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
 }
 
 .profile-container .profile-posts {

@@ -4,33 +4,34 @@
 <div class="banner-container">
 </div>
 <div class="profile-container">
-    <div class="about-show">
-        <div class="about">
-            @if (Auth::user()->id==$user->id)
-            <!-- Botão editar perfil -->
-            @endif
-            <div class="profile-img-container">
-                <div class="data-label">
-                    <p>
-                        @if ($user->gender)
-                        <img src="/default-user-male.svg" alt="">
-                        @else
-                        <img src="/default-user-female.svg" alt="">
-                        @endif
-                    </p>
-                </div>
+    <div class="about">
+        @if (Auth::user()->id==$user->id)
+        <!-- Botão editar perfil -->
+        @endif
+        <div class="profile-img-container">
+            <div class="data-label">
+                <p>
+                    @if ($user->gender)
+                    <img id="prof-img" src="/default-user-male.svg" alt="">
+                    @else
+                    <img id="prof-img" src="/default-user-female.svg" alt="">
+                    @endif
+                </p>
             </div>
-            <div class="profile-data">
-                @if (Auth::user()->id != $user->id)
-                <div class="contact-follow">
-                    <button class="visiter-btn">Follow</button>
-                    <button class="visiter-btn">Contact</button>
-                </div>
-                @else
-                <div class="edit-profile">
-                    <p id='edit-profile-btn'> Edit Profile <img src="/icons/pen-solid.svg" /></p>
-                </div>
-                @endif
+        </div>
+        <div class="profile-data">
+            @if (Auth::user()->id != $user->id)
+            <div class="contact-follow">
+                <button class="visiter-btn">Follow</button>
+                <button class="visiter-btn">Contact</button>
+            </div>
+            @else
+            <div class="show-data edit-profile ">
+                <p id='edit-profile-btn'> Edit Profile </p>
+                <img src="/icons/pen-solid.svg" />
+            </div>
+            @endif
+            <div class="show-data">
                 <div class="data-label">
                     <p id="name">{{$user->name}}</p>
                 </div>
@@ -43,53 +44,40 @@
                 <div class="data-label">
                     <p><img src="/icons/calendar-alt-solid.svg">{{$user->b_day}}</p>
                 </div>
+            </div>
+            <div class="form-data">
+                <form action="" method="post">
+                    <div class="form-label edit-profile" id="img-form">
+                        <label for="file">
+                            <div class="edit-profile ">
+                                <p id='edit-profile-btn'> Change picture</p>
+                                <img src="/icons/image-icon.svg" />
+                            </div>
+                        </label>
+                        <input type="file" id="file" accept="image/*" onchange="change(this.value)">
+                    </div>
+                    <div class="form-label">
+                        <input type="text" name="name" value="{{ $user->name }}" placeholder="Name">
+                    </div>
+                    <div class="form-label">
+                        <textarea type="textarea" name="description" id="textarea"
+                            placeholder="Description">{{ $user->description }}</textarea>
+                    </div>
+                    <div class="form-label">
+                        <input type="text" name="country" value="{{ $user->country }}" placeholder="Country">
+                    </div>
+                    <div class="form-label">
+                        <input type="text" name="bb" value="{{ $user->b_day }}" placeholder="Birthday">
+                    </div>
 
+                </form>
             </div>
-        </div>
-    </div>
-    <div class="about-form">
-        <div class="about">
-            @if (Auth::user()->id==$user->id)
-            <!-- Botão editar perfil -->
-            @endif
-            <div class="profile-img-container">
-                <div class="data-label">
-                    <p>
-                        @if ($user->gender)
-                        <img src="/default-user-male.svg" alt="">
-                        @else
-                        <img src="/default-user-female.svg" alt="">
-                        @endif
-                    </p>
-                </div>
-            </div>
-            <div class="profile-data">
-                @if (Auth::user()->id != $user->id)
-                <div class="contact-follow">
-                    <button class="visiter-btn">Follow</button>
-                    <button class="visiter-btn">Contact</button>
-                </div>
-                @else
-                <div class="edit-profile">
-                    <p> Edit Profile <img src="/icons/pen-solid.svg" /></p>
-                </div>
-                @endif
-                <div class="data-label">
-                    <p id="name">{{$user->name}}</p>
-                </div>
-                <div class="data-label">
-                    <p>{{$user->description}}</p>
-                </div>
-                <div class="data-label">
-                    <p> <img src="/icons/map-marker-alt-solid.svg"> {{ $user->country }} </p>
-                </div>
-                <div class="data-label">
-                    <p><img src="/icons/calendar-alt-solid.svg">{{$user->b_day}}</p>
-                </div>
 
-            </div>
         </div>
+
     </div>
+
+
 
     <div class="profile-posts">
         <div class="header-info">
@@ -131,7 +119,8 @@
                         <div class="post-date">{{$post->created_at->toFormattedDateString()}}</div>
                         <div class="post-stats">
                             <div class="stats-item"><i class="far fa-eye"></i> {{$post->views}} Views</div>
-                            <div class="stats-item"><i class="far fa-heart"></i> {{$post->likes->count()}} Likes</div>
+                            <div class="stats-item"><i class="far fa-heart"></i> {{$post->likes->count()}} Likes
+                            </div>
                         </div>
 
                     </div>
