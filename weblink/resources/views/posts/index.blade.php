@@ -11,6 +11,7 @@
 
             @if (Request::get('order'))
             <input type="hidden" name="order" value="<?php echo htmlspecialchars(Request::get('order')); ?>">
+            <input id="tech" type="hidden" name="tech">
             @endif
 
             <input class="search-submit" type="submit" value="Search">
@@ -100,9 +101,11 @@
 
         var search = url.searchParams.get("search");
         var order = url.searchParams.get("order");
+        var tech = url.searchParams.get("tech");
 
         search && $("#search").val(search); //Set search input
         order ? $("#sort").val(order) : $("#sort").val('hot'); //Set order input with value or default
+        tech && $("#tech").val(tech); //Set tech input
     });
 </script>
 

@@ -1784,3 +1784,154 @@ body {
   margin: 5% auto;
 }
 
+.tags-container {
+  width: 100%;
+}
+
+.tags-container .header {
+  height: 400px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#a217ff), to(transparent));
+  background-image: linear-gradient(#a217ff, transparent);
+  text-align: center;
+  color: white;
+}
+
+.tags-container .header h1 {
+  font-weight: bold;
+  margin: 0;
+  padding-top: 3%;
+  font-size: 3.5rem;
+}
+
+.tags-container .header p {
+  margin: 0;
+  margin-bottom: 2%;
+  font-size: 1.5rem;
+}
+
+.tags-container .header .button {
+  border-style: none;
+  background-color: #a217ff;
+  display: block;
+  font-weight: bold;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  margin: auto;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.tags-container .header .button:hover {
+  background-color: #6900b0;
+}
+
+.tags-container .tag-container {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  flex-wrap: wrap;
+  margin-top: 2%;
+}
+
+@media screen and (max-width: 1200px) {
+  .tags-container .tag-container {
+    width: 90%;
+  }
+}
+
+.tags-container .tag-container .tag {
+  background: #0a0a0c;
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  width: 23%;
+  min-width: 350px;
+  margin: 1% auto;
+}
+
+@media screen and (max-width: 1600px) {
+  .tags-container .tag-container .tag {
+    min-width: 300px;
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .tags-container .tag-container .tag {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .tags-container .tag-container .tag {
+    min-width: 0;
+    width: 100%;
+    margin: 3% auto;
+  }
+}
+
+.tags-container .tag-container .tag:hover {
+  background: #3f4267;
+}
+
+.tags-container .tag-container .tag:hover .tag-image {
+  background: #383a57;
+}
+
+.tags-container .tag-container .tag:hover .tag-image img {
+  max-width: 75%;
+}
+
+.tags-container .tag-container .tag .tag-image {
+  width: 30%;
+  background: #242538;
+  display: -webkit-box;
+  display: flex;
+}
+
+.tags-container .tag-container .tag .tag-image img {
+  margin: auto;
+  max-width: 70%;
+  max-height: 100%;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.tags-container .tag-container .tag .tag-info {
+  width: 65%;
+  color: white;
+  padding: 4%;
+}
+
+.tags-container .tag-container .tag .tag-info h1 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-width: 770px) {
+  .tags-container .tag-container .tag .tag-info h1 {
+    font-size: 1.4rem;
+  }
+}
+
+.tags-container .tag-container .tag .tag-info p {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 770px) {
+  .tags-container .tag-container .tag .tag-info p {
+    font-size: 0.8rem;
+  }
+}
+
