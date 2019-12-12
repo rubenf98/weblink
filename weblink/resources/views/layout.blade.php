@@ -89,7 +89,7 @@
 
 <script>
     $(document).ready(function(){
-    $.ajax({ url: "/tags",
+    $.ajax({ url: "/api/tags",
             context: document.body,
             success: function(data){
                 

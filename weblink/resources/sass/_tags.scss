@@ -1,0 +1,127 @@
+.tags-container {
+    width: 100%;
+
+    .header {
+        height: 400px;
+        background-image: linear-gradient($custom-purple, transparent);
+        text-align: center;
+        color: white;
+
+        h1 {
+            font-weight: bold;
+            margin: 0;
+            padding-top: 3%;
+            font-size: 3.5rem;
+        }
+        p {
+            margin: 0;
+            margin-bottom: 2%;
+            font-size: 1.5rem;
+        }
+        .button {
+            border-style: none;
+            background-color: $custom-purple;
+            display: block;
+            font-weight: bold;
+            padding: 0 20px;
+            min-width: 160px;
+            height: 50px;
+            border-radius: 25px;
+            margin: auto;
+            font-size: 14px;
+            color: white;
+            text-transform: uppercase;
+            transition: all 0.4s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($custom-purple, 20%);
+            }
+        }
+    }
+
+    .tag-container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        flex-wrap: wrap;
+        margin-top: 2%;
+
+        @media screen and (max-width: $l) {
+            width: 90%;
+        }
+
+        .tag {
+            background: #0a0a0c;
+            display: flex;
+            justify-content: space-around;
+            width: 23%;
+            min-width: 350px;
+            margin: 1% auto;
+
+            @media screen and (max-width: $xl) {
+                min-width: 300px;
+                width: 45%;
+            }
+
+            @media screen and (max-width: $l) {
+                width: 48%;
+            }
+
+            @media screen and (max-width: $m) {
+                min-width: 0;
+                width: 100%;
+                margin: 3% auto;
+            }
+
+            &:hover {
+                background: lighten(#353857, 5%);
+
+                .tag-image {
+                    background: lighten(#242538, 10%);
+
+                    img {
+                        max-width: 75%;
+                    }
+                }
+            }
+
+            .tag-image {
+                width: 30%;
+                background: #242538;
+                display: flex;
+
+                img {
+                    margin: auto;
+                    max-width: 70%;
+                    max-height: 100%;
+                    transition: .2s ease;
+                }
+            }
+
+            .tag-info {
+                width: 65%;
+                color: white;
+                padding: 4%;
+
+                h1 {
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    @media screen and (max-width: $m) {
+                        font-size: 1.4rem;
+                    }
+                }
+
+                p {
+                    margin-top: 5px;
+                    font-size: 1rem;
+                    @media screen and (max-width: $m) {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

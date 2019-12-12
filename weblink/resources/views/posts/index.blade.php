@@ -9,11 +9,15 @@
             <input autofocus id="search" class="search-input" type="text" placeholder="What are you looking for?"
                 name="search">
 
+            @if (Request::get('order'))
+            <input type="hidden" name="order" value="<?php echo htmlspecialchars(Request::get('order')); ?>">
+            <input id="tech" type="hidden" name="tech">
+            @endif
+
             <input class="search-submit" type="submit" value="Search">
         </form>
         <a class="reset-button" href="/posts">Reset Filters</a>
     </div>
-
 
 
     <div class="posts">
@@ -91,28 +95,49 @@
 </div>
 
 <script>
-    var url_string = $(location).attr('href');
-    var url = new URL(url_string);
-    var search = url.searchParams.get("search");
+    //Function to get search and order attribute from URL and fill the search and order input
+    $(document).ready(function() {
+        var url = new URL(document.location);
 
-    if (search) 
-        document.getElementById("search").defaultValue = search;
+        var search = url.searchParams.get("search");
+        var order = url.searchParams.get("order");
+        var tech = url.searchParams.get("tech");
+
+        search && $("#search").val(search); //Set search input
+        order ? $("#sort").val(order) : $("#sort").val('hot'); //Set order input with value or default
+        tech && $("#tech").val(tech); //Set tech input
+    });
 </script>
 
 <script>
     $( "#sort" ).change(function() {
-        console.log($( "#sort option:selected" ).val())
-        $.ajax({ url: "/posts?order="+$( "#sort option:selected" ).val(),
-            context: document.body,
-            success: function(data){
-                
+    var url = new URL(document.location);
+    var order = url.searchParams.get("order");
 
-                       
-  
+    if(url.href.includes('?')) 
+    {
+        if (order) 
+        {
+            //Already have an order, so we need to replace it
+            url.searchParams.set("order", $( "#sort option:selected" ).val());
+            location.reload();
+        }
+        else
+        {
+            //We have URL attributes so we need to preserve them and add an order
+            var url = document.location.href+"&order="+$( "#sort option:selected" ).val();
+        }
+    }
+    else
+    {
+        //There are no URL attributes, so we just add an order
+        var url = document.location.href+"?order="+$( "#sort option:selected" ).val();
+    }
+    
 
-                    }});
-    });
+    window.location = url;
+
+});
 </script>
-
 
 @endsection

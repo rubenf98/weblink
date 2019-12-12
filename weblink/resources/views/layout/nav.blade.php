@@ -24,8 +24,10 @@
             <li><a class="page" href="{{ url('/user/' . Auth::id()) }}">Profile</a></li>
             @endauth
             <li><a class="page" href="/posts">Posts</a></li>
+            <li><a class="page" href="/tags">Topics</a></li>
             <li><a class="page" href="/about">About</a></li>
             <li><a class="page" href="/contact">Contact</a></li>
+            <li><a class="page" href="/documentation">Documentation</a></li>
         </ul>
     </div>
 

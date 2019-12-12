@@ -15,6 +15,16 @@ class TagController extends Controller
      */
     public function index()
     {
+        return view('tags.index')->with('tags', TagResource::collection(Tag::all()));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexAPI()
+    {
         return TagResource::collection(Tag::all());
     }
 

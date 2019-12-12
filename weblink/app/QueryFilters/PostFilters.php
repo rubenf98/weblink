@@ -28,4 +28,13 @@ class PostFilters extends QueryFilters
                 });
         });
     }
+
+    public function tech($string)
+    {
+        $this->query->where(function ($query) use ($string) {
+            $query->WhereHas('tag', function ($query) use ($string) {
+                $query->where('name', $string);
+            });
+        });
+    }
 }
