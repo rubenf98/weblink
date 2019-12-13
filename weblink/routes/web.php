@@ -27,6 +27,8 @@ Route::delete('/post/{id}', 'PostController@destroy');
 
 Route::get('/tags', 'TagController@index');
 
+Route::post('/tag-suggestion', 'TagSuggestionController@store');
+
 Route::post('/comment', 'CommentController@store')->middleware('auth');
 
 Route::get('/users', 'UserController@index'); //LIST OF USERS TO ADMIN

@@ -324,6 +324,23 @@ body {
   width: 100%;
 }
 
+.alert-container {
+  position: relative;
+}
+
+.alert-container .alert {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  padding: 25px;
+  border-radius: 16px;
+}
+
+.alert-container .alert-success {
+  background: green;
+  color: white;
+}
+
 #loginScreen {
   display: -webkit-box;
   display: flex;
@@ -1933,5 +1950,110 @@ body {
   .tags-container .tag-container .tag .tag-info p {
     font-size: 0.8rem;
   }
+}
+
+.tag-create-container .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 10px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.tag-create-container .modal .modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 1200px) {
+  .tag-create-container .modal .modal-content {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .tag-create-container .modal .modal-content {
+    width: 80%;
+  }
+}
+
+.tag-create-container .modal .modal-content h1 {
+  text-align: center;
+}
+
+.tag-create-container .modal .modal-content .submit-button {
+  border-style: none;
+  background-color: #a217ff;
+  display: block;
+  font-weight: bold;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 25px;
+  margin: 3% auto;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.tag-create-container .modal .modal-content .submit-button:hover {
+  background-color: #6900b0;
+}
+
+.tag-create-container .modal .modal-content .form-input {
+  width: 80%;
+  font-size: 14px;
+  color: #444;
+  border: none;
+  border-radius: 16px;
+  background-color: white;
+  padding: 15px 15px;
+  margin: 5% auto;
+  display: block;
+  box-shadow: 0px 0px 8px lightgray;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.tag-create-container .modal .modal-content .form-input:focus {
+  border: 1px solid #555;
+}
+
+@media screen and (max-width: 350px) {
+  .tag-create-container .modal .modal-content .form-input {
+    width: 90%;
+  }
+}
+
+.tag-create-container .modal .modal-content textarea {
+  height: 100px;
+  resize: none;
+  overflow: hidden;
+}
+
+.tag-create-container .modal .closeSuggestion {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.tag-create-container .modal .closeSuggestion:hover,
+.tag-create-container .modal .closeSuggestion :focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 

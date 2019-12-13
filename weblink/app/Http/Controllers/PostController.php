@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         $filters = PostFilters::hydrate($request->query());
 
         $ordered_query = Post::order($filters, $request->order);
@@ -85,7 +85,7 @@ class PostController extends Controller
             }
         }
 
-        return redirect('/posts');
+        return redirect('/posts')->with('status', 'Post created with success');
     }
 
     /**

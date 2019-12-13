@@ -1,13 +1,14 @@
 @extends('layout')
 
 @section('content')
+@include('layout.button')
 
 <div class="tags-container">
 
     <div class="header">
         <h1>Explore Topics</h1>
         <p>Languages, resources, libraries, frameworks and UI patterns.</p>
-        <input class="button" type="button" value="Suggest a Topic">
+        <input id="btn-suggest" class="button" type="button" value="Suggest a Topic">
     </div>
 
     <div class="tag-container">
