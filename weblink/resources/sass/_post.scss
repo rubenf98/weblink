@@ -301,12 +301,6 @@
                     margin-left: 3%;
                     font-size: 20px;
 
-                    img {
-                        margin-top: 0%;
-                        margin-right: 2px;
-                        width: 25px;
-                    }
-
                     p {
                         margin-bottom: 2px;
                         padding: 0;
@@ -315,6 +309,17 @@
                     .comments-upvotes {
                         display: flex;
                         align-content: center;
+
+                        .comment-upvote {
+                            cursor: pointer;
+                            margin-top: 0%;
+                            margin-right: 3px;
+                            width: 20px;
+                        }
+
+                        span {
+                            font-size: 18px;
+                        }
                     }
                 }
 
@@ -325,6 +330,7 @@
 
                     img {
                         width: 60px;
+                        border-radius: 10px;
                     }
 
                     .comment-name {

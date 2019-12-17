@@ -25,12 +25,6 @@
                     @endif
                     <span id="upvote">{{$upvotes}}</span>
 
-                    @if ($post->is_liked)
-                    <img src="/icons/heart-filled.svg" id="upvote-post" onclick="upvotePost()" />
-                    @else
-                    <img src="/icons/heart-regular.svg" id="upvote-post" onclick="upvotePost()" />
-                    @endif
-                    <span id="upvote">{{$upvotes}}</span>
                 </div>
                 <div>
                     <span class="share">Share</span>
@@ -206,11 +200,12 @@
 
                     <div class="comments-upvotes">
                         @if ($comment->is_liked)
-                        <img src="/icons/circle-up-filled.svg" id="upvote-arrow" onclick="upvoteComment()" />
+                        <img class="comment-upvote" src="/icons/circle-up-filled.svg" id="upvote-arrow-{{$comment->id}}"
+                            onclick="upvoteComment('{{$comment->id}}')" />
                         @else
-                        <img src="/icons/circle-up.svg" id="upvote-arrow" onclick="upvoteComment()" />
+                        <img class="comment-upvote" src="/icons/circle-up.svg" id="upvote-arrow-{{$comment->id}}" onclick="upvoteComment('{{$comment->id}}')" />
                         @endif
-                        <span id="comment-upvote">{{$comment->likes->count()}}</span>
+                        <span id="comment-{{$comment->id}}">{{$comment->likes->count()}}</span>
                         <span id='comment-id' style="display:none">{{$comment->id}}</span>
                     </div>
                 </div>
@@ -294,9 +289,8 @@
 </script>
 
 <script>
-    function upvoteComment() {
-        var image =  document.getElementById("upvote-arrow");
-        var comment_id = document.getElementById("comment-id").innerHTML;
+    function upvoteComment(comment_id) {
+        var image = document.getElementById("upvote-arrow-"+comment_id);
 
         console.log(comment_id)     
             
@@ -309,14 +303,14 @@
             if (image.getAttribute('src') == "/icons/circle-up.svg") 
             {
                 image.src = "/icons/circle-up-filled.svg";
-                var value = parseInt(document.getElementById("upvote").innerHTML,10) - 1;
-                document.getElementById("upvote").innerHTML = value;
+                var value = parseInt(document.getElementById("comment-"+comment_id).innerHTML,10) + 1;
+                document.getElementById("comment-"+comment_id).innerHTML = value;
             }
             else 
             {
                 image.src = "/icons/circle-up.svg";
-                var value = parseInt(document.getElementById("upvote").innerHTML,10) + 1;
-                document.getElementById("upvote").innerHTML = value;
+                var value = parseInt(document.getElementById("comment-"+comment_id).innerHTML,10) - 1;
+                document.getElementById("comment-"+comment_id).innerHTML = value;
             }            
         }, 
         error: function(data){
