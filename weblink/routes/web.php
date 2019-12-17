@@ -41,6 +41,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/documentation', function () {
+    return view('docs.layout');
+});
+
 Route::get('/dashboard', function () {
     return view('auth.dashboard');
 })->middleware('admin');

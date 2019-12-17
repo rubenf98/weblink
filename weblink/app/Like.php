@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;
+use App\Post;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Like extends Model
@@ -44,11 +45,17 @@ class Like extends Model
                 'likeable_id'   => $id,
                 'likeable_type' => $type,
             ]);
+            if ($type == 'App\Post') {
+                Tag::UpdateLikes($id, "increment");
+            }
         } else {
-            if (is_null($like->deleted_at))
+            if (is_null($like->deleted_at)) {
                 $like->delete();
-            else
+                Tag::UpdateLikes($id, "decrement");
+            } else {
                 $like->restore();
+                Tag::UpdateLikes($id, "increment");
+            }
         }
     }
 }

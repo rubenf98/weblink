@@ -14,6 +14,13 @@ use Illuminate\Http\Request;
 */
 Route::get('/tags', 'TagController@indexAPI');
 
+Route::prefix('stats')->group(function () {
+    Route::prefix('tags')->group(function () {
+        Route::get('/', 'TagController@common');
+        Route::post('update-clicks/{tag}', 'TagController@updateClicks');
+    });
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

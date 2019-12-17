@@ -84,8 +84,8 @@ class PostController extends Controller
                 $inserted_post->tag()->attach($tag_id);
             }
         }
-
-        return redirect('/posts')->with('status', 'Post created with success');
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Post saved with success!', 'class' => 'success']);
+        return redirect('/posts?order=new');
     }
 
     /**

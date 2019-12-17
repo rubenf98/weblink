@@ -126,6 +126,13 @@
             flex-wrap: wrap;
             margin: auto;
 
+            .no-data {
+                text-align: center;
+                margin: auto;
+                display: block;
+                margin: 3%;
+            }
+
             .card {
                 display: grid;
                 grid-template-columns: 300px;

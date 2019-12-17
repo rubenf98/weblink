@@ -13,7 +13,7 @@
 
     <div class="tag-container">
         @foreach ($tags as $tag)
-        <div id="tag" class="tag" onclick="window.location.href='/posts?tech={{$tag->name}}&order=best'">
+        <div id="tag" class="tag" onclick="updateClicks('{{$tag->id}}', '{{$tag->name}}')">
             <div id="tagImage" class="tag-image">
                 <img src={{$tag->image}}>
             </div>
@@ -28,6 +28,19 @@
 
 
 </div>
+<script language="javascript">
+    function updateClicks(tag_id,tag_name) {         
+            
+    $.ajax({
+        type: 'post',
+        url: '/api/stats/tags/update-clicks/'+tag_id,
+        headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 
+        success: function (data) {
+            window.location.href='/posts?tech='+tag_name+'&order=best';            
+        }
+    });
+};
+</script>
 
 @endsection

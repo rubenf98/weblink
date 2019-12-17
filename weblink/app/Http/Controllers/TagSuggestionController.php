@@ -48,7 +48,7 @@ class TagSuggestionController extends Controller
         ]);
 
         TagSuggestion::create($tag->toArray());
-        $request->session()->flash('status', ['message' => 'Saved succesfully!', 'class' => 'success']);
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Thank you for your suggestion!', 'class' => 'success']);
         return redirect('/tags');
     }
 

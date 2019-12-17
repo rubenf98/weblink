@@ -166,10 +166,13 @@
             </div>
 
 
-
+            @if ($post->url)
             <div class="links">
                 <a href={{$post->url}} target="_blank"><button>Visit</button></a>
             </div>
+
+            @endif
+
         </div>
 
     </div>

@@ -30,8 +30,13 @@
     </div>
 
     @if(Session::has('status'))
-    <div class="alert-container">
-        <div class="alert alert-{{Session::get('status.class')}}"> {{ Session::get('status.message') }}</div>
+    <div id="alert" class="alert-container">
+
+        <div class="alert alert-{{Session::get('status.class')}}">
+            <img src="/icons/{{Session::get('status.class')}}.svg">
+            <h1>{{ Session::get('status.title') }}</h1>
+            <span> {{ Session::get('status.message') }}</span>
+        </div>
     </div>
 
     @endif
@@ -51,6 +56,10 @@
 </body>
 
 </html>
+
+<script>
+    setTimeout(function(){ $('#alert').delay(3000).fadeOut(1000); });   
+</script>
 
 <script>
     // Get the modal
