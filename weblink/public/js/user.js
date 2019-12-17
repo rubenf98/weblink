@@ -1,31 +1,41 @@
-/*
-var editForm = $("#edit-profile-btn");
-var showData = $(".about-show");
-var form = $(".about-form");
+var editForm = $(".change-view-update");
+var showData = $(".show-data");
+var form = $(".update-form-data");
 var swap = true;
 
+//JS Change between update and show data
 editForm.click(function() {
     if (swap) {
-        console.log("form");
         form.css("display", "block");
         showData.css("display", "none");
         swap = false;
+        addLiveViewImg();
     } else {
-        console.log("show");
         swap = true;
+        form.css("display", "none");
+        showData.css("display", "block");
     }
 });
-*/
 
+// JS update the height description
 $("#textarea").on("keyup", function() {
     $(this).css("height", "auto");
     $(this).height(this.scrollHeight);
 });
 
-var imgAdd = $("#img-form");
-// editar foto live!
-function change(input) {
-    var image = document.getElementById("prof-img");
-    image.src = URL.createObjectURL(input.target.files[0]);
-    imgAdd.append(`<img src="/icons/check.svg" />`);
+// JS Upload image change dinamic
+function addLiveViewImg() {
+    document.getElementById("files").onchange = function() {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            // get loaded data and render thumbnail.
+
+            document.getElementById("prof-img-update-form").src =
+                e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+    };
 }

@@ -584,143 +584,134 @@ body {
   width: 90%;
   -webkit-box-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+          align-items: flex-start;
 }
 
-.profile-container .about-form {
-  display: none;
+@media screen and (max-width: 600px) {
+  .profile-container {
+    display: block;
+  }
 }
 
 .profile-container .about {
-  position: fixed;
-  width: 30%;
+  margin-top: 2rem;
+  -webkit-box-flex: 1;
+          flex: 1;
+}
+
+.profile-container .about .change-view-update-container {
+  width: 80%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+          flex-direction: row-reverse;
+}
+
+.profile-container .about .change-view-update-container .change-view-update {
+  width: 1.5rem;
+}
+
+.profile-container .about .change-view-update-container .change-view-update-X {
+  width: 1.4rem;
 }
 
 .profile-container .about .profile-img-container {
-  width: 100%;
-  text-align: center;
-}
-
-.profile-container .about .profile-img-container img {
-  background-color: white;
-  border-radius: 16px;
-  border: 1px solid white;
-  width: 60%;
-}
-
-.profile-container .about .profile-data {
-  width: 100%;
-}
-
-.profile-container .about .profile-data .data-label {
-  margin: 1% 0;
   display: -webkit-box;
   display: flex;
-  font-size: 1.2rem;
-}
-
-.profile-container .about .profile-data .data-label p {
-  color: rgba(0, 0, 0, 0.61);
-  margin: 0;
-}
-
-.profile-container .about .profile-data .data-label #name {
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 1%;
-}
-
-.profile-container .about .profile-data .data-label img {
-  height: 0.7em;
-}
-
-.profile-container .about .profile-data .contact-follow {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.profile-container .about .profile-data .edit-profile {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-align: center;
-          align-items: center;
-}
-
-.profile-container .about .profile-data .edit-profile p {
-  margin: 0;
-  margin-right: 0.5rem;
-  color: rgba(0, 0, 0, 0.404);
-  text-decoration: none;
-}
-
-.profile-container .about .profile-data .edit-profile p:visited {
-  text-decoration: none;
-}
-
-.profile-container .about .profile-data .edit-profile p:hover {
-  cursor: pointer;
-}
-
-.profile-container .about .profile-data .edit-profile img {
   -webkit-box-pack: center;
           justify-content: center;
-  height: 0.9rem;
-  margin-right: 0.2rem;
 }
 
-.profile-container .about .profile-data .edit-profile img:visited {
-  text-decoration: none;
+.profile-container .about .profile-img-container #prof-img-update {
+  border-radius: 16px;
+  border: 2px solid lightgrey;
+  width: 150px;
+  height: 150px;
+  background-image: var(--background);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
 }
 
-.profile-container .about .profile-data .edit-profile img:hover {
-  cursor: pointer;
+.profile-container .about .show-data {
+  width: 80%;
+  display: block;
+  text-align: center;
+  color: black;
 }
 
-.profile-container .about .profile-data .form-label {
-  display: -webkit-box;
-  display: flex;
-  width: 100%;
+.profile-container .about .show-data p {
+  text-align: left;
+  margin: 0.2rem;
 }
 
-.profile-container .about .profile-data .form-label input {
-  outline: none;
-  width: 100%;
-  border: 0;
-  background-color: rgba(255, 255, 255, 0);
+.profile-container .about .show-data #show-name {
+  font-size: 1.3rem;
+  width: 80%;
 }
 
-.profile-container .about .profile-data .form-label input:focus {
-  border: 0;
-}
-
-.profile-container .about .profile-data .form-label textarea {
-  outline: none;
-  width: 100%;
+.profile-container .about .show-data #show-description {
+  font-size: 1rem;
+  height: 1rem;
+  width: 80%;
   resize: none;
-  border: 0;
+}
+
+.profile-container .about .show-data #show-country {
+  font-size: 1rem;
+  width: 80%;
+}
+
+.profile-container .about .show-data #show-birthday {
+  font-size: 1rem;
+  width: 80%;
+}
+
+.profile-container .about .update-form-data {
+  width: 80%;
+  display: none;
+}
+
+.profile-container .about .update-form-data input,
+.profile-container .about .update-form-data textarea {
+  margin: 0.2rem;
   background-color: rgba(255, 255, 255, 0);
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.212);
 }
 
-.profile-container .about .profile-data .form-label input[type=file] {
+.profile-container .about .update-form-data input[type=file] {
   display: none;
 }
 
-.profile-container .about .profile-data .show-data {
-  display: none;
+.profile-container .about .update-form-data #update-name input {
+  font-size: 1.3rem;
+  width: 80%;
 }
 
-.profile-container .about .profile-data .form-data {
-  width: 100%;
-  display: -webkit-box;
-  display: flex;
+.profile-container .about .update-form-data #update-description textarea {
+  font-size: 1rem;
+  height: 1rem;
+  width: 80%;
+  resize: none;
+}
+
+.profile-container .about .update-form-data #update-country input {
+  font-size: 1rem;
+  width: 80%;
+}
+
+.profile-container .about .update-form-data #update-birthday input {
+  font-size: 1rem;
+  width: 80%;
 }
 
 .profile-container .profile-posts {
-  margin-left: 40%;
-  width: 70%;
-  position: relative;
-  overflow: auto;
+  -webkit-box-flex: 2;
+          flex: 2;
 }
 
 .profile-container .profile-posts .header-info {
@@ -735,6 +726,8 @@ body {
 }
 
 .profile-container .profile-posts .header-info .user-stats .stat {
+  -webkit-box-flex: 1;
+          flex: 1;
   padding: 1% 0;
   margin: 0;
   text-align: center;
@@ -749,9 +742,34 @@ body {
   font-weight: bold;
 }
 
+@media screen and (max-width: 300px) {
+  .profile-container .profile-posts .header-info .user-stats .stat {
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+
+  .profile-container .profile-posts .header-info .user-stats .stat p {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .profile-container .profile-posts .header-info .user-stats {
+    width: 60%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+
 .profile-container .profile-posts .profile-posts-section {
   width: 90%;
   margin: 0 auto;
+  height: 80vh;
+  overflow: auto;
 }
 
 .profile-container .profile-posts .profile-posts-section a {

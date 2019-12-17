@@ -1,102 +1,97 @@
 @extends('layout')
 
 @section('content')
-<div class="banner-container">
-</div>
 <div class="profile-container">
     <div class="about">
-        @if (Auth::user()->id==$user->id)
-        <!-- Botão editar perfil -->
-        @endif
-        <div class="profile-img-container">
-            <div class="data-label">
-                <p>
-                    @if ($user->gender)
-                    <img id="prof-img" src="/default-user-male.svg" alt="">
-                    @else
-                    <img id="prof-img" src="/default-user-female.svg" alt="">
-                    @endif
-                </p>
+        <div class="show-data">
+            <div class="profile-img-container">
+                <div id="prof-img-update" style='--background: url("/Leo.jpg");'> </div>
+            </div>
+            <div class="change-view-update-container">
+                <div class="change-view-update">
+                    <img src="/icons/settings.svg">
+                </div>
+            </div>
+            <div id="show-name">
+                <p>{{ $user->name }}</p>
+            </div>
+            <div id="show-country">
+                <p>{{ $user->country }}</p>
+            </div>
+            <div id="show-birthday">
+                <p>{{ $user->b_day }}</p>
+            </div>
+            <div id="show-description">
+                <p>{{ $user->description }}</p>
             </div>
         </div>
-        <div class="profile-data">
-            @if (Auth::user()->id != $user->id)
-            <div class="contact-follow">
-                <button class="visiter-btn">Follow</button>
-                <button class="visiter-btn">Contact</button>
-            </div>
-            @else
-            <div class="show-data edit-profile ">
-                <p id='edit-profile-btn'> Edit Profile </p>
-                <img src="/icons/pen-solid.svg" />
-            </div>
-            @endif
-            <div class="show-data">
-                <div class="data-label">
-                    <p id="name">{{$user->name}}</p>
-                </div>
-                <div class="data-label">
-                    <p>{{$user->description}}</p>
-                </div>
-                <div class="data-label">
-                    <p> <img src="/icons/map-marker-alt-solid.svg"> {{ $user->country }} </p>
-                </div>
-                <div class="data-label">
-                    <p><img src="/icons/calendar-alt-solid.svg">{{$user->b_day}}</p>
-                </div>
-            </div>
-            <div class="form-data">
-                <form action="" method="post">
-                    <div class="form-label edit-profile" id="img-form">
-                        <label for="file">
-                            <div class="edit-profile ">
-                                <p id='edit-profile-btn'> Change picture</p>
-                                <img src="/icons/image-icon.svg" />
-                            </div>
-                        </label>
-                        <input type="file" id="file" accept="image/*" onchange="change(this.value)">
-                    </div>
-                    <div class="form-label">
-                        <input type="text" name="name" value="{{ $user->name }}" placeholder="Name">
-                    </div>
-                    <div class="form-label">
-                        <textarea type="textarea" name="description" id="textarea"
-                            placeholder="Description">{{ $user->description }}</textarea>
-                    </div>
-                    <div class="form-label">
-                        <input type="text" name="country" value="{{ $user->country }}" placeholder="Country">
-                    </div>
-                    <div class="form-label">
-                        <input type="text" name="bb" value="{{ $user->b_day }}" placeholder="Birthday">
-                    </div>
+        <div class="update-form-data">
+            <form action="" method="post" enctype="multipart/form-data">
+                <img src="/default-user-male.svg" alt="" id="prof-img-update-form">
+                <label for="files"><img src="/icons/pen-solid.svg"></label>
+                <input type="file" name="files" id="files" accept="image/*">
 
-                </form>
-            </div>
-
+                <div class="change-view-update-container">
+                    <div class="change-view-update-X change-view-update ">
+                        <img src="/icons/X.svg">
+                    </div>
+                </div>
+                <div id="update-name">
+                    <input type="text" name="update-name-input" id="update-name-input" value="{{ $user->name }}"
+                        placeholder="Name">
+                </div>
+                <div id="update-country">
+                    <input type="text" name="update-country-input" id="update-country-input"
+                        value="{{ $user->country }}" placeholder="Country">
+                </div>
+                <div id="update-birthday">
+                    <input type="date" name="update-birthday-input" id="update-birthday-input"
+                        value="{{ $user->b_day }}" placeholder="Birthday">
+                </div>
+                <div id="update-description">
+                    <textarea name="update-description-input" id="update-description-input"
+                        placeholder="Description">{{ $user->description }}</textarea>
+                </div>
+            </form>
         </div>
-
     </div>
 
 
-
+    <!-- Secção que mostra os posts do utilizador  -->
     <div class="profile-posts">
         <div class="header-info">
             <div class="user-stats">
                 <div class="stat">
-                    <p>12345<p>
-                            <img src="/icons/eye-solid.svg"> Views
+                    <div>
+                        <p>12345</p>
+                    </div>
+                    <div>
+                        <img src="/icons/eye-solid.svg"> Views
+                    </div>
                 </div>
                 <div class="stat">
-                    <p>12345<p>
-                            <img src="/icons/heart-regular.svg"> Likes
+                    <div>
+                        <p>12345</p>
+                    </div>
+                    <div>
+                        <img src="/icons/heart-regular.svg"> Likes
+                    </div>
                 </div>
                 <div class="stat">
-                    <p>12345<p>
-                            <i class="far fa-follow"></i> Following
+                    <div>
+                        <p>12345</p>
+                    </div>
+                    <div>
+                        <p> Following</p>
+                    </div>
                 </div>
                 <div class="stat">
-                    <p>12345<p>
-                            <i class="far fa-follow"></i> Followers
+                    <div>
+                        <p>12345</p>
+                    </div>
+                    <div>
+                        <p> Followers</p>
+                    </div>
                 </div>
             </div>
         </div>
