@@ -11,7 +11,7 @@ class LikeController extends Controller
     public function likePost($id)
     {
         if (Auth::user()) {
-            Like::handleLike('App\Post', $id);
+            return Like::handleLike('App\Post', $id);
         } else {
             session()->flash('status', 'Unauthorized');
             return session('status');

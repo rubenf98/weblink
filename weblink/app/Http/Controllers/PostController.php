@@ -23,7 +23,7 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         $filters = PostFilters::hydrate($request->query());
 
         $ordered_query = Post::order($filters, $request->order);
@@ -84,8 +84,8 @@ class PostController extends Controller
                 $inserted_post->tag()->attach($tag_id);
             }
         }
-
-        return redirect('/posts');
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Post saved with success!', 'class' => 'success']);
+        return redirect('/posts?order=new');
     }
 
     /**

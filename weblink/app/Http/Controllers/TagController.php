@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use App\Http\Resources\TagResource;
+use App\Http\Resources\TagDataResource;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -26,6 +27,28 @@ class TagController extends Controller
     public function indexAPI()
     {
         return TagResource::collection(Tag::all());
+    }
+
+    /**
+     * Display a listing of the resource ordered by the most common
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function common()
+    {
+        return TagDataResource::collection(Tag::withCount('post')->orderBy('post_count', 'desc')->paginate(10));
+    }
+
+    /**
+     * Update the specified resource number of clicks.
+     *  
+     * @param  \App\Tag  $tag
+     * @return \Illuminate\Http\Response
+     */
+    public function updateClicks(Tag $tag)
+    {
+        $tag->clicks++;
+        $tag->save();
     }
 
     /**

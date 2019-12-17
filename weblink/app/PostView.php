@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Auth;
+use App\Tag;
 
 class PostView extends Model
 {
@@ -47,10 +48,12 @@ class PostView extends Model
                 if ($row->where('created_at', '>=', $last_day)->latest()->first() == null) {
                     //Create new record
                     PostView::createRecord($user->id, $post_id);
+                    Tag::UpdateViews($post_id);
                 }
             } else {
                 //Create new record
                 PostView::createRecord($user->id, $post_id);
+                Tag::UpdateViews($post_id);
             }
         }
     }

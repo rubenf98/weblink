@@ -1,0 +1,89 @@
+.docs-container {
+    width: 80%;
+    margin: auto;
+
+    .doc-content {
+        display: none;
+        width: 60%;
+        margin: auto;
+
+        .list-margin {
+            margin: 1% 0;
+
+            .tag {
+                padding: 0px 3px;
+
+                border-radius: 6px;
+            }
+
+            .success {
+                background: lighten(green, 80%);
+                border: 1px solid lighten(green, 40%);
+            }
+
+            .fail {
+                background: lighten(red, 60%);
+                border: 1px solid lighten(red, 30%);
+            }
+
+            .type {
+                background: lighten($custom-purple, 50%);
+                border: 1px solid lighten($custom-purple, 30%);
+            }
+        }
+
+        .api-subtitle {
+            margin: 1% 0;
+        }
+    }
+
+    #doc-content-1 {
+        display: block;
+    }
+
+    .tabs-container {
+        width: 50%;
+        margin: 5% auto;
+
+        @media screen and (max-width: $xl) {
+            width: 60%;
+        }
+
+        @media screen and (max-width: $m) {
+            width: 70%;
+        }
+
+        .tab-list {
+            display: inline-block;
+            margin: auto;
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            justify-content: center;
+
+            #t-1 {
+                color: white;
+                background: $custom-purple;
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+            }
+
+            .tab-item {
+                display: inline;
+                cursor: pointer;
+                padding: 2% 8%;
+                color: $custom-purple;
+                border-bottom: 3px solid $custom-purple;
+                font-size: 1.4rem;
+                transition: 0.3s ease;
+
+                &:hover {
+                    color: white;
+                    background: lighten($custom-purple, 30%);
+                    border-top-left-radius: 16px;
+                    border-top-right-radius: 16px;
+                }
+            }
+        }
+    }
+}

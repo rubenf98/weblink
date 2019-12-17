@@ -19,8 +19,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-
-
     <script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
     <link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
 
@@ -31,11 +29,25 @@
         @include('layout.nav')
     </div>
 
+    @if(Session::has('status'))
+    <div id="alert" class="alert-container">
+
+        <div class="alert alert-{{Session::get('status.class')}}">
+            <img src="/icons/{{Session::get('status.class')}}.svg">
+            <h1>{{ Session::get('status.title') }}</h1>
+            <span> {{ Session::get('status.message') }}</span>
+        </div>
+    </div>
+
+    @endif
+
     <div class="content">@yield('content')
 
     </div>
 
     @include('posts.create')
+    @include('tagsSuggestions.create')
+
 
 
     <div class="footer">
@@ -44,6 +56,10 @@
 </body>
 
 </html>
+
+<script>
+    setTimeout(function(){ $('#alert').delay(3000).fadeOut(1000); });   
+</script>
 
 <script>
     // Get the modal
@@ -89,20 +105,47 @@
 
 <script>
     $(document).ready(function(){
-    $.ajax({ url: "/api/tags",
+        $.ajax({ url: "/api/tags",
             context: document.body,
             success: function(data){
-                
                 data.data.forEach(function (arrayItem) {
-
                     $(document).ready(function () {
                         $(".chosen-select").chosen({width: "80%", no_results_text: "Oops, nothing found!", max_selected_options: 3});
                         $('.chosen-select').append("<option value='"+arrayItem.name+"'>"+arrayItem.name+"</option>");
                         $('.chosen-select').trigger("chosen:updated");
                     });
                 });
-                    }});
+            }
+        });
     });
     
        
+</script>
+
+<script>
+    // Get the modal
+var tagModal = document.getElementById("tag-modal");
+
+// Get the button that opens the modal
+var tagButton = document.getElementById("btn-suggest");
+
+// Get the <span> element that closes the modal
+var tagSpan = document.getElementsByClassName("closeSuggestion")[0];
+
+// When the user clicks the button, open the modal 
+tagButton.onclick = function () {
+    tagModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+tagSpan.onclick = function () {
+    tagModal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == tagModal) {
+        tagModal.style.display = "none";
+    }
+}
 </script>

@@ -1,34 +1,34 @@
 var imageCoding = $("#coding_div");
 
-imageCoding.mouseenter(function() {
+imageCoding.mouseenter(function () {
     $("#coding_img").attr("src", "images/img_welcome/coding-hover.svg");
 });
 
-imageCoding.mouseleave(function() {
+imageCoding.mouseleave(function () {
     $("#coding_img").attr("src", "images/img_welcome/coding.svg");
 });
 
 var imageIdea = $("#idea_div");
 
-imageIdea.mouseenter(function() {
+imageIdea.mouseenter(function () {
     $("#idea_img").attr("src", "images/img_welcome/light-hover.svg");
 });
 
-imageIdea.mouseleave(function() {
+imageIdea.mouseleave(function () {
     $("#idea_img").attr("src", "images/img_welcome/light.svg");
 });
 
 var imageConnection = $("#connection_div");
 
-imageConnection.mouseenter(function() {
+imageConnection.mouseenter(function () {
     $("#connection_img").attr("src", "images/img_welcome/connection-hover.svg");
 });
 
-imageConnection.mouseleave(function() {
+imageConnection.mouseleave(function () {
     $("#connection_img").attr("src", "images/img_welcome/connection.svg");
 });
 
-$(".list-item").click(function() {
+$(".list-item").click(function () {
     var item = $(".list-item");
     item.css("background-color", "rgb(63,62,84)");
     $(this).css("background-color", "rgb(141, 8, 230)");
@@ -69,5 +69,33 @@ $(".list-item").click(function() {
     if ($(this)[0].id == "d-4") {
         $(".img-class").hide();
         $("#img-4").show();
+    }
+});
+
+$(".tab-item").click(function () {
+    var item = $(".tab-item");
+    item.css("background-color", "transparent");
+    item.css("color", "rgb(141, 8, 230)");
+
+    $(this).css("background-color", "rgb(141, 8, 230)");
+    $(this).css("color", "rgb(255, 255, 255)");
+    $(this).css("border-top-left-radius", "16px");
+    $(this).css("border-top-right-radius", "16px");
+
+    if ($(this)[0].id == "t-1") {
+        $(".doc-content").hide();
+        $("#doc-content-1").show();
+    }
+    if ($(this)[0].id == "t-2") {
+        $(".doc-content").hide();
+        $("#doc-content-2").show();
+    }
+    if ($(this)[0].id == "t-3") {
+        $(".doc-content").hide();
+        $("#doc-content-3").show();
+    }
+    if ($(this)[0].id == "t-4") {
+        $(".doc-content").hide();
+        $("#doc-content-4").show();
     }
 });
