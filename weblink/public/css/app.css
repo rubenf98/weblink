@@ -1140,9 +1140,12 @@ body {
 
 .post-container .comments-container .comments .no-data {
   text-align: center;
-  margin: auto;
-  display: block;
   margin: 3%;
+}
+
+.post-container .comments-container .comments .no-data img {
+  width: 30%;
+  min-width: 200px;
 }
 
 .post-container .comments-container .comments .comment {
@@ -1358,9 +1361,18 @@ body {
 
 .posts-container .posts .post .no-data {
   text-align: center;
-  margin: auto;
-  display: block;
   margin: 3%;
+}
+
+.posts-container .posts .post .no-data img {
+  width: 50%;
+  min-width: 250px;
+}
+
+@media screen and (max-width: 770px) {
+  .posts-container .posts .post .no-data {
+    margin-top: 30px;
+  }
 }
 
 .posts-container .posts .post .card {
@@ -2266,5 +2278,239 @@ body {
   background: #dfb0ff;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
+}
+
+.dashboard-nav-container {
+  width: 50%;
+  margin: 5% auto;
+}
+
+@media screen and (max-width: 1600px) {
+  .dashboard-nav-container {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .dashboard-nav-container {
+    width: 70%;
+  }
+}
+
+.dashboard-nav-container .header-list {
+  margin: auto;
+  display: -webkit-box;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.dashboard-nav-container .header-list .header-item {
+  display: inline;
+  cursor: pointer;
+  padding: 2% 8%;
+  color: #a217ff;
+  border-bottom: 3px solid #a217ff;
+  font-size: 1.4rem;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  background-color: transparent;
+  color: #8d08e6;
+}
+
+.dashboard-nav-container .header-list .header-item:hover {
+  color: white;
+  background: #dfb0ff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.default-table-container {
+  width: 80%;
+  margin: auto;
+}
+
+.default-table-container .table-filter-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.default-table-container .search-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+}
+
+.default-table-container .search-container .reset-button {
+  color: #444;
+  font-weight: bold;
+  text-decoration: none;
+  display: block;
+  width: 30%;
+}
+
+.default-table-container .search-container .search-form {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+
+.default-table-container .search-container .search-form .search-input {
+  width: 100%;
+  font-size: 16px;
+  color: #444;
+  border: none;
+  background-color: white;
+  padding: 15px 15px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: white url(/images/search.svg?c6a0effbe867db0941bd5592f8f43810) no-repeat scroll;
+  background-position: 2% center;
+  background-size: auto 50%;
+  padding-left: 50px;
+}
+
+@media screen and (max-width: 350px) {
+  .default-table-container .search-container .search-form .search-input {
+    background-position: 5% center;
+  }
+}
+
+.default-table-container .search-container .search-form .search-input:focus {
+  border: 1px solid #555;
+}
+
+.default-table-container .search-container .search-form .search-submit {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  background-color: #a217ff;
+  cursor: pointer;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.default-table-container .search-container .search-form .search-submit:hover {
+  background-color: #6900b0;
+}
+
+.default-table-container .add-button {
+  border-style: none;
+  background-color: #a217ff;
+  display: block;
+  font-weight: bold;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 16px;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.default-table-container .add-button:hover {
+  background-color: #6900b0;
+}
+
+.default-table-container .table-container {
+  overflow-x: auto;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+
+@media screen and (max-width: 770px) {
+  .default-table-container .table-container {
+    width: 100%;
+  }
+}
+
+.default-table-container .table-container .table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  text-align: left;
+  background-color: white;
+}
+
+.default-table-container .table-container .table img {
+  width: 50px;
+  border-radius: 10px;
+}
+
+.default-table-container .table-container .table .operation-container {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.default-table-container .table-container .table .operation-container .operation-icon {
+  width: 20px;
+  border-radius: 0px;
+}
+
+.default-table-container .table-container .table td {
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+}
+
+@media screen and (max-width: 770px) {
+  .default-table-container .table-container .table td {
+    padding: 15px;
+  }
+}
+
+.default-table-container .table-container .table td .tag {
+  padding: 2px 8px;
+  text-transform: capitalize;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.default-table-container .table-container .table td .active {
+  color: green;
+  background: #e6ffe6;
+}
+
+.default-table-container .table-container .table td .banned {
+  color: red;
+  background: #ffe6e6;
+}
+
+.default-table-container .table-container .table td .suspended {
+  color: orange;
+  background: #fff6e6;
+}
+
+.default-table-container .table-container .table th {
+  padding: 30px;
+  color: gray;
+}
+
+@media screen and (max-width: 770px) {
+  .default-table-container .table-container .table th {
+    padding: 15px;
+  }
 }
 

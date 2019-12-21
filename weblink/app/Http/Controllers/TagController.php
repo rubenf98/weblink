@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Tag;
 use App\Http\Resources\TagResource;
+use App\Http\Resources\TagsResource;
 use App\Http\Resources\TagDataResource;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,16 @@ class TagController extends Controller
     public function index()
     {
         return view('tags.index')->with('tags', TagResource::collection(Tag::all()));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function dashboardIndex()
+    {
+        return view('dashboard.tags')->with('tags', TagsResource::collection(Tag::all()));
     }
 
     /**

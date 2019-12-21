@@ -25,6 +25,13 @@ Route::post('/post', 'PostController@store')->middleware('auth');
 Route::put('/post/{id}', 'PostController@update');
 Route::delete('/post/{id}', 'PostController@destroy');
 
+Route::prefix('dashboard')->group(function () {
+    Route::get('/users', 'UserController@index');
+    Route::get('/tags', 'TagController@dashboardIndex');
+    Route::get('/suggestions', 'TagSuggestionController@index');
+    Route::get('/analytics', 'TagSuggestionController@index');
+});
+
 Route::get('/tags', 'TagController@index');
 
 Route::post('/tag-suggestion', 'TagSuggestionController@store');
@@ -45,9 +52,7 @@ Route::get('/documentation', function () {
     return view('docs.layout');
 });
 
-Route::get('/dashboard', function () {
-    return view('auth.dashboard');
-})->middleware('admin');
+Route::get('/dashboard', 'UserController@admin')->middleware('admin');
 
 
 

@@ -99,3 +99,27 @@ $(".tab-item").click(function () {
         $("#doc-content-4").show();
     }
 });
+
+$(".header-item").click(function () {
+    var header = $(".header-item");
+    header.css("background-color", "transparent");
+    header.css("color", "rgb(141, 8, 230)");
+
+    $(this).css("background-color", "rgb(141, 8, 230)");
+    $(this).css("color", "rgb(255, 255, 255)");
+    $(this).css("border-top-left-radius", "16px");
+    $(this).css("border-top-right-radius", "16px");
+
+    if ($(this)[0].id == "h-1") {
+        $(".header-content").hide();
+        $("#header-content-1").show();
+    }
+    if ($(this)[0].id == "h-2") {
+        $(".header-content").hide();
+        $("#header-content-2").show();
+    }
+    if ($(this)[0].id == "h-3") {
+        $(".header-content").hide();
+        $("#header-content-3").show();
+    }
+});

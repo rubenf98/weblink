@@ -283,9 +283,12 @@
 
             .no-data {
                 text-align: center;
-                margin: auto;
-                display: block;
                 margin: 3%;
+
+                img {
+                    width: 30%;
+                    min-width: 200px;
+                }
             }
 
             .comment {

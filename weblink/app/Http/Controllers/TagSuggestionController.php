@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\TagSuggestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Resources\TagsSuggestionsResource;
 
 class TagSuggestionController extends Controller
 {
@@ -15,7 +16,7 @@ class TagSuggestionController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.suggestions')->with('suggestions', TagsSuggestionsResource::collection(TagSuggestion::all()));
     }
 
     /**

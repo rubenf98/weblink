@@ -1,0 +1,39 @@
+.dashboard-nav-container {
+    width: 50%;
+    margin: 5% auto;
+
+    @media screen and (max-width: $xl) {
+        width: 60%;
+    }
+
+    @media screen and (max-width: $m) {
+        width: 70%;
+    }
+
+    .header-list {
+        margin: auto;
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        justify-content: center;
+
+        .header-item {
+            display: inline;
+            cursor: pointer;
+            padding: 2% 8%;
+            color: $custom-purple;
+            border-bottom: 3px solid $custom-purple;
+            font-size: 1.4rem;
+            transition: 0.3s ease;
+            background-color: transparent;
+            color: rgb(141, 8, 230);
+
+            &:hover {
+                color: white;
+                background: lighten($custom-purple, 30%);
+                border-top-left-radius: 16px;
+                border-top-right-radius: 16px;
+            }
+        }
+    }
+}
