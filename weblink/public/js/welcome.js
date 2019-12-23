@@ -123,3 +123,25 @@ $(".header-item").click(function () {
         $("#header-content-3").show();
     }
 });
+
+function deleteRecord(record_id, type) {
+    var answer = confirm("Do you really want to delete this " + type + "?");
+
+    if (answer == true) {
+        $.ajax({
+            type: 'delete',
+            url: '/' + type + '/' + record_id,
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+
+            success: function (data) {
+                $('#row-' + type + '-' + record_id).hide();
+            },
+            error: function (data) {
+                if (data.status == 401) {
+                    alert("You need to login to be able to upvote")
+                }
+
+            }
+        });
+    }
+};

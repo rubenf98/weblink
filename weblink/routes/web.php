@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -32,13 +33,18 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/analytics', 'TagSuggestionController@index');
 });
 
+Route::delete('/tag/{tag}', 'TagController@destroy')->middleware('admin');
 Route::get('/tags', 'TagController@index');
 
+Route::delete('/tag-suggestion/{tagSuggestion}', 'TagSuggestionController@destroy')->middleware('admin');
 Route::post('/tag-suggestion', 'TagSuggestionController@store');
 
 Route::post('/comment', 'CommentController@store')->middleware('auth');
 
-Route::get('/users', 'UserController@index'); //LIST OF USERS TO ADMIN
+Route::delete('/user/{user}', 'UserController@destroy')->middleware('admin');
+Route::get('/users', 'UserController@index')->middleware('admin');
+Route::post('/user', 'UserController@store')->middleware('admin');
+Route::post('/user/status/{user}', 'UserController@status')->middleware('admin');
 Route::get('/user/{id}', 'UserController@show'); // PROFILE
 Auth::routes(); //LOGIN AND REGISTER
 
@@ -52,7 +58,9 @@ Route::get('/documentation', function () {
     return view('docs.layout');
 });
 
-Route::get('/dashboard', 'UserController@admin')->middleware('admin');
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard');
+});
 
 
 

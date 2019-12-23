@@ -6,6 +6,7 @@ use App\Tag;
 use App\Http\Resources\TagResource;
 use App\Http\Resources\TagsResource;
 use App\Http\Resources\TagDataResource;
+use App\QueryFilters\TagFilters;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -25,9 +26,10 @@ class TagController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function dashboardIndex()
+    public function dashboardIndex(Request $request)
     {
-        return view('dashboard.tags')->with('tags', TagsResource::collection(Tag::all()));
+        $filters = TagFilters::hydrate($request->query());
+        return view('tags.dashboard-index')->with('tags', TagsResource::collection(Tag::filterBy($filters)->get()));
     }
 
     /**
@@ -125,6 +127,7 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        $tag->delete();
+        return response(null, 204);
     }
 }

@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['admin', 'normal'])->default('normal');
-            $table->enum('status', ['active', 'banned', 'suspended'])->default('active');
+            $table->enum('status', ['active', 'banned'])->default('active');
             $table->string('password');
             $table->string('image')->default("/user-default.png");
             $table->integer('points')->default(0);

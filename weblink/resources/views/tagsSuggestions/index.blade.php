@@ -4,20 +4,26 @@
 <div class="default-table-container">
     <h1>Suggestions</h1>
     <div class="table-filter-container">
-        <div class="search-container">
-            <form class="search-form" action="/dashboard/users" method="get">
-                <input autofocus id="search" class="search-input" type="text" placeholder="What are you looking for?"
-                    name="search">
+        <div>
+            <div class="search-container">
+                <form class="search-form" action="/dashboard/suggestions" method="get">
+                    <input autofocus id="search" class="search-input" type="text"
+                        placeholder="What are you looking for?" name="search">
 
-                @if (Request::get('order'))
-                <input type="hidden" name="order" value="<?php echo htmlspecialchars(Request::get('order')); ?>">
-                <input id="tech" type="hidden" name="tech">
-                @endif
+                    @if (Request::get('order'))
+                    <input type="hidden" name="order" value="<?php echo htmlspecialchars(Request::get('order')); ?>">
+                    <input id="tech" type="hidden" name="tech">
+                    @endif
 
-                <input class="search-submit" type="submit" value="Search">
-            </form>
+                    <input class="search-submit" type="submit" value="Search">
+                </form>
+
+            </div>
+            <a class="reset-button" href="/dashboard/suggestions">Reset</a>
         </div>
     </div>
+
+    @if (count($suggestions) > 0)
     <div class="table-container">
         <table class="table">
             <thead>
@@ -31,7 +37,7 @@
                 </tr>
             </thead>
             @foreach ($suggestions as $suggestion)
-            <tr>
+            <tr id="row-tag-suggestion-{{$suggestion->id}}">
                 <td>{{$suggestion->name}}</td>
                 <td>{{$suggestion->description}}</td>
                 <td>{{$suggestion->link}}</td>
@@ -41,13 +47,23 @@
                     <div class="operation-container">
                         <img src="/icons/ban.svg" class="operation-icon">
                         <img src="/icons/pen-solid.svg" class="operation-icon">
-                        <img src="/icons/delete.svg" class="operation-icon">
+                        <img onclick="deleteRecord({{$suggestion->id}}, 'tag-suggestion')" src="/icons/delete.svg" class="operation-icon">
                     </div>
                 </td>
             </tr>
+
             @endforeach
         </table>
     </div>
-</div>
+    @else
+    <div class="no-data">
+        <img src="/images/nodata.png">
+        <p>No results found!</p>
+    </div>
+    @endif
 
+
+
+</div>
+<script src="/js/welcome.js"></script>
 @endsection

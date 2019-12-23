@@ -4,16 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Post;
+use Cerbero\QueryFilters\FiltersRecords;
 
 class Tag extends Model
 {
+    use FiltersRecords;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name'
+        'name', 'description', 'image'
     ];
 
     protected $appends = ['count'];

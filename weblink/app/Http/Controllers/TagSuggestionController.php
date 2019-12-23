@@ -6,6 +6,7 @@ use App\TagSuggestion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\TagsSuggestionsResource;
+use App\QueryFilters\TagSuggestionFilters;
 
 class TagSuggestionController extends Controller
 {
@@ -14,9 +15,10 @@ class TagSuggestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard.suggestions')->with('suggestions', TagsSuggestionsResource::collection(TagSuggestion::all()));
+        $filters = TagSuggestionFilters::hydrate($request->query());
+        return view('tagsSuggestions.index')->with('suggestions', TagsSuggestionsResource::collection(TagSuggestion::filterBy($filters)->get()));
     }
 
     /**
@@ -95,6 +97,7 @@ class TagSuggestionController extends Controller
      */
     public function destroy(TagSuggestion $tagSuggestion)
     {
-        //
+        $tagSuggestion->delete();
+        return response(null, 204);
     }
 }
