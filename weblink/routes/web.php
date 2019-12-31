@@ -35,7 +35,7 @@ Route::prefix('dashboard')->group(function () {
 
 Route::delete('/tag/{tag}', 'TagController@destroy')->middleware('admin');
 Route::get('/tags', 'TagController@index');
-Route::post('/tag', 'TagController@store');
+Route::post('/tag', 'TagController@store')->middleware('admin');
 Route::put('/tag/{tag}', 'TagController@update');
 
 Route::delete('/tag-suggestion/{tagSuggestion}', 'TagSuggestionController@destroy')->middleware('admin');
@@ -68,7 +68,7 @@ Route::get('/documentation', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('auth.dashboard');
+    return view('dashboard.dashboard');
 })->middleware('admin');
 
 
