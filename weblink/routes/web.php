@@ -48,7 +48,13 @@ Route::delete('/user/{user}', 'UserController@destroy')->middleware('admin');
 Route::get('/users', 'UserController@index')->middleware('admin');
 Route::post('/user', 'UserController@store')->middleware('admin');
 Route::post('/user/status/{user}', 'UserController@status')->middleware('admin');
-Route::get('/user/{id}', 'UserController@show'); // PROFILE
+Route::get('/user/{id}', 'UserController@show')->middleware('auth');
+Route::post('/user/update/{id}', 'UserController@update')->middleware('auth');
+
+//Follow
+Route::post('/user/follow/{id}', 'FollowController@follow')->middleware('auth');
+Route::post('/user/unfollow/{id}', 'FollowController@unfollow')->middleware('auth');
+
 Auth::routes(); //LOGIN AND REGISTER
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -62,8 +68,8 @@ Route::get('/documentation', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
-});
+    return view('auth.dashboard');
+})->middleware('admin');
 
 
 
