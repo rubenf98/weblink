@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
+use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image as IMG;
+use Illuminate\Http\Request;
+
 use App\Http\Resources\TagResource;
 use App\Http\Resources\TagsResource;
 use App\Http\Resources\TagDataResource;
+
 use App\QueryFilters\TagFilters;
-use Illuminate\Http\Request;
+
+use App\Tag;
 
 class TagController extends Controller
 {
@@ -82,7 +87,37 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validator::make($request->all(), [
+            'name' => 'required|string|max:100',
+            'description' => 'required|min:10',
+        ]);
+
+        $image = "/default.png";
+
+        if ($request->file('image')) {
+            if ($request->file('image')->isValid()) {
+                $image = $request->file('image');
+                $filename = uniqid() . '.png';
+
+                IMG::make($image)->encode('png', 65)->resize(760, null, function ($c) {
+                    $c->aspectRatio();
+                    $c->upsize();
+                })->save(public_path('/images/tags/' . $filename));
+
+                $image = '/images/tags/' . $filename;
+            }
+        }
+
+        $tag = new Request([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $image
+        ]);
+
+        Tag::create($tag->toArray());
+
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Tag created with success!', 'class' => 'success']);
+        return redirect('/dashboard/tags');
     }
 
     /**
@@ -93,7 +128,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        //
+        return new TagResource($tag);
     }
 
     /**
@@ -116,7 +151,12 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        dd("teste");
+        $tag->name = $request->name;
+        $tag->save();
+
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Tag updated with success!', 'class' => 'success']);
+        return redirect('/dashboard/tags');
     }
 
     /**

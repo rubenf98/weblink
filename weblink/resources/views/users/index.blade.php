@@ -17,7 +17,6 @@
             </div>
             <a class="reset-button" href="/dashboard/users">Reset</a>
         </div>
-
         <button id="user-create-button" class="add-button">Add new</button>
     </div>
     @if (count($users) > 0)

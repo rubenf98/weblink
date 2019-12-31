@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/tags', 'TagController@indexAPI');
+Route::get('/tag/{tag}', 'TagController@show');
 Route::get('/users', 'UserController@index');
 
 Route::prefix('stats')->group(function () {

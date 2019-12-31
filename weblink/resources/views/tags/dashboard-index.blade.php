@@ -15,7 +15,7 @@
             </div>
             <a class="reset-button" href="/dashboard/tags">Reset</a>
         </div>
-        <button class="add-button">Add new</button>
+        <button id="tag-create-button" class="add-button">Add new</button>
     </div>
     @if (count($tags) > 0)
     <div class="table-container">
@@ -41,7 +41,7 @@
                 <td>{{$tag->likes}}</td>
                 <td>
                     <div class="operation-container">
-                        <img src="/icons/pen-solid.svg" class="operation-icon">
+                        <img src="/icons/pen-solid.svg" class="operation-icon edit-button" id="edit-tag-{{$tag->id}}">
                         <img onclick="deleteRecord({{$tag->id}}, 'tag')" src="/icons/delete.svg" class="operation-icon">
                     </div>
                 </td>
@@ -57,5 +57,8 @@
     @endif
 
 </div>
+
+
+
 <script src="/js/welcome.js"></script>
 @endsection

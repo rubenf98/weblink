@@ -33,8 +33,6 @@
                         <input class="form-input" type="text" name="source" id=""
                             placeholder="https://bitbucket.org/kwajd/weblink">
                     </div>
-
-
                 </div>
 
                 <div class="center">

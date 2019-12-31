@@ -35,9 +35,12 @@ Route::prefix('dashboard')->group(function () {
 
 Route::delete('/tag/{tag}', 'TagController@destroy')->middleware('admin');
 Route::get('/tags', 'TagController@index');
+Route::post('/tag', 'TagController@store');
+Route::put('/tag/{tag}', 'TagController@update');
 
 Route::delete('/tag-suggestion/{tagSuggestion}', 'TagSuggestionController@destroy')->middleware('admin');
 Route::post('/tag-suggestion', 'TagSuggestionController@store');
+Route::post('/tag-suggestion/status/{tagSuggestion}', 'TagSuggestionController@status')->middleware('admin');
 
 Route::post('/comment', 'CommentController@store')->middleware('auth');
 

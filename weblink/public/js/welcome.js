@@ -138,10 +138,13 @@ function deleteRecord(record_id, type) {
             },
             error: function (data) {
                 if (data.status == 401) {
-                    alert("You need to login to be able to upvote")
+                    alert("You need to be an admin to be able to delete records")
                 }
 
             }
         });
     }
 };
+
+
+
