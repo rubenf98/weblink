@@ -376,39 +376,133 @@ body {
   height: 400px;
   background-image: url(/images/aboutus.png?c2ed89cfcbe841c9fba0ec86902b93bc);
   background-position: center;
-  box-shadow: 0px 20px 20px black inset;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 5%;
 }
 
-.about-container .imgAbout {
-  height: 400px;
-  background-image: url("/aboutus.png");
-  background-position: center;
-  box-shadow: 0px 20px 20px black inset;
+.about-container .header {
+  text-align: center;
 }
 
-.about-container .aboutAndLogo {
+.about-container .header h1 {
+  font-size: 4em;
+  margin: 0 auto;
+  margin-top: 1%;
+}
+
+.about-container .header p {
+  width: 30%;
+  font-size: 1.8em;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-container .header p {
+    width: 90%;
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .about-container .header p {
+    font-size: 1.3em;
+  }
+}
+
+.about-container .about-section {
   display: -webkit-box;
   display: flex;
-  margin: 0 auto;
+  margin: 3% auto;
+  justify-content: space-around;
+  -webkit-box-align: center;
+          align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-container .about-section {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .about-container .about-section {
+    margin-bottom: 10%;
+  }
+}
+
+.about-container .about-section .image {
+  max-width: 250px;
+  min-width: 200px;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-container .about-section .image {
+    width: 70%;
+  }
+}
+
+.about-container .about-section .about {
+  max-width: 300px;
   text-align: center;
-  align-content: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  font-size: 1.1em;
 }
 
-.about-container .aboutAndLogo .logo {
-  width: 20%;
+@media screen and (max-width: 1200px) {
+  .about-container .about-section .about {
+    width: 80%;
+    font-size: 0.9em;
+  }
 }
 
-.about-container .aboutAndLogo .logo img {
-  width: 100%;
-  padding-top: 3%;
-}
-
-.about-container .aboutAndLogo .about {
-  padding-top: 3%;
+.about-container .team-section {
+  display: block;
+  margin: 3% auto;
   width: 40%;
-  text-align: left;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-container .team-section {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .about-container .team-section {
+    width: 95%;
+  }
+}
+
+.about-container .team-section .image {
+  width: 80%;
+  display: block;
+  margin: 2% auto;
+}
+
+@media screen and (max-width: 770px) {
+  .about-container .team-section .image {
+    width: 90%;
+  }
+}
+
+.about-container .team-section .team {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .about-container .team-section .team {
+    width: 95%;
+  }
+}
+
+.about-container .team-section .team .team-member {
+  margin: 0 8px;
 }
 
 .AuthContainer {
