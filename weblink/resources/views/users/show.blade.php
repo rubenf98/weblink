@@ -5,52 +5,97 @@
     <div class="about">
         <div class="show-data">
             <div class="profile-img-container">
-                <div id="prof-img-update" style='--background: url("/Leo.jpg");'> </div>
+                <div id="prof-img-update" style='--background: url({{ $user->image }});'> </div>
             </div>
+            @if(Auth::user())
+            @if (Auth::user()->id == $user->id)
             <div class="change-view-update-container">
                 <div class="change-view-update">
                     <img src="/icons/settings.svg">
                 </div>
             </div>
+            @endif
+            @endif
             <div id="show-name">
                 <p>{{ $user->name }}</p>
             </div>
-            <div id="show-country">
-                <p>{{ $user->country }}</p>
-            </div>
-            <div id="show-birthday">
-                <p>{{ $user->b_day }}</p>
+            <div id="show-email">
+                <p> {{ $user->email }}</p>
             </div>
             <div id="show-description">
-                <p>{{ $user->description }}</p>
+                <p><img src="/icons/info.svg" alt=""> {{ $user->description }}</p>
             </div>
+            <div id="show-country">
+                <p><img src="/icons/marker.svg" alt=""> {{ $user->country }}</p>
+            </div>
+            <div id="show-creation-date">
+                <p><img src="/icons/calendar.svg" alt=""> Joined
+                    {{ \Carbon\Carbon::parse($user->created_at)->toFormattedDateString() }}</p>
+            </div>
+            <div id="show-birthday">
+                <p><img src="/icons/baby.svg" alt=""> Born on
+                    {{ \Carbon\Carbon::parse($user->b_day)->toFormattedDateString() }}</p>
+            </div>
+            @if(Auth::user()->id != $user->id)
+            <div class="follow-div">
+                @if ($follow)
+                <button class="follow" style="display:none" onclick="follow({{ $user->id }})">Follow</button>
+
+                <button class="unfollow" style="display:block" onclick="unfollow({{ $user->id }})">Unfollow</button>
+                @else
+                <button class="follow" style="display:block" onclick="follow({{ $user->id }})">Follow</button>
+
+                <button class="unfollow" style="display:none" onclick="unfollow({{ $user->id }})">Unfollow</button>
+                @endif
+
+            </div>
+            @endif
         </div>
         <div class="update-form-data">
-            <form action="" method="post" enctype="multipart/form-data">
-                <img src="/default-user-male.svg" alt="" id="prof-img-update-form">
-                <label for="files"><img src="/icons/pen-solid.svg"></label>
-                <input type="file" name="files" id="files" accept="image/*">
+            <form action="/user/update/{{ $user->id }}" method="post" enctype="multipart/form-data">
+                @csrf
+                <div class="profile-img-container-form">
+                    <div id="prof-img-update-form" style='--background: url({{ $user->image }});'>
+                        <label for="image-upload">
+                            <p>Edit</p>
+                        </label>
+                    </div>
+                    <input type="file" name="image-upload" id="image-upload" accept="image/*" onchange="readURL(this);">
+                </div>
+
 
                 <div class="change-view-update-container">
                     <div class="change-view-update-X change-view-update ">
-                        <img src="/icons/X.svg">
+                        <a href=""><img src="/icons/X.svg"></a>
                     </div>
                 </div>
                 <div id="update-name">
                     <input type="text" name="update-name-input" id="update-name-input" value="{{ $user->name }}"
                         placeholder="Name">
                 </div>
+                <div id="update-email">
+                    <input type="email" name="update-email-input" id="update-email-input" value="{{ $user->email }}"
+                        placeholder="Name">
+                </div>
+                <div id="update-description">
+                    <textarea name="update-description-input" id="update-description-input"
+                        placeholder="Description">{{ $user->description }}</textarea>
+                </div>
                 <div id="update-country">
                     <input type="text" name="update-country-input" id="update-country-input"
                         value="{{ $user->country }}" placeholder="Country">
+                </div>
+                <div id="show-creation-date">
+                    <p>Joined
+                        {{ \Carbon\Carbon::parse($user->created_at)->toFormattedDateString() }}</p>
                 </div>
                 <div id="update-birthday">
                     <input type="date" name="update-birthday-input" id="update-birthday-input"
                         value="{{ $user->b_day }}" placeholder="Birthday">
                 </div>
-                <div id="update-description">
-                    <textarea name="update-description-input" id="update-description-input"
-                        placeholder="Description">{{ $user->description }}</textarea>
+
+                <div class="submit">
+                    <input type="submit" value="Submit">
                 </div>
             </form>
         </div>
@@ -63,7 +108,7 @@
             <div class="user-stats">
                 <div class="stat">
                     <div>
-                        <p>12345</p>
+                        <p>{{ $views }}</p>
                     </div>
                     <div>
                         <img src="/icons/eye-solid.svg"> Views
@@ -71,7 +116,7 @@
                 </div>
                 <div class="stat">
                     <div>
-                        <p>12345</p>
+                        <p>{{ $likes }}</p>
                     </div>
                     <div>
                         <img src="/icons/heart-regular.svg"> Likes
@@ -79,7 +124,7 @@
                 </div>
                 <div class="stat">
                     <div>
-                        <p>12345</p>
+                        <p>{{ $following }}</p>
                     </div>
                     <div>
                         <p> Following</p>
@@ -87,7 +132,7 @@
                 </div>
                 <div class="stat">
                     <div>
-                        <p>12345</p>
+                        <p id="numberFollowers">{{ $followers }}</p>
                     </div>
                     <div>
                         <p> Followers</p>
@@ -95,34 +140,39 @@
                 </div>
             </div>
         </div>
-
+        <hr>
         <div class="profile-posts-section">
             @forelse ($user->post as $post)
 
             <a href="/post/{{$post->id}}">
                 <div class="profile_post">
-                    <div class="post-text">
-                        <div class="post-title">
-                            <h1>{{$post->title}}</h1>
-                        </div>
-                    </div>
-                    <div class="post-img-container">
-                        <img src={{$post->image}} alt="">
-                    </div>
-                    <div class="post-text">
-                        <div class="post-description">{{$post->description}}</div>
-                        <div class="post-date">{{$post->created_at->toFormattedDateString()}}</div>
-                        <div class="post-stats">
-                            <div class="stats-item"><i class="far fa-eye"></i> {{$post->views}} Views</div>
-                            <div class="stats-item"><i class="far fa-heart"></i> {{$post->likes->count()}} Likes
-                            </div>
-                        </div>
 
+                    <div class="post-title">
+                        <h1>{{$post->title}}</h1>
+                    </div>
+                    <div class="post-img-text">
+                        <div class="post-img-container" style=" --postImg: url({{ $post->image }})">
+
+                        </div>
+                        <div class="post-text">
+
+                            <div class="post-desc-date-container">
+                                <div class="post-description">{{$post->description}}</div>
+                                <div class="post-date">{{$post->created_at->toFormattedDateString()}}</div>
+                            </div>
+                            <div class="post-stats">
+                                <div class="stats-item"> <img src="/icons/eye-solid.svg" alt=""> {{ $post->views }}
+                                </div>
+                                <div class="stats-item"> <img src="/icons/heart-solid.svg" alt="">
+                                    {{$post->likes->count()}}</div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </a>
             @empty
-            <div class="no-data">
+            <div class="no-posts">
                 <div>
                     <svg width="184" height="152" viewBox="0 0 184 152" xmlns="http://www.w3.org/2000/svg">
                         <g fill="none" fill-rule="evenodd">

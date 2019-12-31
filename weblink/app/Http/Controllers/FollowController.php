@@ -4,82 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Follow;
 use Illuminate\Http\Request;
+use Auth;
 
 class FollowController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function follow($id)
     {
-        //
+        Follow::insert(['follower' => Auth::user()->id, 'followed' => $id]);
+
+        return redirect('user/'.$id);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function unfollow($id)
     {
-        //
-    }
+        Follow::where([
+            ['follower', Auth::user()->id],
+            ['followed', $id],
+        ])->delete();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Follow  $follow
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Follow $follow)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Follow  $follow
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Follow $follow)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Follow  $follow
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Follow $follow)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Follow  $follow
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Follow $follow)
-    {
-        //
+        return redirect('user/'.$id);
     }
 }

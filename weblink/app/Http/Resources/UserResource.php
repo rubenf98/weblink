@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Carbon\Carbon;
 
 class UserResource extends JsonResource
 {
@@ -26,7 +27,7 @@ class UserResource extends JsonResource
             'description' =>  $this->description,
             'country' =>  $this->country,
             'created_at' => (string) $this->created_at,
-            'post' => UserPostsResource::collection($this->post),          
+            'post' => UserPostsResource::collection($this->post),
         ];
     }
 }
