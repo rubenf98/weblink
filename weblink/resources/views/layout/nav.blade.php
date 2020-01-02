@@ -17,7 +17,7 @@
         <ul>
             @auth
             @if (Auth::user()->role == 'admin')
-            <li><a class="page" href="/dashboard">Dashboard</a></li>
+            <li><a class="page" href="/dashboard/users">Dashboard</a></li>
             @endif
             @endauth
             @auth

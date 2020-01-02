@@ -85,6 +85,53 @@ class TagController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function storeAPI(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:100',
+            'description' => 'required|min:10',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'message' => $validator->errors()
+            ], 400);
+        }
+
+        $image = "/default.png";
+
+        if ($request->file('image')) {
+            if ($request->file('image')->isValid()) {
+                $image = $request->file('image');
+                $filename = uniqid() . '.png';
+
+                IMG::make($image)->encode('png', 65)->resize(760, null, function ($c) {
+                    $c->aspectRatio();
+                    $c->upsize();
+                })->save(public_path('/images/tags/' . $filename));
+
+                $image = '/images/tags/' . $filename;
+            }
+        }
+
+        $tag = new Request([
+            'name' => $request->name,
+            'description' => $request->description,
+            'image' => $image
+        ]);
+
+        $inserted_tag = Tag::create($tag->toArray());
+
+        return new TagResource($inserted_tag);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         Validator::make($request->all(), [
@@ -151,9 +198,56 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        dd("teste");
         $tag->name = $request->name;
+        $tag->description = $request->description;
+
         $tag->save();
+
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Tag updated with success!', 'class' => 'success']);
+        return redirect('/dashboard/tags');
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Tag  $tag
+     * @return \Illuminate\Http\Response
+     */
+    public function updateAPI(Request $request, Tag $tag)
+    {
+
+        $tag->name = $request->name;
+        $tag->description = $request->description;
+
+        $old_image = $tag->image;
+        $new_image = "";
+
+        if ($request->file('image')) {
+            if ($request->file('image')->isValid()) {
+                $new_image = $request->file('image');
+                $filename = uniqid() . '.png';
+
+                IMG::make($new_image)->encode('png', 65)->resize(760, null, function ($c) {
+                    $c->aspectRatio();
+                    $c->upsize();
+                })->save(public_path('/images/tags/' . $filename));
+
+                if ($old_image != "/default.png") {
+                    Storage::delete(public_path($old_image));
+                }
+
+                $new_image = '/images/tags/' . $filename;
+            }
+        }
+
+        if ($new_image) {
+            $tag->image = $new_image;
+        }
+
+        $tag->save();
+
+        return new TagResource($tag);
 
         $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Tag updated with success!', 'class' => 'success']);
         return redirect('/dashboard/tags');

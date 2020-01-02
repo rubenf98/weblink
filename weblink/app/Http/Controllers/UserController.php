@@ -206,4 +206,33 @@ class UserController extends Controller
 
         return redirect('/user/' . $id . '');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function showAPI(User $user)
+    {
+        return new UserResource($user);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\User  $user
+     */
+    public function updateDashboard(Request $request, User $user)
+    {
+        $user->update($request->all());
+
+        $user->role = $request->role;
+
+        $user->save();
+
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'User updated with success!', 'class' => 'success']);
+        return redirect('/dashboard/users');
+    }
 }
