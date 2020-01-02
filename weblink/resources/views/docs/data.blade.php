@@ -53,6 +53,8 @@
 </ul>
 
 <h2>Posts</h2>
+<p>Each post is pre-populated with a random number of views between 0 and 50 as well as a 50% chance of receiving a like
+    from each user.</p>
 <ul>
     <li class="list-margin">CodePen
     </li>
@@ -154,5 +156,43 @@
         <li>Image: /images/tags/haml.png
         </li>
     </ul>
+</ul>
 
+<h2>Comments</h2>
+<ul>
+    <li class="list-margin">User 2, Post 1
+    </li>
+    <ul>
+        <li>Great website!! It looks awesome, keep it on</li>
+    </ul>
+
+    <li class="list-margin">User 3, Post 1
+    </li>
+    <ul>
+        <li>Great design, couldn\'t do it better</li>
+    </ul>
+
+    <li class="list-margin">User 6, Post 1
+    </li>
+    <ul>
+        <li>Loved the dark theme feature!</li>
+    </ul>
+
+    <li class="list-margin">User 1, Post 2
+    </li>
+    <ul>
+        <li>Not the best thing I\'ve seen</li>
+    </ul>
+
+    <li class="list-margin">User 4, Post 2
+    </li>
+    <ul>
+        <li>On mobile it\'s horrible!</li>
+    </ul>
+
+    <li class="list-margin">User 1, Post 1
+    </li>
+    <ul>
+        <li>Thanks guys!</li>
+    </ul>
 </ul>

@@ -23,67 +23,64 @@ class UserSeeder extends Seeder
         ]);
 
         User::create([
-            'name'=> 'Teste',
+            'name'=> 'Mary S. Roberts',
             'email'=> 'teste@teste.com',
             'password'=> bcrypt('secret'), 
-            'b_day' => '1998-03-03',
+            'b_day' => '1980-12-19',
             'country' => 'Portugal',
             'gender' => 0           
         ]);
 
         User::create([
-            'name'=> 'Teste',
+            'name'=> 'James M. Peterson',
             'email'=> 'teste2@teste.com',
             'password'=> bcrypt('secret'),
-            'b_day' => '1998-03-03',
+            'b_day' => '1943-08-02',
             'country' => 'Portugal',
-            'role' => 'admin',
             'gender' => 1
         ]);
 
         User::create([
-            'name'=> 'Teste',
+            'name'=> 'Etta E. Oliver',
             'email'=> 'teste3@teste.com',
             'password'=> bcrypt('secret'), 
-            'b_day' => '1998-03-03',
+            'b_day' => '1967-06-12',
             'country' => 'Portugal',
             'gender' => 0           
         ]);
 
         User::create([
-            'name'=> 'Teste',
+            'name'=> 'Marc Evans',
             'email'=> 'teste4@teste.com',
             'password'=> bcrypt('secret'),
-            'b_day' => '1998-03-03',
+            'b_day' => '1955-08-17',
             'country' => 'Portugal',
-            'role' => 'admin',
             'gender' => 1
         ]);
 
         User::create([
-            'name'=> 'Teste',
+            'name'=> 'Lisa Torres',
             'email'=> 'teste5@teste.com',
             'password'=> bcrypt('secret'), 
-            'b_day' => '1998-03-03',
+            'b_day' => '1981-10-22',
             'country' => 'Portugal',
             'gender' => 0           
         ]);
 
         User::create([
-            'name'=> 'Teste',
+            'name'=> 'Mary Watson',
             'email'=> 'teste6@teste.com',
             'password'=> bcrypt('secret'),
-            'b_day' => '1998-03-03',
+            'b_day' => '1972-01-18',
             'country' => 'Portugal',
-            'role' => 'admin',
-            'gender' => 1
+            'gender' => 0
         ]);
 
         User::create([
-            'name'=> 'Teste',
+            'name'=> 'Ronald C. Rudolph',
             'email'=> 'teste7@teste.com',
             'password'=> bcrypt('secret'), 
-            'b_day' => '1998-03-03',
+            'b_day' => '1992-09-05',
             'country' => 'Portugal',
             'gender' => 0           
         ]);

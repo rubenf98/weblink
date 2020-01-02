@@ -2508,10 +2508,28 @@ body {
   margin: auto;
 }
 
+@media screen and (max-width: 770px) {
+  .docs-container {
+    width: 95%;
+  }
+}
+
 .docs-container .doc-content {
   display: none;
   width: 60%;
   margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .docs-container .doc-content {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .docs-container .doc-content {
+    width: 95%;
+  }
 }
 
 .docs-container .doc-content .list-margin {
