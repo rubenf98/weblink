@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
         User::create([
             'name'=> 'Teste',
             'email'=> 'teste2@teste.com',
-            'password'=> bcrypt('admin'),
+            'password'=> bcrypt('secret'),
             'b_day' => '1998-03-03',
             'country' => 'Portugal',
             'role' => 'admin',
@@ -53,7 +53,7 @@ class UserSeeder extends Seeder
         User::create([
             'name'=> 'Teste',
             'email'=> 'teste4@teste.com',
-            'password'=> bcrypt('admin'),
+            'password'=> bcrypt('secret'),
             'b_day' => '1998-03-03',
             'country' => 'Portugal',
             'role' => 'admin',
@@ -72,7 +72,7 @@ class UserSeeder extends Seeder
         User::create([
             'name'=> 'Teste',
             'email'=> 'teste6@teste.com',
-            'password'=> bcrypt('admin'),
+            'password'=> bcrypt('secret'),
             'b_day' => '1998-03-03',
             'country' => 'Portugal',
             'role' => 'admin',
