@@ -20,13 +20,14 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->enum('role', ['admin', 'normal'])->default('normal');
             $table->enum('status', ['active', 'banned'])->default('active');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->string('image')->default("/user-default.png");
             $table->integer('points')->default(0);
-            $table->date('b_day');
-            $table->char('gender', 1);
+            $table->date('b_day')->nullable();
+            $table->char('gender', 1)->nullable();
             $table->text('description')->nullable();
-            $table->string('country');
+            $table->string('country')->nullable();
+            $table->string('provider_id')->nullable()->unique();
             $table->rememberToken();
             $table->timestamps();
         });

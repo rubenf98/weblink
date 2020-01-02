@@ -100,20 +100,13 @@ class UserController extends Controller
             $saveimagename="".Auth::user()->id."-".$imagename = $_FILES['image-upload']["name"];
             if (is_uploaded_file($imagetemp)) {
                 if (move_uploaded_file($imagetemp, $imagePath . $saveimagename)) {
-                    echo "Sussecfully uploaded your image.";
+                    echo "Uploaded your image.";
                 }
             } else {
                 echo "error";
             }
         }
-        $name = $request->input("update-name-input");
-        $email = $request->input("update-email-input");
-        $description = $request->input("update-description-input");
-        $country = $request->input("update-country-input");
-        $bb = $request->input("update-birthday-input");
-        if ($image != null) {
-            $img= "".$imagePath."".$saveimagename;
-        }
+ 
 
         $id = Auth::user()->id;
         //Validation
@@ -126,13 +119,15 @@ class UserController extends Controller
             ]);
 
         $update_user = User::find($id);
-        $update_user->name = $name;
-        $update_user->email = $email;
-        $update_user->description = $description;
-        $update_user->country = $country;
-        $update_user->b_day = $bb;
+        $update_user->name = $request->input("update-name-input");
+        $update_user->email = $request->input("update-email-input");
+        $update_user->description = $request->input("update-description-input");
+        $update_user->country = $request->input("update-country-input");
+        $update_user->b_day = $request->input("update-birthday-input");
+        if ($image!=null) {
+            $update_user->image = "/".$imagePath."".$saveimagename;
+        }
         $update_user->save();
-
         return redirect('/user/'.$id.'');
     }
 }

@@ -49,7 +49,18 @@
             </button>
 
 
+            <hr>
+
         </form>
+        <div class="providers-login">
+            <a href="/login/github">
+                <div class="GitHub">
+                    <img src="/icons/github.svg" alt="">
+                    <p>Login with GitHub</p>
+                </div>
+            </a>
+        </div>
+
     </div>
 
     <div class="separator">

@@ -123,6 +123,34 @@
                 }
             }
         }
+
+        .providers-login {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            .GitHub {
+                margin-top: 3%;
+                padding-right: 10px;
+                padding-left: 10px;
+                display: flex;
+                border-radius: 16px;
+                background-color: rgba(70, 70, 70, 0.324);
+                img {
+                    width: 2rem;
+                    margin-right: 1rem;
+                }
+
+                &:hover {
+                    background-color: darken(rgba(70, 70, 70, 0.324), 30%);
+                    color: white;
+                }
+            }
+        }
     }
 
     .RegisterContainer {

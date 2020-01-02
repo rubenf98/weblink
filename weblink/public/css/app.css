@@ -560,6 +560,41 @@ body {
   color: #6900b0;
 }
 
+.AuthContainer .LoginContainer .providers-login {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.AuthContainer .LoginContainer .providers-login a {
+  text-decoration: none;
+  color: black;
+}
+
+.AuthContainer .LoginContainer .providers-login .GitHub {
+  margin-top: 3%;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: -webkit-box;
+  display: flex;
+  border-radius: 16px;
+  background-color: rgba(70, 70, 70, 0.324);
+}
+
+.AuthContainer .LoginContainer .providers-login .GitHub img {
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.AuthContainer .LoginContainer .providers-login .GitHub:hover {
+  background-color: rgba(0, 0, 0, 0.324);
+  color: white;
+}
+
 .AuthContainer .RegisterContainer {
   background-color: white;
   border-radius: 5%;
@@ -998,7 +1033,8 @@ body {
 @media screen and (max-width: 770px) {
   .profile-container .profile-posts .profile-posts-section .profile_post .post-img-text .post-text {
     margin-top: 2%;
-    width: 80%;
+    width: 90%;
+    text-align: center;
   }
 }
 

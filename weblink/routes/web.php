@@ -71,3 +71,9 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/profile/{id}', 'UserController@index');
+
+
+//Login with providers
+
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
