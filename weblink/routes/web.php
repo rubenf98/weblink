@@ -1,17 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,22 +14,25 @@ Route::post('/post', 'PostController@store')->middleware('auth');
 Route::put('/post/{id}', 'PostController@update');
 Route::delete('/post/{id}', 'PostController@destroy');
 
-Route::prefix('dashboard')->group(function () {
+Route::middleware(['admin'])->prefix('dashboard')->group(function () {
     Route::get('/users', 'UserController@index');
     Route::get('/tags', 'TagController@dashboardIndex');
     Route::get('/suggestions', 'TagSuggestionController@index');
-    Route::get('/analytics', 'TagSuggestionController@index');
 });
 
 Route::delete('/tag/{tag}', 'TagController@destroy')->middleware('admin');
 Route::get('/tags', 'TagController@index');
+Route::post('/tag', 'TagController@store')->middleware('admin');
+Route::put('/tag/{tag}', 'TagController@update')->middleware('admin');
 
 Route::delete('/tag-suggestion/{tagSuggestion}', 'TagSuggestionController@destroy')->middleware('admin');
 Route::post('/tag-suggestion', 'TagSuggestionController@store');
+Route::post('/tag-suggestion/status/{tagSuggestion}', 'TagSuggestionController@status')->middleware('admin');
 
 Route::post('/comment', 'CommentController@store')->middleware('auth');
 
 Route::delete('/user/{user}', 'UserController@destroy')->middleware('admin');
+Route::put('/user/{user}', 'UserController@updateDashboard')->middleware('admin');
 Route::get('/users', 'UserController@index')->middleware('admin');
 Route::post('/user', 'UserController@store')->middleware('admin');
 Route::post('/user/status/{user}', 'UserController@status')->middleware('admin');
@@ -63,12 +54,6 @@ Route::get('/about', function () {
 Route::get('/documentation', function () {
     return view('docs.layout');
 });
-
-Route::get('/dashboard', function () {
-    return view('auth.dashboard');
-})->middleware('admin');
-
-
 
 Route::get('/profile/{id}', 'UserController@index');
 

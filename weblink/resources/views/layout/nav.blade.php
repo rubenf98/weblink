@@ -17,7 +17,7 @@
         <ul>
             @auth
             @if (Auth::user()->role == 'admin')
-            <li><a class="page" href="/dashboard">Dashboard</a></li>
+            <li><a class="page" href="/dashboard/users">Dashboard</a></li>
             @endif
             @endauth
             @auth
@@ -26,7 +26,6 @@
             <li><a class="page" href="/posts">Posts</a></li>
             <li><a class="page" href="/tags">Topics</a></li>
             <li><a class="page" href="/about">About</a></li>
-            <li><a class="page" href="/contact">Contact</a></li>
             <li><a class="page" href="/documentation">Documentation</a></li>
         </ul>
     </div>

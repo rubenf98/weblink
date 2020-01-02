@@ -2,6 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use App\Post;
+use App\PostView;
+use App\Like;
+use App\User;
 
 class PostSeeder extends Seeder
 {
@@ -101,5 +104,30 @@ class PostSeeder extends Seeder
             'image' => '/images/website/nike.png',
             'source' => 'github.com',
         ]);
+
+        // give each post some views
+        foreach (Post::all() as $post) {
+
+            $limit = rand(1, 50);
+
+            for ($i = 0; $i < $limit; $i++) {
+                PostView::create([
+                    'user_id' => 1,
+                    'post_id' => $post->id,
+                ]);
+            }
+
+            // give each post some likes
+            foreach (User::all() as $user) {
+                $random = rand(1, 100);
+                if ($random > 50 && $post->likes()->count() < $post->views()->count()) {
+                    Like::create([
+                        'user_id' => $user->id,
+                        'likeable_id' => $post->id,
+                        'likeable_type' => 'App\Post',
+                    ]);
+                }
+            }
+        }
     }
 }

@@ -2,10 +2,22 @@
     width: 80%;
     margin: auto;
 
+    @media screen and (max-width: $m) {
+        width: 95%;
+    }
+
     .doc-content {
         display: none;
         width: 60%;
         margin: auto;
+
+        @media screen and (max-width: $l) {
+            width: 80%;
+        }
+
+        @media screen and (max-width: $m) {
+            width: 95%;
+        }
 
         .list-margin {
             margin: 1% 0;

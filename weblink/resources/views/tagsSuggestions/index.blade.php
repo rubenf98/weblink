@@ -42,12 +42,22 @@
                 <td>{{$suggestion->description}}</td>
                 <td>{{$suggestion->link}}</td>
                 <td>{{$suggestion->created_at}}</td>
-                <td>Accepted</td>
+                <td><span class="tag {{$suggestion->status}}">{{$suggestion->status}}</span></td>
                 <td>
                     <div class="operation-container">
-                        <img src="/icons/ban.svg" class="operation-icon">
-                        <img src="/icons/pen-solid.svg" class="operation-icon">
-                        <img onclick="deleteRecord({{$suggestion->id}}, 'tag-suggestion')" src="/icons/delete.svg" class="operation-icon">
+                        <form action="/tag-suggestion/status/{{$suggestion->id}}" method="post">
+                            @csrf
+                            <input type="hidden" name="status" value="approved">
+                            <button type="submit" style="--background: url(/icons/approved.svg);"> </button>
+                        </form>
+                        <form action="/tag-suggestion/status/{{$suggestion->id}}" method="post">
+                            @csrf
+                            <input type="hidden" name="status" value="declined">
+                            <button type="submit" style="--background: url(/icons/declined.svg);"> </button>
+                        </form>
+
+                        <img onclick="deleteRecord({{$suggestion->id}}, 'tag-suggestion')" src="/icons/delete.svg"
+                            class="operation-icon">
                     </div>
                 </td>
             </tr>

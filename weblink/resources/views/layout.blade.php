@@ -125,7 +125,7 @@
 
 <script>
     // Get the modal
-var tagModal = document.getElementById("tag-modal");
+var tagModal = document.getElementById("tag-suggestion-modal");
 
 // Get the button that opens the modal
 var tagButton = document.getElementById("btn-suggest");

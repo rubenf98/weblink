@@ -19,11 +19,11 @@ class PostResource extends JsonResource
             'title' =>  $this->title,
             'description' =>  $this->description,
             'url' =>  $this->url,
+            'image' => $this->image,
             'source' =>  $this->source,
             'created_at' => (string) $this->created_at,
             'user' => $this->user,
             'comment' => CommentResource::collection($this->comment),
-            'post_img' => PostImgResource::collection($this->post_img),
             'tags' => TagResource::collection($this->tag),
         ];
     }

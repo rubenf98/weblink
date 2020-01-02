@@ -1,17 +1,18 @@
 <div class="social-media">
     <div class="project-info">
+        <span>©WebLink</span>
         <span>Prof. Filipe Quintal</span>
-        <span>[ACR] Grupo 7</span>
-    </div>
-
-    <div>
-        <p>©WebLink</p>
+        <span>Grupo 7</span>
     </div>
 
 
     <div class="social-media">
-        <img class="icon" src="/icons/github.svg" alt="" srcset="">
-        <img class="icon" src="/icons/facebook.svg" alt="" srcset="">
-        <img class="icon" src="/icons/twitter.svg" alt="" srcset="">
+        <a href="https://bitbucket.org/kwajd/weblink/src/master/" target="_blanck">
+            <img class="icon" src="/icons/bitbucket.svg">
+        </a>
+        <a class="" href="/logo.png" download="artigo.pdf">
+            <img class="icon" src="/icons/download.svg">
+        </a>
+
     </div>
 </div>

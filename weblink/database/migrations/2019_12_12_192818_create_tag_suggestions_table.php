@@ -17,6 +17,7 @@ class CreateTagSuggestionsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->text('description')->nullable();
+            $table->enum('status', ['pending', 'approved', 'declined'])->default('pending');
             $table->string('link')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();

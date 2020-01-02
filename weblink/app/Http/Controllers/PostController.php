@@ -35,6 +35,27 @@ class PostController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function indexAPI()
+    {
+        return PostResource::collection(Post::all());
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Post  $post
+     * @return \Illuminate\Http\Response
+     */
+    public function showAPI(Post $post)
+    {
+        return new PostResource($post);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -65,7 +86,6 @@ class PostController extends Controller
                 $image = '/images/website/' . $filename;
             }
         }
-
 
         $post = new Request([
             'user_id' => Auth::id(),

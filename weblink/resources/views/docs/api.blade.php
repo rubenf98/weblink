@@ -37,20 +37,79 @@
         supported for resource.</li>
 </ul>
 <h2>Reference</h2>
+
 <h3 class="api-subtitle">Tag</h3>
-<p>Description</p>
+<p>All tags that can be attributed to a post. These can be found on the topics section on the navigation bar.</p>
 <h4>Attributes</h4>
 <ul>
     <li class="list-margin">id <span class="tag type">intenger</span> - unique identifier</li>
     <li class="list-margin">name <span class="tag type">string</span> - topic name</li>
     <li class="list-margin">description <span class="tag type">text</span> - small description of the topic</li>
     <li class="list-margin">image <span class="tag type">string</span> - url of the image</li>
+    <li class="list-margin">times_used <span class="tag type">integer</span> - number of times this tag was used on
+        posts</li>
+    <li class="list-margin">clicks <span class="tag type">integer</span> - number of times this tag was clicked on the
+        topics page</li>
+    <li class="list-margin">views <span class="tag type">integer</span> - number of views on posts with this tag</li>
+    <li class="list-margin">likes <span class="tag type">integer</span> - number of likes on posts with this tag</li>
+    <li class="list-margin">created_at <span class="tag type">date</span> - date of creation</li>
 </ul>
 <h4>Methods</h4>
 <ul>
-    <li class="list-margin">/api/stats/tags</li>
+    <li class="list-margin">Listing of all tags with their respective statistics</li>
+    <ul>
+        <li class="list-margin">GET: /api/stats/tags</li>
+        <li class="list-margin">Response: 200</li>
+    </ul>
+    <li class="list-margin">Listing of all tags</li>
+    <ul>
+        <li class="list-margin">GET: /api/tags</li>
+        <li class="list-margin">Response: 200</li>
+    </ul>
+    <li class="list-margin">Show one specific tag data</li>
+    <ul>
+        <li class="list-margin">GET: /api/tag/{tag_id}</li>
+        <li class="list-margin">Response: 200</li>
+    </ul>
+    <li class="list-margin">Destroy one specific tag resource</li>
+    <ul>
+        <li class="list-margin">DELETE: /api/tag/{tag_id}</li>
+        <li class="list-margin">Response: 204</li>
+    </ul>
+    <li class="list-margin">Create a tag resource</li>
+    <ul>
+        <li class="list-margin">POST: /api/tag</li>
+        <li class="list-margin">Response: 201</li>
+    </ul>
 </ul>
 
 <h3 class="api-subtitle">Post</h3>
+<p>All posts created by our users</p>
+<h4>Attributes</h4>
+<ul>
+    <li class="list-margin">id <span class="tag type">intenger</span> - unique identifier</li>
+    <li class="list-margin">title <span class="tag type">string</span> - post name</li>
+    <li class="list-margin">description <span class="tag type">text</span> - small description of the topic</li>
+    <li class="list-margin">image <span class="tag type">string</span> - url of the image</li>
+    <li class="list-margin">source <span class="tag type">string</span> - url for the project source code</li>
+    <li class="list-margin">created_at <span class="tag type">date</span> - date of creation</li>
+    <li class="list-margin">user <span class="tag type">object</span> - user that created this post</li>
+    <li class="list-margin">comment <span class="tag type">array</span> - listing of this posts comments</li>
+    <li class="list-margin">tags <span class="tag type">array</span> - listing of this posts tags</li>
+    <li class="list-margin">created_at <span class="tag type">date</span> - date of creation</li>
+
+</ul>
+<h4>Methods</h4>
+<ul>
+    <li class="list-margin">Listing of all posts</li>
+    <ul>
+        <li class="list-margin">/api/posts</li>
+    </ul>
+    <li class="list-margin">Show one specific post</li>
+    <ul>
+        <li class="list-margin">/api/post/{post_id}</li>
+    </ul>
+</ul>
+
 <h3 class="api-subtitle">User</h3>
 <h3 class="api-subtitle">Miscelaneous</h3>

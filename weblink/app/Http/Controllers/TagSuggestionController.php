@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Resources\TagsSuggestionsResource;
 use App\QueryFilters\TagSuggestionFilters;
+use Auth;
+use App\User;
 
 class TagSuggestionController extends Controller
 {
@@ -22,13 +24,31 @@ class TagSuggestionController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display the specified resource.
      *
+     * @param  \App\TagSuggestion  $tagSuggestion
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function status(Request $request, TagSuggestion $tagSuggestion)
     {
-        //
+        $user = Auth::user();
+
+        if ($user->role == 'admin') {
+
+            if ($request->status == "approved")
+                $tagSuggestion->status = "approved";
+            else if ($request->status == "declined")
+                $tagSuggestion->status = "declined";
+            else {
+                $tagSuggestion->status = "pending";
+            }
+
+            $tagSuggestion->save();
+        } else {
+            $request->session()->flash('status', ['title' => "Careful", 'message' => 'Only an admin can do this action!', 'class' => 'warning']);
+        }
+
+        return redirect('/dashboard/suggestions');
     }
 
     /**

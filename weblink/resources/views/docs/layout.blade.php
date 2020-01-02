@@ -7,9 +7,6 @@
             <li class="tab-item" id="t-1">
                 <span class="tab-title"> Overview</span>
             </li>
-            <li class="tab-item" id="t-2">
-                <span class="tab-title"> Faq</span>
-            </li>
             <li class="tab-item" id="t-3">
                 <span class="tab-title"> Api</span>
             </li>
@@ -21,9 +18,6 @@
 
     <div id="doc-content-1" class="doc-content">
         @include('docs.overview')
-    </div>
-    <div id="doc-content-2" class="doc-content">
-        @include('docs.faq')
     </div>
     <div id="doc-content-3" class="doc-content">
         @include('docs.api')

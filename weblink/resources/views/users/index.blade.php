@@ -17,7 +17,6 @@
             </div>
             <a class="reset-button" href="/dashboard/users">Reset</a>
         </div>
-
         <button id="user-create-button" class="add-button">Add new</button>
     </div>
     @if (count($users) > 0)
@@ -30,6 +29,7 @@
                     <th>Email</th>
                     <th>Role</th>
                     <th>Points</th>
+                    <th>Birthday</th>
                     <th>Member Since</th>
                     <th>Status</th>
                     <th>Operations</th>
@@ -42,6 +42,7 @@
                 <td>{{$user->email}}</td>
                 <td>{{$user->role}}</td>
                 <td>{{$user->points}}</td>
+                <td>{{$user->b_day}}</td>
                 <td>{{$user->created_at}}</td>
                 <td><span class="tag {{$user->status}}">{{$user->status}}</span></td>
                 <td>
@@ -61,7 +62,7 @@
 
 
 
-                        <img src="/icons/pen-solid.svg" class="operation-icon">
+                        <img src="/icons/pen-solid.svg" class="operation-icon edit-user-button" id="edit-user-{{$user->id}}">
                         <img onclick="deleteRecord({{$user->id}}, 'user')" src="/icons/delete.svg"
                             class="operation-icon">
                     </div>

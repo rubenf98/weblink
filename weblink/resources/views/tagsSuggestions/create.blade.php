@@ -1,5 +1,5 @@
-<div class="tag-create-container">
-    <div id="tag-modal" class="modal">
+<div class="tag-suggestion-create-container">
+    <div id="tag-suggestion-modal" class="modal">
         <div class="modal-content">
             <span class="closeSuggestion">&times;</span>
             <h1>Suggest a Topic</h1>
