@@ -64,17 +64,17 @@
 
                 <div class="card-stats">
                     <div class="stat">
-                        <div id="like" class="value"><img class="icon" src="/icons/heart-white.svg">
+                        <div id="like" class="value"><img class="icon" src="/images/icons/heart-white.svg">
                             {{$post->likes->count()}}
                         </div>
                     </div>
                     <div class="stat">
-                        <div id="like" class="value"><img class="icon" src="/icons/eye.svg">
+                        <div id="like" class="value"><img class="icon" src="/images/icons/eye.svg">
                             {{$post->views}}
                         </div>
                     </div>
                     <div class="stat">
-                        <div id="like" class="value"><img class="icon" src="/icons/comments.svg">
+                        <div id="like" class="value"><img class="icon" src="/images/icons/comments.svg">
                             {{$post->comments}}
                         </div>
                     </div>

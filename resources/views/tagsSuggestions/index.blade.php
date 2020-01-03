@@ -48,15 +48,15 @@
                         <form action="/tag-suggestion/status/{{$suggestion->id}}" method="post">
                             @csrf
                             <input type="hidden" name="status" value="approved">
-                            <button type="submit" style="--background: url(/icons/approved.svg);"> </button>
+                            <button type="submit" style="--background: url(/images/icons/approved.svg);"> </button>
                         </form>
                         <form action="/tag-suggestion/status/{{$suggestion->id}}" method="post">
                             @csrf
                             <input type="hidden" name="status" value="declined">
-                            <button type="submit" style="--background: url(/icons/declined.svg);"> </button>
+                            <button type="submit" style="--background: url(/images/icons/declined.svg);"> </button>
                         </form>
 
-                        <img onclick="deleteRecord({{$suggestion->id}}, 'tag-suggestion')" src="/icons/delete.svg"
+                        <img onclick="deleteRecord({{$suggestion->id}}, 'tag-suggestion')" src="/images/icons/delete.svg"
                             class="operation-icon">
                     </div>
                 </td>

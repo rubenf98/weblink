@@ -33,7 +33,7 @@
                 transition: 0.5s ease;
                 border-top-left-radius: 10px;
                 border-bottom-left-radius: 10px;
-                background: white url("icons/search.svg") no-repeat scroll;
+                background: white url("/images/icons/search.svg") no-repeat scroll;
                 background-position: 2% center;
                 background-size: auto 50%;
                 padding-left: 50px;
@@ -110,7 +110,7 @@
                 appearance: none;
                 padding: 10px 10px;
                 cursor: pointer;
-                background: $custom-purple url("/icons/sort-down.svg") 90% / 10%
+                background: $custom-purple url("/images/icons/sort-down.svg") 90% / 10%
                     no-repeat;
 
                 &:focus {

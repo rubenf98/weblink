@@ -55,7 +55,7 @@
         <div class="providers-login">
             <a href="/login/github">
                 <div class="GitHub">
-                    <img src="/icons/github.svg" alt="">
+                    <img src="/images/icons/github.svg" alt="">
                     <p>Login with GitHub</p>
                 </div>
             </a>

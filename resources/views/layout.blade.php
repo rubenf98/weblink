@@ -36,7 +36,7 @@
     <div id="alert" class="alert-container">
 
         <div class="alert alert-{{Session::get('status.class')}}">
-            <img src="/icons/{{Session::get('status.class')}}.svg">
+            <img src="/images/icons/{{Session::get('status.class')}}.svg">
             <h1>{{ Session::get('status.title') }}</h1>
             <span> {{ Session::get('status.message') }}</span>
         </div>

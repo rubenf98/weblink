@@ -8,10 +8,10 @@
 
     <div class="social-media">
         <a href="https://bitbucket.org/kwajd/weblink/src/master/" target="_blanck">
-            <img class="icon" src="/icons/bitbucket.svg">
+            <img class="icon" src="/images/icons/bitbucket.svg">
         </a>
         <a class="" href="/logo.png" download="artigo.pdf">
-            <img class="icon" src="/icons/download.svg">
+            <img class="icon" src="/images/icons/download.svg">
         </a>
 
     </div>

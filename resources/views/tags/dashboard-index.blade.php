@@ -41,8 +41,8 @@
                 <td>{{$tag->likes}}</td>
                 <td>
                     <div class="operation-container">
-                        <img src="/icons/pen-solid.svg" class="operation-icon edit-tag-button" id="edit-tag-{{$tag->id}}">
-                        <img onclick="deleteRecord({{$tag->id}}, 'tag')" src="/icons/delete.svg" class="operation-icon">
+                        <img src="/images/icons/pen-solid.svg" class="operation-icon edit-tag-button" id="edit-tag-{{$tag->id}}">
+                        <img onclick="deleteRecord({{$tag->id}}, 'tag')" src="/images/icons/delete.svg" class="operation-icon">
                     </div>
                 </td>
             </tr>

@@ -11,7 +11,7 @@
             @if (Auth::user()->id == $user->id)
             <div class="change-view-update-container">
                 <div class="change-view-update">
-                    <img src="/icons/settings.svg">
+                    <img src="/images/icons/settings.svg">
                 </div>
             </div>
             @endif
@@ -23,17 +23,17 @@
                 <p> {{ $user->email }}</p>
             </div>
             <div id="show-description">
-                <p><img src="/icons/info.svg" alt=""> {{ $user->description }}</p>
+                <p><img src="/images/icons/info.svg" alt=""> {{ $user->description }}</p>
             </div>
             <div id="show-country">
-                <p><img src="/icons/marker.svg" alt=""> {{ $user->country }}</p>
+                <p><img src="/images/icons/marker.svg" alt=""> {{ $user->country }}</p>
             </div>
             <div id="show-creation-date">
-                <p><img src="/icons/calendar.svg" alt=""> Joined
+                <p><img src="/images/icons/calendar.svg" alt=""> Joined
                     {{ \Carbon\Carbon::parse($user->created_at)->toFormattedDateString() }}</p>
             </div>
             <div id="show-birthday">
-                <p><img src="/icons/baby.svg" alt=""> Born on
+                <p><img src="/images/icons/baby.svg" alt=""> Born on
                     {{ \Carbon\Carbon::parse($user->b_day)->toFormattedDateString() }}</p>
             </div>
             @if(Auth::user()->id != $user->id)
@@ -66,7 +66,7 @@
 
                 <div class="change-view-update-container">
                     <div class="change-view-update-X change-view-update ">
-                        <a href=""><img src="/icons/X.svg"></a>
+                        <a href=""><img src="/images/icons/X.svg"></a>
                     </div>
                 </div>
                 <div id="update-name">
@@ -111,7 +111,7 @@
                         <p>{{ $views }}</p>
                     </div>
                     <div>
-                        <img src="/icons/eye-solid.svg"> Views
+                        <img src="/images/icons/eye-solid.svg"> Views
                     </div>
                 </div>
                 <div class="stat">
@@ -119,7 +119,7 @@
                         <p>{{ $likes }}</p>
                     </div>
                     <div>
-                        <img src="/icons/heart-regular.svg"> Likes
+                        <img src="/images/icons/heart-regular.svg"> Likes
                     </div>
                 </div>
                 <div class="stat">
@@ -161,9 +161,9 @@
                                 <div class="post-date">{{$post->created_at->toFormattedDateString()}}</div>
                             </div>
                             <div class="post-stats">
-                                <div class="stats-item"> <img src="/icons/eye-solid.svg" alt=""> {{ $post->views }}
+                                <div class="stats-item"> <img src="/images/icons/eye-solid.svg" alt=""> {{ $post->views }}
                                 </div>
-                                <div class="stats-item"> <img src="/icons/heart-solid.svg" alt="">
+                                <div class="stats-item"> <img src="/images/icons/heart-solid.svg" alt="">
                                     {{$post->likes->count()}}</div>
                             </div>
 

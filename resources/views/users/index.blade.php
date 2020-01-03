@@ -51,19 +51,19 @@
                         @if ($user->status == "banned")
                         <form action="/user/status/{{$user->id}}" method="post">
                             @csrf
-                            <button type="submit" style="--background: url(/icons/unban.svg);"> </button>
+                            <button type="submit" style="--background: url(/images/icons/unban.svg);"> </button>
                         </form>
                         @else
                         <form action="/user/status/{{$user->id}}" method="post">
                             @csrf
-                            <button type="submit" style="--background: url(/icons/ban.svg);"> </button>
+                            <button type="submit" style="--background: url(/images/icons/ban.svg);"> </button>
                         </form>
                         @endif
 
 
 
-                        <img src="/icons/pen-solid.svg" class="operation-icon edit-user-button" id="edit-user-{{$user->id}}">
-                        <img onclick="deleteRecord({{$user->id}}, 'user')" src="/icons/delete.svg"
+                        <img src="/images/icons/pen-solid.svg" class="operation-icon edit-user-button" id="edit-user-{{$user->id}}">
+                        <img onclick="deleteRecord({{$user->id}}, 'user')" src="/images/icons/delete.svg"
                             class="operation-icon">
                     </div>
                 </td>

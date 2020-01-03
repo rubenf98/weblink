@@ -1606,7 +1606,7 @@ body {
   transition: 0.5s ease;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background: white url(/images/search.svg?c6a0effbe867db0941bd5592f8f43810) no-repeat scroll;
+  background: white url("/images/icons/search.svg") no-repeat scroll;
   background-position: 2% center;
   background-size: auto 50%;
   padding-left: 50px;
@@ -1696,7 +1696,7 @@ body {
   appearance: none;
   padding: 10px 10px;
   cursor: pointer;
-  background: #a217ff url("/icons/sort-down.svg") 90%/10% no-repeat;
+  background: #a217ff url("/images/icons/sort-down.svg") 90%/10% no-repeat;
 }
 
 .posts-container .posts .order-form .search-select:focus {
@@ -2764,7 +2764,7 @@ body {
   transition: 0.5s ease;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background: white url(/images/search.svg?c6a0effbe867db0941bd5592f8f43810) no-repeat scroll;
+  background: white url("/images/icons/search.svg") no-repeat scroll;
   background-position: 2% center;
   background-size: auto 50%;
   padding-left: 50px;

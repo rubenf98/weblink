@@ -44,7 +44,7 @@
             @auth
 
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();"><img class="icon" src="../icons/logout.svg"></a>
+                document.getElementById('logout-form').submit();"><img class="icon" src="/images/icons/logout.svg"></a>
 
 
 
@@ -55,7 +55,7 @@
             @else
 
             @if (Route::has('register'))
-            <a href="{{ url('/login') }}"><img class="icon" src="/icons/user.svg"></a>
+            <a href="{{ url('/login') }}"><img class="icon" src="/images/icons/user.svg"></a>
             @endif
 
             @endauth

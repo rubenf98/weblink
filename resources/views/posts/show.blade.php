@@ -19,9 +19,9 @@
             <div class="stats-container">
                 <div class="stats">
                     @if ($post->is_liked)
-                    <img src="/icons/heart-filled.svg" id="upvote-post" onclick="upvotePost()" />
+                    <img src="/images/icons/heart-filled.svg" id="upvote-post" onclick="upvotePost()" />
                     @else
-                    <img src="/icons/heart-regular.svg" id="upvote-post" onclick="upvotePost()" />
+                    <img src="/images/icons/heart-regular.svg" id="upvote-post" onclick="upvotePost()" />
                     @endif
                     <span id="upvote">{{$upvotes}}</span>
 
@@ -200,10 +200,10 @@
 
                     <div class="comments-upvotes">
                         @if ($comment->is_liked)
-                        <img class="comment-upvote" src="/icons/circle-up-filled.svg" id="upvote-arrow-{{$comment->id}}"
+                        <img class="comment-upvote" src="/images/icons/circle-up-filled.svg" id="upvote-arrow-{{$comment->id}}"
                             onclick="upvoteComment('{{$comment->id}}')" />
                         @else
-                        <img class="comment-upvote" src="/icons/circle-up.svg" id="upvote-arrow-{{$comment->id}}"
+                        <img class="comment-upvote" src="/images/icons/circle-up.svg" id="upvote-arrow-{{$comment->id}}"
                             onclick="upvoteComment('{{$comment->id}}')" />
                         @endif
                         <span id="comment-{{$comment->id}}">{{$comment->likes->count()}}</span>
