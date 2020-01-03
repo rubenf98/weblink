@@ -33,7 +33,7 @@
     <div class="navbar-order">
         @if (Route::has('login'))
         <div>
-            <img onclick="openNav()" style="cursor:pointer" class="icon" src="/icons/bars.svg">
+            <img onclick="openNav()" style="cursor:pointer" class="icon" src="../icons/bars.svg">
         </div>
 
         <div>
@@ -44,7 +44,7 @@
             @auth
 
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();"><img class="icon" src="/icons/logout.svg"></a>
+                document.getElementById('logout-form').submit();"><img class="icon" src="../icons/logout.svg"></a>
 
 
 
