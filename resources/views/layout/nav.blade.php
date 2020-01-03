@@ -33,7 +33,7 @@
     <div class="navbar-order">
         @if (Route::has('login'))
         <div>
-            <img onclick="openNav()" style="cursor:pointer" class="icon" src={{asset("/icons/bars.svg")}}>
+            <img onclick="openNav()" style="cursor:pointer" class="icon" src="/images/icons/bars.svg">
         </div>
 
         <div>
