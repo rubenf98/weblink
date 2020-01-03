@@ -81,7 +81,7 @@ class PostController extends Controller
                 IMG::make($image)->encode('png', 65)->resize(760, null, function ($c) {
                     $c->aspectRatio();
                     $c->upsize();
-                })->save(public_path('/images/website/' . $filename));
+                })->save('images/website/' . $filename);
 
                 $image = '/images/website/' . $filename;
             }
