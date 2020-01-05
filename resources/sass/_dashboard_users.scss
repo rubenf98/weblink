@@ -1,0 +1,196 @@
+.default-table-container {
+    width: 80%;
+    margin: auto;
+
+    .no-data {
+        text-align: center;
+        margin: 3%;
+
+        img {
+            width: 50%;
+            min-width: 250px;
+        }
+
+        @media screen and (max-width: $m) {
+            margin-top: 30px;
+        }
+    }
+
+    .table-filter-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .reset-button {
+        color: #444;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .search-container {
+        display: flex;
+        justify-content: space-between;
+
+        .search-form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .search-input {
+                width: 100%;
+                font-size: 16px;
+                color: #444;
+                border: none;
+                background-color: white;
+                padding: 15px 15px;
+                transition: 0.5s ease;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+                background: white url("/images/icons/search.svg") no-repeat scroll;
+                background-position: 2% center;
+                background-size: auto 50%;
+                padding-left: 50px;
+
+                @media screen and (max-width: $xs) {
+                    background-position: 5% center;
+                }
+
+                &:focus {
+                    border: 1px solid #555;
+                }
+            }
+
+            .search-submit {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                font-size: 16px;
+                color: white;
+                border: none;
+                background-color: $custom-purple;
+                cursor: pointer;
+                transition: 0.5s ease;
+
+                &:hover {
+                    background-color: darken($custom-purple, 20%);
+                }
+            }
+        }
+    }
+
+    .add-button {
+        border-style: none;
+        background-color: $custom-purple;
+        display: block;
+        font-weight: bold;
+        padding: 0 20px;
+        min-width: 160px;
+        height: 50px;
+        border-radius: 16px;
+        font-size: 14px;
+        color: white;
+        text-transform: uppercase;
+        transition: all 0.4s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($custom-purple, 20%);
+        }
+    }
+
+    .table-container {
+        overflow-x: auto;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+
+        @media screen and (max-width: $m) {
+            width: 100%;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow: hidden;
+            text-align: left;
+            background-color: white;
+
+            img {
+                width: 50px;
+                border-radius: 10px;
+            }
+
+            .operation-container {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+
+                button {
+                    background: none;
+                    background-image: var(--background);
+                    background-repeat: no-repeat;
+                    background-position: 50% 50%;
+                    height: 30px;
+                    width: 20px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                button span {
+                    display: none;
+                }
+
+                .operation-icon {
+                    width: 20px;
+                    border-radius: 0px;
+                    cursor: pointer;
+                }
+            }
+
+            td {
+                padding: 30px;
+                background-color: rgba(255, 255, 255, 0.2);
+                color: black;
+
+                @media screen and (max-width: $m) {
+                    padding: 15px;
+                }
+
+                .tag {
+                    padding: 2px 8px;
+                    text-transform: capitalize;
+                    border-radius: 8px;
+                    font-weight: bold;
+                }
+
+                .pending {
+                    color: orange;
+                    background: lighten(orange, 40%);
+                }
+
+                .active,
+                .approved {
+                    color: green;
+                    background: lighten(green, 70%);
+                }
+
+                .banned,
+                .declined {
+                    color: red;
+                    background: lighten(red, 45%);
+                }
+            }
+
+            th {
+                padding: 30px;
+                color: gray;
+
+                @media screen and (max-width: $m) {
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}

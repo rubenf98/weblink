@@ -1,0 +1,39 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rancho&display=swap");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+//SCSS Páginas
+@import "welcome";
+@import "layout";
+@import "login";
+@import "about";
+@import "auth";
+@import "profile";
+@import "post";
+@import "posts";
+@import "navbar";
+@import "post_create";
+@import "footer";
+@import "button";
+@import "dashboard";
+@import "tags";
+@import "tag_suggestion_create";
+@import "docs";
+@import "dashboard_nav";
+@import "dashboard_users";
+@import "user_create";
+@import "tag_create";
+@import "tag_edit";
+@import "post_edit";
+@import "user_edit";
+

@@ -1,0 +1,1 @@
+<div id="myBtn"><img src="/images/icons/plus.svg" class="fixedbutton"></div>
