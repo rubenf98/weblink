@@ -19,7 +19,6 @@ class CommentSeeder extends Seeder
             'Sometimes I wonder if I really can. But then I think to myself, maybe I can\'t. But if I could, that would be good. Maybe it\'s all a lie?',
             'If you really wanted to do that, then why wouldn\'t you do that? Instead you do this. It makes no sense.',
             'I like to say things twice, say things twice. It can get annoying though, annoying though.',
-            'If you really wanted to do that, then why wouldn\'t you do that? Instead you do this. It makes no sense.',
             'I can drive 10 miles, walk 50 feet. Turn around and before I know it, I\'d be back home. Or would I? I\'m not sure but that\'s just how it is.',
             'I see you have something to talk about. Well, I have something to shout about. Infact something to sing about. But I\'ll just keep quiet and let you carry on.',
             'From this day on I shall be known as Bob. For Bob is a good name and I am good. But if you want you can just call me Sally.',

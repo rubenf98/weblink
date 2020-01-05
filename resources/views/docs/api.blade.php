@@ -110,6 +110,4 @@
         <li class="list-margin">/api/post/{post_id}</li>
     </ul>
 </ul>
-
-<h3 class="api-subtitle">User</h3>
-<h3 class="api-subtitle">Miscelaneous</h3>
+....

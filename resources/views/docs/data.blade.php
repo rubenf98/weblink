@@ -151,40 +151,23 @@
 </ul>
 
 <h2>Comments</h2>
+<p>
+    Distributed randomly through all posts
+</p>
 <ul>
-    <li class="list-margin">User 2, Post 1
+    <li class="list-margin">Sometimes I wonder if I really can. But then I think to myself, maybe I can't. But if I
+        could, that would be good. Maybe it\'s all a lie?
     </li>
-    <ul>
-        <li>Great website!! It looks awesome, keep it on</li>
-    </ul>
-
-    <li class="list-margin">User 3, Post 1
+    <li class="list-margin">If you really wanted to do that, then why wouldn't you do that? Instead you do this. It
+        makes no sense.
     </li>
-    <ul>
-        <li>Great design, couldn\'t do it better</li>
-    </ul>
-
-    <li class="list-margin">User 6, Post 1
+    <li class="list-margin">I like to say things twice, say things twice. It can get annoying though, annoying though.
     </li>
-    <ul>
-        <li>Loved the dark theme feature!</li>
-    </ul>
-
-    <li class="list-margin">User 1, Post 2
+    <li class="list-margin">I can drive 10 miles, walk 50 feet. Turn around and before I know it, I'd be back home. Or
+        would I? I'm not sure but that's just how it is.
     </li>
-    <ul>
-        <li>Not the best thing I\'ve seen</li>
-    </ul>
-
-    <li class="list-margin">User 4, Post 2
+    ...
+    <li class="list-margin">I feel sorry for people who don't drink. When they wake up in the morning, that's as good
+        as they're going to feel all day.
     </li>
-    <ul>
-        <li>On mobile it\'s horrible!</li>
-    </ul>
-
-    <li class="list-margin">User 1, Post 1
-    </li>
-    <ul>
-        <li>Thanks guys!</li>
-    </ul>
 </ul>
