@@ -61,4 +61,4 @@ Route::get('/profile/{id}', 'UserController@index');
 //Login with providers
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider');
-Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+//Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
