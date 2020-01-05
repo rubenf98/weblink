@@ -48,7 +48,7 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         //dd($provider);
-        $provider_user = Socialite::driver('github')->user();
+        $provider_user = Socialite::driver('github')->stateless()->user();
         //dd($provider_user);
 
         if ($provider_user->name == null) {
