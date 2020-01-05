@@ -82,14 +82,6 @@ $(".tab-item").click(function () {
     $(this).css("border-top-left-radius", "16px");
     $(this).css("border-top-right-radius", "16px");
 
-    if ($(this)[0].id == "t-1") {
-        $(".doc-content").hide();
-        $("#doc-content-1").show();
-    }
-    if ($(this)[0].id == "t-2") {
-        $(".doc-content").hide();
-        $("#doc-content-2").show();
-    }
     if ($(this)[0].id == "t-3") {
         $(".doc-content").hide();
         $("#doc-content-3").show();

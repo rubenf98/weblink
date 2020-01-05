@@ -4,6 +4,7 @@
 @include('layout.button')
 
 <div class="post-container">
+    @include('posts.edit')
     @php
     $upvotes = $post->likes->count()
     @endphp
@@ -36,7 +37,17 @@
 
         <div class="post-content">
 
-            <h1 class="hide">{{$post->title}}</h1>
+            <div class="hide post-header">
+                <h1 class="hide">{{$post->title}}</h1>
+                @auth
+                @if (Auth::user()->id == $post->user_id)
+
+                <img src="/images/icons/settings.svg" class="edit-post-button" id="edit-user-{{$post->id}}">
+
+                @endif
+                @endauth
+            </div>
+
 
 
             <p class="title hide"> <i class="fas fa-paragraph"></i> Description</p>
@@ -99,9 +110,17 @@
 
             <div class="hidden-container">
                 <div class="show">
-                    <h1>{{$post->title}}</h1>
 
 
+                    <div class="post-header">
+                        <h1>{{$post->title}}</h1>
+
+                        @auth
+                        @if (Auth::user()->id == $post->user_id)
+                        <img src="/images/icons/settings.svg" class="edit-post-button" id="edit-user-{{$post->id}}">
+                        @endif
+                        @endauth
+                    </div>
                     <p class="title"> <i class="fas fa-paragraph"></i> Description</p>
                     <p class="description"> {{$post->description}}</p>
                 </div>
@@ -200,8 +219,8 @@
 
                     <div class="comments-upvotes">
                         @if ($comment->is_liked)
-                        <img class="comment-upvote" src="/images/icons/circle-up-filled.svg" id="upvote-arrow-{{$comment->id}}"
-                            onclick="upvoteComment('{{$comment->id}}')" />
+                        <img class="comment-upvote" src="/images/icons/circle-up-filled.svg"
+                            id="upvote-arrow-{{$comment->id}}" onclick="upvoteComment('{{$comment->id}}')" />
                         @else
                         <img class="comment-upvote" src="/images/icons/circle-up.svg" id="upvote-arrow-{{$comment->id}}"
                             onclick="upvoteComment('{{$comment->id}}')" />

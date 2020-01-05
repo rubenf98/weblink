@@ -15,8 +15,6 @@
     <li class="list-margin">teste@teste.com
     </li>
     <ul>
-        <li>Name: Teste
-        </li>
         <li>Password: secret
         </li>
     </ul>
@@ -24,8 +22,6 @@
     <li class="list-margin">teste2@teste.com
     </li>
     <ul>
-        <li>Name: Teste
-        </li>
         <li>Password: secret
         </li>
     </ul>
@@ -33,8 +29,6 @@
     <li class="list-margin">teste3@teste.com
     </li>
     <ul>
-        <li>Name: Teste
-        </li>
         <li>Password: secret
         </li>
     </ul>
@@ -44,8 +38,6 @@
     <li class="list-margin">teste7@teste.com
     </li>
     <ul>
-        <li>Name: Teste
-        </li>
         <li>Password: secret
         </li>
     </ul>

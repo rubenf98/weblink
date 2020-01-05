@@ -26,24 +26,6 @@
                 @enderror
             </div>
 
-            <div class="center">
-                <div class="checkbox">
-                    <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                    <label for="remember">
-                        {{ __('Remember me') }}
-                    </label>
-                </div>
-
-
-                @if (Route::has('password.request'))
-                <a class="" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
-                </a>
-                @endif
-            </div>
-
-
             <button type="submit" class="submit-button">
                 {{ __('Login') }}
             </button>

@@ -62,7 +62,8 @@
 
 
 
-                        <img src="/images/icons/pen-solid.svg" class="operation-icon edit-user-button" id="edit-user-{{$user->id}}">
+                        <img src="/images/icons/pen-solid.svg" class="operation-icon edit-user-button"
+                            id="edit-user-{{$user->id}}">
                         <img onclick="deleteRecord({{$user->id}}, 'user')" src="/images/icons/delete.svg"
                             class="operation-icon">
                     </div>
@@ -83,15 +84,8 @@
 </div>
 
 <script>
-    //Function to get search attribute from URL and fill the search input
-$(document).ready(function() {
-    var url = new URL(document.location);
-
-    var search = url.searchParams.get("search");
-
-
-    search && $("#user-search").val(search); //Set search input
-});
+   
 </script>
 <script src="/js/welcome.js"></script>
+<script src="/js/user.js"></script>
 @endsection

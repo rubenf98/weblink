@@ -11,7 +11,7 @@ Route::get('/posts', 'PostController@index');
 Route::get('/posts/create', 'PostController@create');
 Route::get('/post/{id}', 'PostController@show');
 Route::post('/post', 'PostController@store')->middleware('auth');
-Route::put('/post/{id}', 'PostController@update');
+Route::put('/post/{post}', 'PostController@update');
 Route::delete('/post/{id}', 'PostController@destroy');
 
 Route::middleware(['admin'])->prefix('dashboard')->group(function () {

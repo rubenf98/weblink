@@ -1,7 +1,5 @@
 @extends('layout')
 
-
-
 @section('content')
 <div class="welcome-container">
     <div class="header-container">
@@ -76,7 +74,3 @@
 
 </div>
 @endsection
-
-</body>
-
-</html>

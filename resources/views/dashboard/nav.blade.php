@@ -12,22 +12,4 @@
     </ul>
 </div>
 
-<script>
-    $(".header-item").click(function () {
-
-    $(this).css("background-color", "rgb(141, 8, 230)");
-    $(this).css("color", "rgb(255, 255, 255)");
-    $(this).css("border-top-left-radius", "16px");
-    $(this).css("border-top-right-radius", "16px");
-
-    if ($(this)[0].id == "h-2") {
-        document.location.href = "/dashboard/users";
-    }
-    if ($(this)[0].id == "h-3") {
-        document.location.href = "/dashboard/tags";
-    }
-    if ($(this)[0].id == "h-4") {
-        document.location.href = "/dashboard/suggestions";
-    }
-});
-</script>
+<script src="/js/dashboard.js"></script>

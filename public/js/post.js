@@ -58,3 +58,44 @@ function upvoteComment(comment_id) {
         }
     });
 };
+
+//-----------------------------------------------Modal for updating a post
+var PostEditModal = document.getElementById("post-edit");
+var PostEditbtn = document.getElementsByClassName("edit-post-button");
+var PostEditSpan = document.getElementsByClassName("closePostEdit")[0];
+console.log(PostEditbtn)
+
+for (let item of PostEditbtn) {
+    item.onclick = function () {
+        var post_id = item.id.split(/[- ]+/).pop();
+        $.ajax({
+            url: "/api/post/" + post_id,
+            context: document.body,
+            success: function (data) {
+                $('#post-edit-title').val(data.data.title);
+                $('#post-edit-description').val(data.data.description);
+                $('#post-edit-source').val(data.data.source);
+                $('#post-edit-url').val(data.data.url);
+                var elements = [];
+                data.data.tags.forEach(tag => {
+                    elements.push(tag.name);
+                });
+                $('#post-edit-tag').val(elements);
+                $('#post-edit-tag').trigger("chosen:updated");
+                
+                $('#post-edit-form').attr('action', "/post/" + post_id);
+
+                PostEditModal.style.display = "block";
+            }
+        });
+    }
+}
+PostEditSpan.onclick = function () {
+    PostEditModal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == PostEditModal) {
+        PostEditModal.style.display = "none";
+    }
+}
+//-----------------------------------------------

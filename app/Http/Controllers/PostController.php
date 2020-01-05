@@ -136,12 +136,22 @@ class PostController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Post  $post
-     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Post $post)
     {
-        //
+
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->source = $request->source;
+        $post->url = $request->url;
+
+        $post->save();
+
+        $request->session()->flash('status', ['title' => "YESSS!", 'message' => 'Post updated with success!', 'class' => 'success']);
+        return redirect('/post/' . $post->id);
     }
+
+
 
     /**
      * Remove the specified resource from storage.

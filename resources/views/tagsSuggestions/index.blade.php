@@ -56,8 +56,8 @@
                             <button type="submit" style="--background: url(/images/icons/declined.svg);"> </button>
                         </form>
 
-                        <img onclick="deleteRecord({{$suggestion->id}}, 'tag-suggestion')" src="/images/icons/delete.svg"
-                            class="operation-icon">
+                        <img onclick="deleteRecord({{$suggestion->id}}, 'tag-suggestion')"
+                            src="/images/icons/delete.svg" class="operation-icon">
                     </div>
                 </td>
             </tr>

@@ -1,23 +1,21 @@
-@extends('layout')
+$(".header-item").click(function () {
 
-@section('content')
-<div class="dashboard-container">
-    @include('dashboard.nav')
+    $(this).css("background-color", "rgb(141, 8, 230)");
+    $(this).css("color", "rgb(255, 255, 255)");
+    $(this).css("border-top-left-radius", "16px");
+    $(this).css("border-top-right-radius", "16px");
 
-    @include('users.create')
-    @include('users.edit')
+    if ($(this)[0].id == "h-2") {
+        document.location.href = "/dashboard/users";
+    }
+    if ($(this)[0].id == "h-3") {
+        document.location.href = "/dashboard/tags";
+    }
+    if ($(this)[0].id == "h-4") {
+        document.location.href = "/dashboard/suggestions";
+    }
+});
 
-    @include('tags.create')
-    @include('tags.edit')
-
-    <div id="dashboardContent" class="dashboardContent">
-        @yield('dashboardContent')
-    </div>
-</div>
-
-<script src="/js/dashboard.js"></script>
-
-<script>
 //-----------------------------------------------Modal for creating a user
 var UserCreateModal = document.getElementById("user-create");
 var UserCreatebtn = document.getElementById("user-create-button");
@@ -35,9 +33,7 @@ window.onclick = function (event) {
     }
 }
 //-----------------------------------------------
-</script>
 
-<script>
 //-----------------------------------------------Modal for creating a tag
 var TagCreateModal = document.getElementById("tag-create");
 var TagCreatebtn = document.getElementById("tag-create-button");
@@ -55,9 +51,8 @@ window.onclick = function (event) {
     }
 }
 //-----------------------------------------------
-</script>
 
-<script>
+
 //-----------------------------------------------Modal for updating a tag
 var TagEditModal = document.getElementById("tag-edit");
 var TagEditbtn = document.getElementsByClassName("edit-tag-button");
@@ -90,10 +85,7 @@ window.onclick = function (event) {
     }
 }
 //-----------------------------------------------
-</script>
 
-
-<script>
 //-----------------------------------------------Modal for updating a user
 var UserEditModal = document.getElementById("user-edit");
 var UserEditbtn = document.getElementsByClassName("edit-user-button");
@@ -133,8 +125,3 @@ window.onclick = function (event) {
     }
 }
 //-----------------------------------------------
-</script>
-
-
-
-@endsection
