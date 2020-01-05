@@ -40,14 +40,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectToProvider($provider)
+    public function redirectToProvider()
     {
-        return Socialite::driver($provider)->redirect();
+        return Socialite::driver('github')->redirect();
     }
 
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback()
     {
-        $provider_user = Socialite::driver($provider)->user();
+        $provider_user = Socialite::driver('github')->user();
         //dd($provider_user);
         
         if ($provider_user->name == null) {

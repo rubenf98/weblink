@@ -36,6 +36,7 @@
                 <p><img src="/icons/baby.svg" alt=""> Born on
                     {{ \Carbon\Carbon::parse($user->b_day)->toFormattedDateString() }}</p>
             </div>
+            @if (Auth::user())
             @if(Auth::user()->id != $user->id)
             <div class="follow-div">
                 @if ($follow)
@@ -49,6 +50,7 @@
                 @endif
 
             </div>
+            @endif
             @endif
         </div>
         <div class="update-form-data">

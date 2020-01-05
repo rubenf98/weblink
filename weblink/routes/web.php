@@ -36,7 +36,7 @@ Route::put('/user/{user}', 'UserController@updateDashboard')->middleware('admin'
 Route::get('/users', 'UserController@index')->middleware('admin');
 Route::post('/user', 'UserController@store')->middleware('admin');
 Route::post('/user/status/{user}', 'UserController@status')->middleware('admin');
-Route::get('/user/{id}', 'UserController@show')->middleware('auth');
+Route::get('/user/{id}', 'UserController@show');
 Route::post('/user/update/{id}', 'UserController@update')->middleware('auth');
 
 //Follow
@@ -60,5 +60,5 @@ Route::get('/profile/{id}', 'UserController@index');
 
 //Login with providers
 
-Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider');
-Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
